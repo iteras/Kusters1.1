@@ -58,7 +58,7 @@ namespace Domain
         public string LastName { get; set; }
 
         [Display(Name = nameof(Resources.Domain.Registered), ResourceType = typeof(Resources.Domain))]
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime Registered { get; set; }
 
         [Display(Name = nameof(Resources.Domain.Sex), ResourceType = typeof(Resources.Domain))]
