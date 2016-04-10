@@ -41,6 +41,8 @@ namespace Domain
 
         //public int PersonInContractId { get; set; }
         public virtual List<PersonInContract>  PersonsInContract { get; set; }
+
+
         [ForeignKey(nameof(User))]
         public int UserId { get; set; }
         public virtual UserInt User { get; set; }

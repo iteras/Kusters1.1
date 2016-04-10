@@ -96,6 +96,15 @@
     <Compile Include="Interfaces\IUserLoginRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Interfaces\IUserRoleRepository.cs" />
+    <Compile Include="Migrations\201604101611004_InitialCreate.cs" />
+    <Compile Include="Migrations\201604101611004_InitialCreate.Designer.cs">
+      <DependentUpon>201604101611004_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604101811036_Kusters.cs" />
+    <Compile Include="Migrations\201604101811036_Kusters.Designer.cs">
+      <DependentUpon>201604101811036_Kusters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NLogCommandInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ArticleRepository.cs" />
@@ -137,6 +146,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201604101611004_InitialCreate.resx">
+      <DependentUpon>201604101611004_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604101811036_Kusters.resx">
+      <DependentUpon>201604101811036_Kusters.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
