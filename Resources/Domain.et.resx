@@ -123,6 +123,12 @@
   <data name="ArticleHeadline" xml:space="preserve">
     <value>Pealkiri</value>
   </data>
+  <data name="BankNr" xml:space="preserve">
+    <value>Pangakonto nr</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
   <data name="FirstLastName" xml:space="preserve">
     <value>Ees-, perekonnanimi</value>
   </data>
@@ -132,6 +138,9 @@
   <data name="FirstnameLengthError" xml:space="preserve">
     <value>Eesnimi on liiga pikk.</value>
   </data>
+  <data name="Invited" xml:space="preserve">
+    <value>Kutsutud</value>
+  </data>
   <data name="LastFirstName" xml:space="preserve">
     <value>Pere-, eesnimi</value>
   </data>
@@ -140,5 +149,23 @@
   </data>
   <data name="LastnameLengthError" xml:space="preserve">
     <value>Perekonnanimi on liiga pikk.</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>Lukustatud</value>
+  </data>
+  <data name="Money" xml:space="preserve">
+    <value>Rahasumma</value>
+  </data>
+  <data name="Raiting" xml:space="preserve">
+    <value>Reiting</value>
+  </data>
+  <data name="Registered" xml:space="preserve">
+    <value>Registeerimiskuupäev</value>
+  </data>
+  <data name="Sex" xml:space="preserve">
+    <value>Sugu</value>
+  </data>
+  <data name="TelNr" xml:space="preserve">
+    <value>Telefoni nr</value>
   </data>
 </root>

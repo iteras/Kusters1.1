@@ -16,7 +16,7 @@ using System.Web.UI.WebControls;
 
 namespace Web.Controllers
 {
-    public class PersonsController : Controller
+    public class PersonsController : BaseController
     {
      //   private KustersDbContext db = new KustersDbContext();
 

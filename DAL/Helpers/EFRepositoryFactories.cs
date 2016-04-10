@@ -49,7 +49,7 @@ namespace DAL.Helpers
                 {typeof (IUserRoleIntRepository), dbContext => new UserRoleIntRepository(dbContext)},
                 {typeof (IUserClaimIntRepository), dbContext => new UserClaimIntRepository(dbContext)},
                 {typeof (IUserLoginIntRepository), dbContext => new UserLoginIntRepository(dbContext)},
-               // {typeof (RoleRepository.IRoleIntRepository), dbContext => new RoleIntRepository(dbContext)},
+                {typeof (IRoleIntRepository), dbContext => new RoleIntRepository(dbContext)},
             };
         }
 

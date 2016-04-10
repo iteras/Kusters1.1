@@ -15,7 +15,7 @@ using Domain;
 
 namespace Web.Controllers
 {
-    public class CampaignsController : Controller
+    public class CampaignsController : BaseController
     {
         //  private KustersDbContext db = new KustersDbContext();
 

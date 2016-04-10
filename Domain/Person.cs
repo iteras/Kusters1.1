@@ -45,24 +45,54 @@ namespace Domain
         public int UserId { get; set; }
         public virtual UserInt User { get; set; }
 
-        [MaxLength(32)]
+        [Required]
+        [MaxLength(128, ErrorMessageResourceName = "FirstnameLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [MinLength(1, ErrorMessageResourceName = "FirstnameLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [Display(Name = nameof(Resources.Domain.Firstname), ResourceType = typeof(Resources.Domain))]
         public string FirstName { get; set; }
-        [MaxLength(32)]
+
+        [Required]
+        [MaxLength(128, ErrorMessageResourceName = "LastnameLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [MinLength(1, ErrorMessageResourceName = "LastnameLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [Display(Name = nameof(Resources.Domain.Lastname), ResourceType = typeof(Resources.Domain))]
         public string LastName { get; set; }
 
+        [Display(Name = nameof(Resources.Domain.Registered), ResourceType = typeof(Resources.Domain))]
+        [DataType(DataType.DateTime)]
+        public DateTime Registered { get; set; }
+
+        [Display(Name = nameof(Resources.Domain.Sex), ResourceType = typeof(Resources.Domain))]
         public bool Sex { get; set; } //true male, false female
+
+        [Display(Name = nameof(Resources.Domain.Email), ResourceType = typeof(Resources.Domain))]
         [MaxLength(50)]
         public string Email { get; set; }
+
         [MaxLength(32)]
         public string Password { get; set; }
+
+        [Display(Name = nameof(Resources.Domain.TelNr), ResourceType = typeof(Resources.Domain))]
         [MaxLength(20)]
         public string TelNr { get; set; }
+        [Display(Name = nameof(Resources.Domain.BankNr), ResourceType = typeof(Resources.Domain))]
         [MaxLength(64)]
         public string BankNr { get; set; }
 
+        [Display(Name = nameof(Resources.Domain.Locked), ResourceType = typeof(Resources.Domain))]
         public bool Locked { get; set; } //true means locked, false means not locked
+
+        [Display(Name = nameof(Resources.Domain.Money), ResourceType = typeof(Resources.Domain))]
         public double Money { get; set; }
+
+        [Display(Name = nameof(Resources.Domain.Invited), ResourceType = typeof(Resources.Domain))]
         public int Invited { get; set; } //is int proper type???
-        public double Rating { get; set; }
+
+        [Display(Name = nameof(Resources.Domain.Raiting), ResourceType = typeof(Resources.Domain))]
+        public double Raiting { get; set; }
+
+        
+
+
+        
     }
 }

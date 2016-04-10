@@ -79,6 +79,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bank account nr.
+        /// </summary>
+        public static string BankNr {
+            get {
+                return ResourceManager.GetString("BankNr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact type name too long..
         /// </summary>
         public static string ContactTypeNameLengthError {
@@ -93,6 +102,15 @@ namespace Resources {
         public static string ContactValueLengthError {
             get {
                 return ResourceManager.GetString("ContactValueLengthError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
             }
         }
         
@@ -133,6 +151,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invited.
+        /// </summary>
+        public static string Invited {
+            get {
+                return ResourceManager.GetString("Invited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last, Firstname.
         /// </summary>
         public static string LastFirstname {
@@ -156,6 +183,60 @@ namespace Resources {
         public static string LastnameLengthError {
             get {
                 return ResourceManager.GetString("LastnameLengthError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Locked.
+        /// </summary>
+        public static string Locked {
+            get {
+                return ResourceManager.GetString("Locked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash.
+        /// </summary>
+        public static string Money {
+            get {
+                return ResourceManager.GetString("Money", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raiting.
+        /// </summary>
+        public static string Raiting {
+            get {
+                return ResourceManager.GetString("Raiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registered date.
+        /// </summary>
+        public static string Registered {
+            get {
+                return ResourceManager.GetString("Registered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sex.
+        /// </summary>
+        public static string Sex {
+            get {
+                return ResourceManager.GetString("Sex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone nr.
+        /// </summary>
+        public static string TelNr {
+            get {
+                return ResourceManager.GetString("TelNr", resourceCulture);
             }
         }
     }

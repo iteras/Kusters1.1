@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Domain.Person>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Persons";
 }
 
 <h2>Index</h2>
@@ -12,38 +12,53 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Firstname)
+            @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Lastname)
+            @Html.DisplayNameFor(model => model.LastName)
         </th>
-        <th>@Html.DisplayNameFor(model => model.DateTime)</th>
-        <th>@Html.DisplayNameFor(model => model.Date)</th>
-        <th>@Html.DisplayNameFor(model => model.Time)</th>
-        <th>@Html.DisplayNameFor(model => model.Contacts)</th>
-        <th></th>
+        <th>@Html.DisplayNameFor(model => model.Registered)</th>
+        <th>@Html.DisplayNameFor(model => model.Sex)</th>
+        <th>@Html.DisplayNameFor(model => model.Email)</th>
+        <th>@Html.DisplayNameFor(model => model.TelNr)</th>
+        <th>@Html.DisplayNameFor(model => model.BankNr)</th>
+        <th>@Html.DisplayNameFor(model => model.Money)</th>
+        <th>@Html.DisplayNameFor(model => model.Invited)</th>
+        <th>@Html.DisplayNameFor(model => model.Raiting)</th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Firstname)
+                @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Lastname)
+                @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateTime)
+                @Html.DisplayFor(modelItem => item.Registered)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @Html.DisplayFor(modelItem => item.Sex)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Time)
+                @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @item.Contacts.Count
+                @Html.DisplayFor(modelItem => item.TelNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BankNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Money)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Invited)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Raiting)
             </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.PersonId }) |

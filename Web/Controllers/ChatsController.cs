@@ -15,7 +15,7 @@ using Domain;
 
 namespace Web.Controllers
 {
-    public class ChatsController : Controller
+    public class ChatsController : BaseController
     {
         //private KustersDbContext db = new KustersDbContext();
         //private readonly IChatRepository _chatRepository = new ChatRepository(new DataBaseContext());

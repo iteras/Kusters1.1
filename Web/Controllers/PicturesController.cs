@@ -14,7 +14,7 @@ using Domain;
 
 namespace Web.Controllers
 {
-    public class PicturesController : Controller
+    public class PicturesController : BaseController
     {
         //private KustersDbContext db = new KustersDbContext();
         //private readonly IPictureRepository _pictureRepository = new PictureRepository(new KustersDbContext());

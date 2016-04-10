@@ -14,7 +14,7 @@ using Domain;
 
 namespace Web.Controllers
 {
-    public class PersonsInContractController : Controller
+    public class PersonsInContractController : BaseController
     {
         //private KustersDbContext db = new KustersDbContext();
         //private readonly IPersonInContractRepository _personInContractRepository = new PersonInContractRepository(new KustersDbContext());

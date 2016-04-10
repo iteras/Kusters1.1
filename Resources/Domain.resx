@@ -150,4 +150,31 @@
   <data name="LastnameLengthError" xml:space="preserve">
     <value>Last name too long.</value>
   </data>
+  <data name="BankNr" xml:space="preserve">
+    <value>Bank account nr</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="Invited" xml:space="preserve">
+    <value>Invited</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="Money" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="Raiting" xml:space="preserve">
+    <value>Raiting</value>
+  </data>
+  <data name="Registered" xml:space="preserve">
+    <value>Registered date</value>
+  </data>
+  <data name="Sex" xml:space="preserve">
+    <value>Sex</value>
+  </data>
+  <data name="TelNr" xml:space="preserve">
+    <value>Telephone nr</value>
+  </data>
 </root>
