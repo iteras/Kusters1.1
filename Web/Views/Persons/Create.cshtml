@@ -1,17 +1,18 @@
 ﻿@model Domain.Person
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Resources.Domain.Create;
+    ViewBag.SubTitle = Resources.Domain.Persons;
 }
 
-<h2>Create</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Person</h4>
+        <h4>@ViewBag.SubTitle</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -19,7 +20,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value=@ViewBag.Title class="btn btn-default" />
             </div>
         </div>
     </div>

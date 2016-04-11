@@ -29,7 +29,9 @@ namespace Domain
         [MaxLength(255)]
        public string Message { get; set; }
 
+
         [MaxLength(32)]
+        [DataType(DataType.DateTime)]
        public string DateTime { get; set; }
 
 

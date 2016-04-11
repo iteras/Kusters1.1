@@ -126,6 +126,12 @@
   <data name="BankNr" xml:space="preserve">
     <value>Pangakonto nr</value>
   </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Kontaktid</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Loo</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>E-mail</value>
   </data>
@@ -155,6 +161,9 @@
   </data>
   <data name="Money" xml:space="preserve">
     <value>Rahasumma</value>
+  </data>
+  <data name="Persons" xml:space="preserve">
+    <value>Inimesed</value>
   </data>
   <data name="Raiting" xml:space="preserve">
     <value>Reiting</value>
