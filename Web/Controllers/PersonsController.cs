@@ -63,6 +63,11 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                person.Money = 0;
+                person.Locked = false;
+                person.Invited = 0;
+                person.Raiting = 0;
+                person.UserId = User.Identity.GetUserId<int>();
                 _uow.Persons.Add(person);
                 _uow.Commit();
                 return RedirectToAction("Index");
