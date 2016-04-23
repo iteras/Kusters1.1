@@ -282,3 +282,17 @@
  
 238 # FAKE - F# Make 
 239 .fake/ 
+/Web/bower_components/cldr-data/main
+/Web/bower_components/cldr-data - Copy
+/Web/bin
+/Web/obj/Debug
+/Resources/bin/Debug
+/Resources/obj/Debug
+/Identity/bin/Debug
+/Identity/obj/Debug
+/Domain/bin/Debug
+/Domain/obj/Debug
+/DataAnnotations/bin/Debug
+/DataAnnotations/obj/Debug
+/DAL/bin/Debug
+/DAL/obj/Debug

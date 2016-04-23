@@ -3060,9 +3060,18 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
+  width: 200px;
+  height: 100px;
   color: #333;
+  font-size: 24px;
   background-color: #fff;
   border-color: #ccc;
+}
+.loginRegisterBtn {
+    align-content: center;    
+    display: inline-block;
+    text-align: center;
+
 }
 .btn-default:focus,
 .btn-default.focus {

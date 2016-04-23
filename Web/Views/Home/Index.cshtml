@@ -6,4 +6,13 @@
 <div class="jumbotron">
     @Html.Raw(Model.Article.ArticleHeadline)
     @Html.Raw(Model.Article.ArticleBody)
+    <div class="loginRegisterBtn center-block">
+        <div class="col-md-16">
+
+            <a class="btn btn-default" href="~/Views/Account/Login.cshtml"> @Resources.Common.Login</a>
+            <a class="btn btn-default" href="~/Views/Account/Register.cshtml"> @Resources.Common.Register</a>
+            <div class="btn btn-default" @Html.ActionLink(@Resources.Common.Login, "Login", new {area = "", controller = "Account"}, htmlAttributes: new {id = "loginLink"}) ></div>
+        </div>
+        
+    </div>
 </div>
