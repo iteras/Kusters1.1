@@ -88,6 +88,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Campaigns.
+        /// </summary>
+        public static string Campaigns {
+            get {
+                return ResourceManager.GetString("Campaigns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Chats.
+        /// </summary>
+        public static string Chats {
+            get {
+                return ResourceManager.GetString("Chats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pretension Chats.
+        /// </summary>
+        public static string ChatsInPretensions {
+            get {
+                return ResourceManager.GetString("ChatsInPretensions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contacts.
         /// </summary>
         public static string Contacts {
@@ -115,11 +142,47 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contracts.
+        /// </summary>
+        public static string Contracts {
+            get {
+                return ResourceManager.GetString("Contracts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create.
         /// </summary>
         public static string Create {
             get {
                 return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deals.
+        /// </summary>
+        public static string Deals {
+            get {
+                return ResourceManager.GetString("Deals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deals in campaigns.
+        /// </summary>
+        public static string DealsInCampaign {
+            get {
+                return ResourceManager.GetString("DealsInCampaign", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descriptions.
+        /// </summary>
+        public static string Descriptions {
+            get {
+                return ResourceManager.GetString("Descriptions", resourceCulture);
             }
         }
         
@@ -228,6 +291,60 @@ namespace Resources {
         public static string Persons {
             get {
                 return ResourceManager.GetString("Persons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to People in chat.
+        /// </summary>
+        public static string PersonsInChat {
+            get {
+                return ResourceManager.GetString("PersonsInChat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to People in contract.
+        /// </summary>
+        public static string PersonsInContract {
+            get {
+                return ResourceManager.GetString("PersonsInContract", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to People in deal.
+        /// </summary>
+        public static string PersonsInDeal {
+            get {
+                return ResourceManager.GetString("PersonsInDeal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to People in pretension.
+        /// </summary>
+        public static string PersonsInPretension {
+            get {
+                return ResourceManager.GetString("PersonsInPretension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product pictures.
+        /// </summary>
+        public static string Pictures {
+            get {
+                return ResourceManager.GetString("Pictures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product pretensions.
+        /// </summary>
+        public static string Pretensions {
+            get {
+                return ResourceManager.GetString("Pretensions", resourceCulture);
             }
         }
         

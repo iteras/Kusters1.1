@@ -147,4 +147,43 @@
   <data name="Submit" xml:space="preserve">
     <value>Submit</value>
   </data>
+  <data name="Campaigns" xml:space="preserve">
+    <value>Campaigns</value>
+  </data>
+  <data name="Chats" xml:space="preserve">
+    <value>All Chats</value>
+  </data>
+  <data name="ChatsInPretensions" xml:space="preserve">
+    <value>Pretension Chats</value>
+  </data>
+  <data name="Contracts" xml:space="preserve">
+    <value>Contracts</value>
+  </data>
+  <data name="Deals" xml:space="preserve">
+    <value>Deals</value>
+  </data>
+  <data name="DealsInCampaign" xml:space="preserve">
+    <value>Deals in campaigns</value>
+  </data>
+  <data name="Descriptions" xml:space="preserve">
+    <value>Descriptions</value>
+  </data>
+  <data name="PersonsInChat" xml:space="preserve">
+    <value>People in chat</value>
+  </data>
+  <data name="PersonsInContract" xml:space="preserve">
+    <value>People in contract</value>
+  </data>
+  <data name="PersonsInDeal" xml:space="preserve">
+    <value>People in deal</value>
+  </data>
+  <data name="PersonsInPretension" xml:space="preserve">
+    <value>People in pretension</value>
+  </data>
+  <data name="Pictures" xml:space="preserve">
+    <value>Product pictures</value>
+  </data>
+  <data name="Pretensions" xml:space="preserve">
+    <value>Product pretensions</value>
+  </data>
 </root>

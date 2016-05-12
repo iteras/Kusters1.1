@@ -126,11 +126,26 @@
   <data name="BankNr" xml:space="preserve">
     <value>Pangakonto nr</value>
   </data>
+  <data name="Campaigns" xml:space="preserve">
+    <value>Kampaaniad</value>
+  </data>
+  <data name="Chats" xml:space="preserve">
+    <value>Vestlused</value>
+  </data>
   <data name="Contacts" xml:space="preserve">
     <value>Kontaktid</value>
   </data>
+  <data name="Contracts" xml:space="preserve">
+    <value>Lepingud</value>
+  </data>
   <data name="Create" xml:space="preserve">
     <value>Loo</value>
+  </data>
+  <data name="Deals" xml:space="preserve">
+    <value>Tehingud</value>
+  </data>
+  <data name="Descriptions" xml:space="preserve">
+    <value>Toote kirjeldused</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>E-mail</value>
@@ -164,6 +179,24 @@
   </data>
   <data name="Persons" xml:space="preserve">
     <value>Inimesed</value>
+  </data>
+  <data name="PersonsInChat" xml:space="preserve">
+    <value>Inimesed vestluses</value>
+  </data>
+  <data name="PersonsInContract" xml:space="preserve">
+    <value>Inimesed lepingus</value>
+  </data>
+  <data name="PersonsInDeal" xml:space="preserve">
+    <value>Inimesed tehingus</value>
+  </data>
+  <data name="PersonsInPretension" xml:space="preserve">
+    <value>Inimesed pretensioonis</value>
+  </data>
+  <data name="Pictures" xml:space="preserve">
+    <value>Toote pildid</value>
+  </data>
+  <data name="Pretensions" xml:space="preserve">
+    <value>Pretensioonid</value>
   </data>
   <data name="Raiting" xml:space="preserve">
     <value>Reiting</value>
