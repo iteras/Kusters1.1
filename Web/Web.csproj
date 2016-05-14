@@ -2618,6 +2618,11 @@
     <Content Include="Views\Contacts\_CreateEdit.cshtml" />
     <Content Include="Views\Persons\_CreateEdit.cshtml" />
     <Content Include="Scripts\jquery-2.2.2.min.map" />
+    <Content Include="Views\Campaigns\Create.cshtml" />
+    <Content Include="Views\Campaigns\_CreateEdit.cshtml" />
+    <Content Include="Views\Campaigns\Index.cshtml" />
+    <Content Include="Views\Campaigns\Details.cshtml" />
+    <Content Include="Views\Campaigns\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

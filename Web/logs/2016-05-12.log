@@ -1525,3 +1525,4 @@ SELECT
 2016-05-12 11:05:30.4039 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: 935b5231-9e61-407b-93b0-9de1db9fca24
 2016-05-12 11:05:30.4039 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: 3d2dea92-6633-41f8-b6df-1bc6d8389bc9
 2016-05-12 11:05:30.4039 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: dd1b85db-9da3-4254-b7ca-cc8e96904dbc Disposing:True
+2016-05-12 11:11:45.9489 | DEBUG |          DAL.Helpers.EFRepositoryFactories.Dispose | InstanceId: 1352dd03-ed61-48ff-ad1b-102d18c5a9b7

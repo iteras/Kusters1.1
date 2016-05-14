@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this?.
+        /// </summary>
+        public static string AreYouSureDelete {
+            get {
+                return ResourceManager.GetString("AreYouSureDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Body.
         /// </summary>
         public static string ArticleBody {
@@ -178,6 +187,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Campaign&apos;s description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Descriptions.
         /// </summary>
         public static string Descriptions {
@@ -187,11 +214,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to E-mail.
         /// </summary>
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field must not be empty!.
+        /// </summary>
+        public static string EmptyFieldError {
+            get {
+                return ResourceManager.GetString("EmptyFieldError", resourceCulture);
             }
         }
         
@@ -232,6 +277,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        public static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invited.
         /// </summary>
         public static string Invited {
@@ -268,6 +322,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input text too long.
+        /// </summary>
+        public static string LengthError {
+            get {
+                return ResourceManager.GetString("LengthError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Locked.
         /// </summary>
         public static string Locked {
@@ -282,6 +345,15 @@ namespace Resources {
         public static string Money {
             get {
                 return ResourceManager.GetString("Money", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount percentage.
+        /// </summary>
+        public static string Percentage {
+            get {
+                return ResourceManager.GetString("Percentage", resourceCulture);
             }
         }
         
@@ -381,6 +453,15 @@ namespace Resources {
         public static string TelNr {
             get {
                 return ResourceManager.GetString("TelNr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Until.
+        /// </summary>
+        public static string Until {
+            get {
+                return ResourceManager.GetString("Until", resourceCulture);
             }
         }
     }

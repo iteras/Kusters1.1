@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Domain.Campaign>
+
+@{
+        
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Resources.Domain.Campaigns</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Percentage)
+        </th>
+        <th>@Html.DisplayNameFor(model => model.From)</th>
+        <th>@Html.DisplayNameFor(model => model.Until)</th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Percentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.From)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Until)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CampaignId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CampaignId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CampaignId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -225,4 +225,31 @@
   <data name="Pretensions" xml:space="preserve">
     <value>Product pretensions</value>
   </data>
+  <data name="AreYouSureDelete" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Campaign's description</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="EmptyFieldError" xml:space="preserve">
+    <value>Field must not be empty!</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="LengthError" xml:space="preserve">
+    <value>Input text too long</value>
+  </data>
+  <data name="Percentage" xml:space="preserve">
+    <value>Discount percentage</value>
+  </data>
+  <data name="Until" xml:space="preserve">
+    <value>Until</value>
+  </data>
 </root>

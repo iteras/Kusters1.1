@@ -7,6 +7,7 @@ using Dal.Interfaces;
 using Dal.Repositories;
 using DAL.Interfaces;
 using DAL.Repositories;
+using Domain;
 
 namespace DAL.Helpers
 {
@@ -42,6 +43,18 @@ namespace DAL.Helpers
                 //{typeof(IUserClaimRepository), dbContext => new UserClaimRepository(dbContext)},
                 //{typeof(IUserLoginRepository), dbContext => new UserLoginRepository(dbContext)},
                 //{typeof(IRoleRepository), dbContext => new RoleRepository(dbContext)},
+                {typeof (IChatRepository), dbContext => new ChatRepository(dbContext) },
+                {typeof (IContractRepository), dbContext => new ContractRepository(dbContext) },
+                {typeof (IDealRepository), dbContext => new DealRepository(dbContext) },
+                {typeof (IDescriptionRepository), dbContext => new DescriptionRepository(dbContext) },
+                {typeof (IPersonInChatRepository), dbContext => new PersonInChatRepository(dbContext) },
+                {typeof (IPersonInContractRepository), dbContext => new PersonInContractRepository(dbContext) },
+                {typeof (IPersonInDealRepository), dbContext => new PersonInDealRepository(dbContext) },
+                {typeof (IPersonInPretensionRepository), dbContext => new PersonInPretensionRepository(dbContext) },
+                {typeof (IPictureRepository), dbContext => new PictureRepository(dbContext) },
+                {typeof (IPretensionRepository), dbContext => new PretensionRepository(dbContext) },
+                {typeof (IProductRepository), dbContext => new ProductRepository(dbContext) },
+                {typeof (ICampaignRepository), dbContext => new CampaignRepository(dbContext) },
                 {typeof (IPersonRepository), dbContext => new PersonRepository(dbContext)},
                 {typeof (IContactRepository), dbContext => new ContactRepository(dbContext)},
                 {typeof (IArticleRepository), dbContext => new ArticleRepository(dbContext)},
