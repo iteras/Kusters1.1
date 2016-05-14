@@ -11,6 +11,7 @@ using Dal.Interfaces;
 using Dal.Repositories;
 using DAL.Interfaces;
 using Domain;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -39,6 +40,7 @@ namespace Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Contract contract = _uow.Contracts.GetById(id);
+            
             if (contract == null)
             {
                 return HttpNotFound();
@@ -49,7 +51,9 @@ namespace Web.Controllers
         // GET: Contracts/Create
         public ActionResult Create()
         {
-            return View();
+            var vm = new ContractViewModels();
+                vm.CampaignsList = new SelectList(_uow.Campaigns.All.Select(a => new {a.CampaignId,a.Description}).ToList(),nameof(Campaign.CampaignId),nameof(Campaign.Description));
+            return View(vm);
         }
 
         // POST: Contracts/Create
@@ -57,10 +61,11 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ContractId,Content,Title")] Contract contract)
+        public ActionResult Create([Bind(Include = "ContractId, CampaignId,Content,Title")] Contract contract)
         {
             if (ModelState.IsValid)
             {
+               
                 _uow.Contracts.Add(contract);
                 _uow.Commit();
                 return RedirectToAction("Index");
@@ -76,12 +81,22 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contract contract = _uow.Contracts.GetById();
+            Contract contract = _uow.Contracts.GetById(id);
             if (contract == null)
             {
                 return HttpNotFound();
             }
-            return View(contract);
+            var vm = new ContractViewModels();
+            vm.GetCampaign = _uow.Campaigns.GetById(contract.CampaignId);
+            vm.Contract = contract;
+            //var vm = new ContractViewModels();
+            //vm.CampaignsList = new SelectList(_uow.Campaigns.All.Select(a => new {
+            //    a.CampaignId,
+            //    a.Description })
+            //    .ToList(),
+            //    nameof(Campaign.CampaignId),
+            //    nameof(Campaign.Description));
+            return View(vm);
         }
 
         // POST: Contracts/Edit/5
@@ -89,7 +104,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ContractId,Content,Title")] Contract contract)
+        public ActionResult Edit([Bind(Include = "ContractId,CampaignId,Content,Title")] Contract contract)
         {
             if (ModelState.IsValid)
             {

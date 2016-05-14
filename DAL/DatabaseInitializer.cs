@@ -24,7 +24,7 @@ namespace DAL
             context.SaveChanges();
 
             // Users
-            context.UsersInt.Add(new UserInt()
+            UserInt us = new UserInt()
             {
                 UserName = "1@eesti.ee",
                 Email = "1@eesti.ee",
@@ -32,7 +32,9 @@ namespace DAL
                 LastName = "User",
                 PasswordHash = pwdHasher.HashPassword("a"),
                 SecurityStamp = Guid.NewGuid().ToString()
-            });
+            };
+
+            context.UsersInt.Add(us);
 
             context.SaveChanges();
 
@@ -94,6 +96,24 @@ namespace DAL
 
             context.SaveChanges();
 
+            context.Persons.Add(new Person()
+            {
+                UserId = 0,
+                User = us,
+                FirstName = "Imre",
+                LastName = "Teras",
+                BankNr = "453543345",
+                Email = "asd@gmail.com",
+                Invited = 1,
+                Locked = false,
+                Money = 40,
+                Password = "asd",
+                Raiting = 5,
+                Sex = true,
+                TelNr = "5435346",
+                Registered = DateTime.Today
+            });
+            context.SaveChanges();
             //articleHeadLine = "<h1>ASP.NET</h1>";
             //articleBody =
             //    "<p class=\"lead\">ASP.NET on tasuta veebiraamistik suurepäraste veebide arendamiseks kasutades HTML-i, CSS-i, ja JavaScript-i.</p>";

@@ -11,6 +11,7 @@ using Dal.Interfaces;
 using Dal.Repositories;
 using DAL.Interfaces;
 using Domain;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -24,11 +25,29 @@ namespace Web.Controllers
             _uow = uow;
         }
 
+
         // GET: Products
         public ActionResult Index()
         {
+            //var vm = new ProductViewModels();
+            //vm.AllPersons = new SelectList(_uow.Persons.All.
+            //    Select(a => new {a.PersonId, a.FirstName, a.LastName}).ToList()
+            //    ,nameof(Person.PersonId)
+            //    ,nameof(Person.FirstName)
+            //    ,nameof(Person.LastName));
+            //vm.AllProducts = _uow.Products.All.ToList();
             return View(_uow.Products.All);
         }
+
+        //// GET: Products by person
+        //public ActionResult Index(Person person)
+        //{
+        //    var vm = new ProductViewModels();
+        //    vm.GetProductByPerson = _uow.Products.All
+        //            .Where(a => a.PersonId == person.PersonId)
+        //            .ToList();
+        //    return View(vm);
+        //}
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)

@@ -151,6 +151,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Content.
+        /// </summary>
+        public static string Content {
+            get {
+                return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contracts.
         /// </summary>
         public static string Contracts {
@@ -165,6 +174,24 @@ namespace Resources {
         public static string Create {
             get {
                 return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datetime.
+        /// </summary>
+        public static string Datetime {
+            get {
+                return ResourceManager.GetString("Datetime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deal done:.
+        /// </summary>
+        public static string DealDone {
+            get {
+                return ResourceManager.GetString("DealDone", resourceCulture);
             }
         }
         
@@ -219,6 +246,15 @@ namespace Resources {
         public static string Details {
             get {
                 return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
             }
         }
         
@@ -340,6 +376,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input too short! Input must be atleast 3 letters!.
+        /// </summary>
+        public static string MinLengthError {
+            get {
+                return ResourceManager.GetString("MinLengthError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cash.
         /// </summary>
         public static string Money {
@@ -421,6 +475,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string Price {
+            get {
+                return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seller.
+        /// </summary>
+        public static string ProductOwner {
+            get {
+                return ResourceManager.GetString("ProductOwner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Products.
+        /// </summary>
+        public static string Products {
+            get {
+                return ResourceManager.GetString("Products", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Raiting.
         /// </summary>
         public static string Raiting {
@@ -453,6 +534,33 @@ namespace Resources {
         public static string TelNr {
             get {
                 return ResourceManager.GetString("TelNr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insterted text was too long! Text must be less than 3500 letters!.
+        /// </summary>
+        public static string TooLongError {
+            get {
+                return ResourceManager.GetString("TooLongError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product trackin code.
+        /// </summary>
+        public static string TrackingCode {
+            get {
+                return ResourceManager.GetString("TrackingCode", resourceCulture);
             }
         }
         

@@ -25,12 +25,11 @@ namespace Domain
 
         //public int PretensionId { get; set; }
         //public virtual Pretension Pretension { get; set; }
-
-        [MaxLength(255)]
+        [Display(Name = nameof(Resources.Domain.Message), ResourceType = typeof(Resources.Domain))]
+        [MaxLength(255, ErrorMessageResourceName ="TooLongError", ErrorMessageResourceType = typeof(Resources.Domain))]
        public string Message { get; set; }
 
-
-        [MaxLength(32)]
+        [Display(Name = nameof(Resources.Domain.Datetime), ResourceType = typeof(Resources.Domain))]
         [DataType(DataType.DateTime)]
        public string DateTime { get; set; }
 

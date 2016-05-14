@@ -48,6 +48,7 @@ namespace Web.Controllers
         // GET: Deals/Create
         public ActionResult Create()
         {
+
             return View();
         }
 

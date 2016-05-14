@@ -186,4 +186,10 @@
   <data name="Pretensions" xml:space="preserve">
     <value>Product pretensions</value>
   </data>
+  <data name="Select" xml:space="preserve">
+    <value>---Select---</value>
+  </data>
+  <data name="s" xml:space="preserve">
+    <value />
+  </data>
 </root>

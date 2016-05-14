@@ -147,4 +147,7 @@
   <data name="Submit" xml:space="preserve">
     <value>Kinnita</value>
   </data>
+  <data name="Select" xml:space="preserve">
+    <value>---Vali---</value>
+  </data>
 </root>

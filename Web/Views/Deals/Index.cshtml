@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Domain.Deal>
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Resources.Domain.Deals</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Until)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DealDone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.From)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Until)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DealDone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DealId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DealId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DealId })
+        </td>
+    </tr>
+}
+
+</table>

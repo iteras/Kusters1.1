@@ -3,7 +3,7 @@ namespace DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CampaignUpdated : DbMigration
+    public partial class usd : DbMigration
     {
         public override void Up()
         {
@@ -62,8 +62,8 @@ namespace DAL.Migrations
                 c => new
                     {
                         ContractId = c.Int(nullable: false, identity: true),
-                        CampaignId = c.Int(),
-                        Content = c.String(),
+                        CampaignId = c.Int(nullable: false),
+                        Content = c.String(maxLength: 3500),
                         Title = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.ContractId)
@@ -90,8 +90,8 @@ namespace DAL.Migrations
                     {
                         DealId = c.Int(nullable: false, identity: true),
                         ProductId = c.Int(nullable: false),
-                        From = c.String(maxLength: 32),
-                        Until = c.String(maxLength: 32),
+                        From = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        Until = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         DealDone = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.DealId)
@@ -173,7 +173,7 @@ namespace DAL.Migrations
                     {
                         ChatId = c.Int(nullable: false, identity: true),
                         Message = c.String(maxLength: 255),
-                        DateTime = c.String(maxLength: 32),
+                        DateTime = c.String(),
                     })
                 .PrimaryKey(t => t.ChatId);
             
@@ -229,7 +229,7 @@ namespace DAL.Migrations
                         Title = c.String(maxLength: 128),
                         Content = c.String(maxLength: 1024),
                         Price = c.Double(nullable: false),
-                        TrackingCode = c.String(maxLength: 128),
+                        TrackingCode = c.String(maxLength: 256),
                     })
                 .PrimaryKey(t => t.ProductId)
                 .ForeignKey("dbo.Person", t => t.PersonId)

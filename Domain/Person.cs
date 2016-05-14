@@ -92,7 +92,10 @@ namespace Domain
         [Display(Name = nameof(Resources.Domain.Raiting), ResourceType = typeof(Resources.Domain))]
         public double Raiting { get; set; }
 
-        
+        public string FirstLastName()
+        {
+            return this.FirstName + this.LastName;
+        }
 
 
         
