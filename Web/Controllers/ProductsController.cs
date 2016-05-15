@@ -29,7 +29,8 @@ namespace Web.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            //var vm = new ProductViewModels();
+            var vm = new ProductViewModels();
+            vm.AllProducts = _uow.Products.All;
             //vm.AllPersons = new SelectList(_uow.Persons.All.
             //    Select(a => new {a.PersonId, a.FirstName, a.LastName}).ToList()
             //    ,nameof(Person.PersonId)
@@ -67,7 +68,9 @@ namespace Web.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
-            return View();
+            var vm = new ProductViewModels();
+            vm.AllPersons = new SelectList(_uow.Persons.All.Select(a => new {a.PersonId,a.FirstLastName}).ToList(), nameof(Person.PersonId), nameof(Person.FirstLastName));
+            return View(vm);
         }
 
         // POST: Products/Create
@@ -75,16 +78,18 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductId,Title,Content,Price,TrackingCode")] Product product)
+        public ActionResult Create([Bind(Include = "ProductId,PersonId,Title,Content,Description,Price,TrackingCode")] Product product)
         {
             if (ModelState.IsValid)
             {
-                _uow.Products.Update(product);
+                _uow.Products.Add(product);
                 _uow.Commit();
                 return RedirectToAction("Index");
             }
+            var vm = new ProductViewModels();
+            vm.AllPersons = new SelectList(_uow.Persons.All.Select(a => new { a.PersonId, a.FirstLastName }).ToList(), nameof(Person.PersonId), nameof(Person.FirstLastName));
 
-            return View(product);
+            return View(vm);
         }
 
         // GET: Products/Edit/5
@@ -95,11 +100,16 @@ namespace Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = _uow.Products.GetById(id);
+            Person GetPerson = _uow.Persons.GetById(product.PersonId);
             if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            var vm = new ProductViewModels();
+            vm.AllPersons = new SelectList(_uow.Persons.All.Select(a => new { a.PersonId, a.FirstLastName }).ToList(), nameof(Person.PersonId), nameof(Person.FirstLastName));
+            vm.Product = product;
+            vm.Person = GetPerson;
+            return View(vm);
         }
 
         // POST: Products/Edit/5
@@ -107,7 +117,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductId,Title,Content,Price,TrackingCode")] Product product)
+        public ActionResult Edit([Bind(Include = "ProductId, PersonId,Title,Description,Content,Price,TrackingCode")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -127,7 +137,7 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = _uow.Products.GetById();
+            Product product = _uow.Products.GetById(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -140,7 +150,7 @@ namespace Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = _uow.Products.GetById();
+            Product product = _uow.Products.GetById(id);
             _uow.Products.Delete(product);
             _uow.Commit();
             return RedirectToAction("Index");

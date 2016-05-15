@@ -20,8 +20,8 @@ namespace Domain
 
 
         [Display(Name = nameof(Resources.Domain.Description), ResourceType = typeof(Resources.Domain))]
-        [MinLength(3, ErrorMessageResourceName = "LengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
-        [MaxLength(2048)]
+        [MinLength(3, ErrorMessageResourceName = "MinLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [MaxLength(2048, ErrorMessageResourceName = "LengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
         public string Description { get; set; }
 
         [Display(Name = nameof(Resources.Domain.Percentage), ResourceType = typeof(Resources.Domain))]
@@ -31,14 +31,14 @@ namespace Domain
         [Display(Name = nameof(Resources.Domain.From), ResourceType = typeof(Resources.Domain))]
         [Required(ErrorMessageResourceName = "EmptyFieldError", ErrorMessageResourceType = typeof(Resources.Domain))]
         [DataType(DataType.Date)]
-        [MaxLength(32)]
-       public string From { get; set; }
+        
+       public DateTime From { get; set; }
 
         [Display(Name = nameof(Resources.Domain.Until), ResourceType = typeof(Resources.Domain))]
         [Required(ErrorMessageResourceName = "EmptyFieldError", ErrorMessageResourceType = typeof(Resources.Domain))]
         [DataType(DataType.Date)]
-        [MaxLength(32)]
-        public string Until { get; set; }
+        
+        public DateTime Until { get; set; }
 
     }
 }

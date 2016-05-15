@@ -63,7 +63,7 @@ Pinhook <contact@pinhooklabs.com>
 Ron Otten <r.j.g.otten@gmail.com>
 Jephte Clain <Jephte.Clain@univ-reunion.fr>
 Anton Matzneller <obhvsbypqghgc@gmail.com>
-Alex Sexton <AlexSexton@gmail.com>
+Alex Genderton <AlexGenderton@gmail.com>
 Dan Heberden <danheberden@gmail.com>
 Henri Wiechers <hwiechers@gmail.com>
 Russell Holbrook <russell.holbrook@patch.com>

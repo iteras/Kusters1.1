@@ -13,6 +13,7 @@ using DAL.Interfaces;
 using Domain;
 using Microsoft.AspNet.Identity;
 using System.Web.UI.WebControls;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -51,7 +52,8 @@ namespace Web.Controllers
         // GET: Persons/Create
         public ActionResult Create()
         {
-            return View();
+            var vm = new PersonViewModels();
+            return View(vm);
         }
 
         // POST: Persons/Create
@@ -61,13 +63,17 @@ namespace Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create( Person person)
         {
+
             if (ModelState.IsValid)
             {
+                //var vm = new PersonViewModels();
                 person.Money = 0;
                 person.Locked = false;
+                person.Registered = DateTime.Now;
                 person.Invited = 0;
                 person.Raiting = 0;
                 person.UserId = User.Identity.GetUserId<int>();
+
                 _uow.Persons.Add(person);
                 _uow.Commit();
                 return RedirectToAction("Index");
@@ -83,12 +89,14 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            var vm = new PersonViewModels();
             Person person = _uow.Persons.GetById(id);
+            vm.Person = person;
             if (person == null)
             {
                 return HttpNotFound();
             }
-            return View(person);
+            return View(vm);
         }
 
         // POST: Persons/Edit/5

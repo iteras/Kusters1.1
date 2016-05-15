@@ -292,8 +292,10 @@
     <Compile Include="ViewModels\ContactViewModels.cs" />
     <Compile Include="ViewModels\ContractViewModels.cs" />
     <Compile Include="ViewModels\DealViewModels.cs" />
+    <Compile Include="ViewModels\DescriptionViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
+    <Compile Include="ViewModels\PersonViewModels.cs" />
     <Compile Include="ViewModels\ProductViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2638,6 +2640,14 @@
     <Content Include="Views\Deals\Details.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Descriptions\Index.cshtml" />
+    <Content Include="Views\Descriptions\Create.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Pictures\Index.cshtml" />
+    <Content Include="Views\Pictures\Create.cshtml" />
+    <Content Include="Views\Pictures\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

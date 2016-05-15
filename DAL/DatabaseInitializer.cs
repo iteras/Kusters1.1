@@ -20,7 +20,11 @@ namespace DAL
             {
                 Name = "Admin"
             });
-
+            // Roles
+            context.RolesInt.Add(new RoleInt()
+            {
+                Name = "User"
+            });
             context.SaveChanges();
 
             // Users
@@ -95,8 +99,7 @@ namespace DAL
             });
 
             context.SaveChanges();
-
-            context.Persons.Add(new Person()
+            Person Imre = new Person
             {
                 UserId = 0,
                 User = us,
@@ -109,11 +112,32 @@ namespace DAL
                 Money = 40,
                 Password = "asd",
                 Raiting = 5,
-                Sex = true,
+                Gender = true,
                 TelNr = "5435346",
                 Registered = DateTime.Today
+            };
+
+            context.Persons.Add(Imre);
+            context.SaveChanges();
+
+            context.Campaigns.Add(new Campaign()
+            {
+                Description ="normal",
+                Percentage = 0,
+                From = DateTime.Today,
+                Until = DateTime.Today
             });
             context.SaveChanges();
+
+
+            context.Products.Add(new Product()
+            {
+                Person = Imre,
+                Title = "Samsung 42 tolline TV",
+                Content = "Müüa seisma jäänud telekas. Müügi põhjuseks nurka seismajäämine",
+                Price =280,
+                TrackingCode =""
+            });
             //articleHeadLine = "<h1>ASP.NET</h1>";
             //articleBody =
             //    "<p class=\"lead\">ASP.NET on tasuta veebiraamistik suurepäraste veebide arendamiseks kasutades HTML-i, CSS-i, ja JavaScript-i.</p>";

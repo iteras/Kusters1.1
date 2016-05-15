@@ -1410,9 +1410,9 @@ MessageFormat._parse = (function() {
 
 
 /** @file messageformat.js - ICU PluralFormat + SelectFormat for JavaScript
- *  @author Alex Sexton - @SlexAxton
+ *  @author Alex Genderton - @SlexAxton
  *  @version 0.3.0-1
- *  @copyright 2012-2015 Alex Sexton, Eemeli Aro, and Contributors
+ *  @copyright 2012-2015 Alex Genderton, Eemeli Aro, and Contributors
  *  @license To use or fork, MIT. To contribute back, Dojo CLA  */
 
 

@@ -189,6 +189,9 @@
   <data name="From" xml:space="preserve">
     <value>Alates</value>
   </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Sugu</value>
+  </data>
   <data name="Invited" xml:space="preserve">
     <value>Kutsutud</value>
   </data>
@@ -204,8 +207,14 @@
   <data name="LengthError" xml:space="preserve">
     <value>Sisestatud tekst on liiga pikk</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Pildi asukoht</value>
+  </data>
   <data name="Locked" xml:space="preserve">
     <value>Lukustatud</value>
+  </data>
+  <data name="Me" xml:space="preserve">
+    <value>Mina</value>
   </data>
   <data name="Message" xml:space="preserve">
     <value>Sõnum</value>
@@ -215,6 +224,12 @@
   </data>
   <data name="Money" xml:space="preserve">
     <value>Rahasumma</value>
+  </data>
+  <data name="MyProducts" xml:space="preserve">
+    <value>Minu asjad</value>
+  </data>
+  <data name="NotSelected" xml:space="preserve">
+    <value>Valik on tegemata!</value>
   </data>
   <data name="Percentage" xml:space="preserve">
     <value>Allahindluse protsent</value>
@@ -237,6 +252,9 @@
   <data name="Pictures" xml:space="preserve">
     <value>Toote pildid</value>
   </data>
+  <data name="PicureDescription" xml:space="preserve">
+    <value>Pildi kirjeldus</value>
+  </data>
   <data name="Pretensions" xml:space="preserve">
     <value>Pretensioonid</value>
   </data>
@@ -254,9 +272,6 @@
   </data>
   <data name="Registered" xml:space="preserve">
     <value>Registeerimiskuupäev</value>
-  </data>
-  <data name="Sex" xml:space="preserve">
-    <value>Sugu</value>
   </data>
   <data name="TelNr" xml:space="preserve">
     <value>Telefoni nr</value>

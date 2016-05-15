@@ -63,8 +63,8 @@ namespace Domain
         [DataType(DataType.Date)]
         public DateTime Registered { get; set; }
 
-        [Display(Name = nameof(Resources.Domain.Sex), ResourceType = typeof(Resources.Domain))]
-        public bool Sex { get; set; } //true male, false female
+        [Display(Name = nameof(Resources.Domain.Gender), ResourceType = typeof(Resources.Domain))]
+        public bool Gender { get; set; } //true male, false female
 
         [Display(Name = nameof(Resources.Domain.Email), ResourceType = typeof(Resources.Domain))]
         [MaxLength(50)]
@@ -92,9 +92,11 @@ namespace Domain
         [Display(Name = nameof(Resources.Domain.Raiting), ResourceType = typeof(Resources.Domain))]
         public double Raiting { get; set; }
 
-        public string FirstLastName()
+
+        [Display(Name = nameof(Resources.Domain.FirstLastname), ResourceType = typeof(Resources.Domain))]
+        public string FirstLastName
         {
-            return this.FirstName + this.LastName;
+            get{ return FirstName + " " + LastName;}
         }
 
 

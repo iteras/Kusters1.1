@@ -1,5 +1,5 @@
 /*!
- * jQuery JavaScript Library v3.0.0-beta1 -ajax,-ajax/jsonp,-ajax/load,-ajax/parseJSON,-ajax/parseXML,-ajax/script,-ajax/var/location,-ajax/var/nonce,-ajax/var/rquery,-ajax/xhr,-manipulation/_evalUrl,-event/ajax,-effects,-effects/Tween,-effects/animatedSelector,-deprecated
+ * jQuery JavaScript Library v3.0.0-beta1 -ajax,-ajax/jsonp,-ajax/load,-ajax/parseJSON,-ajax/parGenderML,-ajax/script,-ajax/var/location,-ajax/var/nonce,-ajax/var/rquery,-ajax/xhr,-manipulation/_evalUrl,-event/ajax,-effects,-effects/Tween,-effects/animatedSelector,-deprecated
  * https://jquery.com/
  *
  * Includes Sizzle.js
@@ -74,7 +74,7 @@ var support = {};
 
 
 var
-	version = "3.0.0-beta1 -ajax,-ajax/jsonp,-ajax/load,-ajax/parseJSON,-ajax/parseXML,-ajax/script,-ajax/var/location,-ajax/var/nonce,-ajax/var/rquery,-ajax/xhr,-manipulation/_evalUrl,-event/ajax,-effects,-effects/Tween,-effects/animatedSelector,-deprecated",
+	version = "3.0.0-beta1 -ajax,-ajax/jsonp,-ajax/load,-ajax/parseJSON,-ajax/parGenderML,-ajax/script,-ajax/var/location,-ajax/var/nonce,-ajax/var/rquery,-ajax/xhr,-manipulation/_evalUrl,-event/ajax,-effects,-effects/Tween,-effects/animatedSelector,-deprecated",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -4359,7 +4359,7 @@ var pnum = ( /[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/ ).source;
 var rcssNum = new RegExp( "^(?:([+-])=|)(" + pnum + ")([a-z%]*)$", "i" );
 
 
-var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
+var csGenderpand = [ "Top", "Right", "Bottom", "Left" ];
 
 var isHidden = function( elem, el ) {
 
@@ -6102,28 +6102,28 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 
 		// Both box models exclude margin, so add it if we want it
 		if ( extra === "margin" ) {
-			val += jQuery.css( elem, extra + cssExpand[ i ], true, styles );
+			val += jQuery.css( elem, extra + csGenderpand[ i ], true, styles );
 		}
 
 		if ( isBorderBox ) {
 
 			// border-box includes padding, so remove it if we want content
 			if ( extra === "content" ) {
-				val -= jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
+				val -= jQuery.css( elem, "padding" + csGenderpand[ i ], true, styles );
 			}
 
 			// At this point, extra isn't border nor margin, so remove border
 			if ( extra !== "margin" ) {
-				val -= jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
+				val -= jQuery.css( elem, "border" + csGenderpand[ i ] + "Width", true, styles );
 			}
 		} else {
 
 			// At this point, extra isn't content, so add padding
-			val += jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
+			val += jQuery.css( elem, "padding" + csGenderpand[ i ], true, styles );
 
 			// At this point, extra isn't content nor padding, so add border
 			if ( extra !== "padding" ) {
-				val += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
+				val += jQuery.css( elem, "border" + csGenderpand[ i ] + "Width", true, styles );
 			}
 		}
 	}
@@ -6408,7 +6408,7 @@ jQuery.each( {
 				parts = typeof value === "string" ? value.split( " " ) : [ value ];
 
 			for ( ; i < 4; i++ ) {
-				expanded[ prefix + cssExpand[ i ] + suffix ] =
+				expanded[ prefix + csGenderpand[ i ] + suffix ] =
 					parts[ i ] || parts[ i - 2 ] || parts[ 0 ];
 			}
 

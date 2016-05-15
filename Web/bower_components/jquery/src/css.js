@@ -6,7 +6,7 @@ define( [
 	"./var/document",
 	"./var/rcssNum",
 	"./css/var/rnumnonpx",
-	"./css/var/cssExpand",
+	"./css/var/csGenderpand",
 	"./css/var/isHidden",
 	"./css/var/getStyles",
 	"./css/var/swap",
@@ -20,7 +20,7 @@ define( [
 	"./core/init",
 	"./core/ready",
 	"./selector" // contains
-], function( jQuery, pnum, access, rmargin, document, rcssNum, rnumnonpx, cssExpand, isHidden,
+], function( jQuery, pnum, access, rmargin, document, rcssNum, rnumnonpx, csGenderpand, isHidden,
 	getStyles, swap, curCSS, adjustCSS, defaultDisplay, addGetHookIf, support, dataPriv ) {
 
 var
@@ -86,28 +86,28 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 
 		// Both box models exclude margin, so add it if we want it
 		if ( extra === "margin" ) {
-			val += jQuery.css( elem, extra + cssExpand[ i ], true, styles );
+			val += jQuery.css( elem, extra + csGenderpand[ i ], true, styles );
 		}
 
 		if ( isBorderBox ) {
 
 			// border-box includes padding, so remove it if we want content
 			if ( extra === "content" ) {
-				val -= jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
+				val -= jQuery.css( elem, "padding" + csGenderpand[ i ], true, styles );
 			}
 
 			// At this point, extra isn't border nor margin, so remove border
 			if ( extra !== "margin" ) {
-				val -= jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
+				val -= jQuery.css( elem, "border" + csGenderpand[ i ] + "Width", true, styles );
 			}
 		} else {
 
 			// At this point, extra isn't content, so add padding
-			val += jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
+			val += jQuery.css( elem, "padding" + csGenderpand[ i ], true, styles );
 
 			// At this point, extra isn't content nor padding, so add border
 			if ( extra !== "padding" ) {
-				val += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
+				val += jQuery.css( elem, "border" + csGenderpand[ i ] + "Width", true, styles );
 			}
 		}
 	}
@@ -454,7 +454,7 @@ jQuery.each( {
 				parts = typeof value === "string" ? value.split( " " ) : [ value ];
 
 			for ( ; i < 4; i++ ) {
-				expanded[ prefix + cssExpand[ i ] + suffix ] =
+				expanded[ prefix + csGenderpand[ i ] + suffix ] =
 					parts[ i ] || parts[ i - 2 ] || parts[ 0 ];
 			}
 

@@ -37,12 +37,18 @@ namespace Domain
 
         [MaxLength(128, ErrorMessageResourceName = "LengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
         [MinLength(3, ErrorMessageResourceName = "MinLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
-       public string Title { get; set; }
+        [Display(Name = nameof(Resources.Domain.Title))]
+        public string Title { get; set; }
 
         [MaxLength(1024, ErrorMessageResourceName = "LengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
         [MinLength(3, ErrorMessageResourceName = "MinLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
         [Display(Name = nameof(Resources.Domain.Content))]
         public string Content { get; set; }
+
+        [MaxLength(1024, ErrorMessageResourceName = "LengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [MinLength(3, ErrorMessageResourceName = "MinLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [Display(Name = nameof(Resources.Domain.Descriptions))]
+        public string Description { get; set; }
 
         [Required]
         [Display(Name = nameof(Resources.Domain.Price))]

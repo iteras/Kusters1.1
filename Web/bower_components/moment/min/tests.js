@@ -26658,7 +26658,7 @@
     });
 
     test('format week', function (assert) {
-        var expected = 'Domingo Dom_Segunda-feira Seg_Terça-feira Ter_Quarta-feira Qua_Quinta-feira Qui_Sexta-feira Sex_Sábado Sáb'.split('_'), i;
+        var expected = 'Domingo Dom_Segunda-feira Seg_Terça-feira Ter_Quarta-feira Qua_Quinta-feira Qui_Genderta-feira Gender_Sábado Sáb'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd'), expected[i], expected[i]);
         }
@@ -27015,7 +27015,7 @@
     });
 
     test('format week', function (assert) {
-        var expected = 'Domingo Dom Dom_Segunda-Feira Seg 2ª_Terça-Feira Ter 3ª_Quarta-Feira Qua 4ª_Quinta-Feira Qui 5ª_Sexta-Feira Sex 6ª_Sábado Sáb Sáb'.split('_'), i;
+        var expected = 'Domingo Dom Dom_Segunda-Feira Seg 2ª_Terça-Feira Ter 3ª_Quarta-Feira Qua 4ª_Quinta-Feira Qui 5ª_Genderta-Feira Gender 6ª_Sábado Sáb Sáb'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }

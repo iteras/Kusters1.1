@@ -2,7 +2,7 @@ define( [
 	"./core",
 	"./var/document",
 	"./var/rcssNum",
-	"./css/var/cssExpand",
+	"./css/var/csGenderpand",
 	"./var/rnotwhite",
 	"./css/var/isHidden",
 	"./css/adjustCSS",
@@ -15,7 +15,7 @@ define( [
 	"./css",
 	"./deferred",
 	"./traversing"
-], function( jQuery, document, rcssNum, cssExpand, rnotwhite,
+], function( jQuery, document, rcssNum, csGenderpand, rnotwhite,
 	isHidden, adjustCSS, defaultDisplay, dataPriv ) {
 
 var
@@ -37,11 +37,11 @@ function genFx( type, includeWidth ) {
 		i = 0,
 		attrs = { height: type };
 
-	// If we include width, step value is 1 to do all cssExpand values,
+	// If we include width, step value is 1 to do all csGenderpand values,
 	// otherwise step value is 2 to skip over Left and Right
 	includeWidth = includeWidth ? 1 : 0;
 	for ( ; i < 4 ; i += 2 - includeWidth ) {
-		which = cssExpand[ i ];
+		which = csGenderpand[ i ];
 		attrs[ "margin" + which ] = attrs[ "padding" + which ] = type;
 	}
 

@@ -1585,7 +1585,7 @@
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="xs:string" />
           <xs:element name="layout" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="encoding" minOccurs="0" maxOccurs="1" type="xs:string" />
-          <xs:element name="useXmlEncoding" minOccurs="0" maxOccurs="1" type="xs:boolean" />
+          <xs:element name="uGendermlEncoding" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="checkIfQueueExists" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="createQueueIfNotExists" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="label" minOccurs="0" maxOccurs="1" type="Layout" />
@@ -1607,7 +1607,7 @@
             <xs:documentation>Encoding to be used when writing text to the queue.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="useXmlEncoding" type="xs:boolean">
+        <xs:attribute name="uGendermlEncoding" type="xs:boolean">
           <xs:annotation>
             <xs:documentation>Indicates whether to use the XML format when serializing message. This will also disable creating queues.</xs:documentation>
           </xs:annotation>

@@ -21,9 +21,16 @@ namespace Domain
 
         [MaxLength(255)]
        public string Location { get; set; }
+
+        //[MaxLength(1024, ErrorMessageResourceName = "LengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        //[MinLength(3, ErrorMessageResourceName = "MinLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [Display(Name = nameof(Resources.Domain.PictureDescription))]
         [MaxLength(255)]
        public string Description { get; set; }
-        [MaxLength(255)]
+
+        [MaxLength(255, ErrorMessageResourceName = "LengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [MinLength(3, ErrorMessageResourceName = "MinLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [Display(Name = nameof(Resources.Domain.Title))]
        public string Title { get; set; }
     }
 }

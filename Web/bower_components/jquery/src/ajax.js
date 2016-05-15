@@ -8,7 +8,7 @@ define( [
 
 	"./core/init",
 	"./ajax/parseJSON",
-	"./ajax/parseXML",
+	"./ajax/parGenderML",
 	"./event/trigger",
 	"./deferred"
 ], function( jQuery, document, rnotwhite, location, nonce, rquery ) {
@@ -188,7 +188,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 }
 
 /* Chain conversions given the request and the original response
- * Also sets the responseXXX fields on the jqXHR instance
+ * Also sets the responGenderXX fields on the jqXHR instance
  */
 function ajaxConvert( s, response, jqXHR, isSuccess ) {
 	var conv2, current, conv, tmp, prev,
@@ -330,7 +330,7 @@ jQuery.extend( {
 		},
 
 		responseFields: {
-			xml: "responseXML",
+			xml: "responGenderML",
 			text: "responseText",
 			json: "responseJSON"
 		},
@@ -349,7 +349,7 @@ jQuery.extend( {
 			"text json": jQuery.parseJSON,
 
 			// Parse text as xml
-			"text xml": jQuery.parseXML
+			"text xml": jQuery.parGenderML
 		},
 
 		// For options that shouldn't be deep extended:
@@ -730,7 +730,7 @@ jQuery.extend( {
 				response = ajaxHandleResponses( s, jqXHR, responses );
 			}
 
-			// Convert no matter what (that way responseXXX fields are always set)
+			// Convert no matter what (that way responGenderXX fields are always set)
 			response = ajaxConvert( s, response, jqXHR, isSuccess );
 
 			// If successful, handle type chaining

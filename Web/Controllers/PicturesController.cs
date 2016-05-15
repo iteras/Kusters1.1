@@ -11,6 +11,7 @@ using Dal.Interfaces;
 using Dal.Repositories;
 using DAL.Interfaces;
 using Domain;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -48,7 +49,13 @@ namespace Web.Controllers
         // GET: Pictures/Create
         public ActionResult Create()
         {
-            return View();
+            var vm = new ProductPictureViewModels();
+            vm.AllProducts = new SelectList(
+                _uow.Products.All.Select(
+                    a => new {a.ProductId, a.Title}).ToList(),
+                nameof(Product.ProductId),
+                nameof(Product.Title));
+            return View(vm);
         }
 
         // POST: Pictures/Create
@@ -56,10 +63,11 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PictureId,Location,Description,Title")] Picture picture)
+        public ActionResult Create([Bind(Include = "PictureId,ProductId,Location,Description,Title")] Picture picture)
         {
             if (ModelState.IsValid)
             {
+
                 _uow.Pictures.Add(picture);
                 _uow.Commit();
                 return RedirectToAction("Index");

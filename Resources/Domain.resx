@@ -171,8 +171,8 @@
   <data name="Registered" xml:space="preserve">
     <value>Registered date</value>
   </data>
-  <data name="Sex" xml:space="preserve">
-    <value>Sex</value>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
   </data>
   <data name="TelNr" xml:space="preserve">
     <value>Telephone nr</value>
@@ -205,7 +205,7 @@
     <value>Deals in campaigns</value>
   </data>
   <data name="Descriptions" xml:space="preserve">
-    <value>Descriptions</value>
+    <value>Products descriptions</value>
   </data>
   <data name="PersonsInChat" xml:space="preserve">
     <value>People in chat</value>
@@ -279,6 +279,9 @@
   <data name="MinLengthError" xml:space="preserve">
     <value>Input too short! Input must be atleast 3 letters!</value>
   </data>
+  <data name="NotSelected" xml:space="preserve">
+    <value>Item is not selected!</value>
+  </data>
   <data name="Price" xml:space="preserve">
     <value>Price</value>
   </data>
@@ -287,5 +290,17 @@
   </data>
   <data name="TrackingCode" xml:space="preserve">
     <value>Product trackin code</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Picture location</value>
+  </data>
+  <data name="Me" xml:space="preserve">
+    <value>Me</value>
+  </data>
+  <data name="MyProducts" xml:space="preserve">
+    <value>My products</value>
+  </data>
+  <data name="PictureDescription" xml:space="preserve">
+    <value>Picture description</value>
   </data>
 </root>

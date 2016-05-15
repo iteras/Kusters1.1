@@ -16132,7 +16132,7 @@ define("tinymce/geom/ClientRect", [], function() {
  * @private
  * @class tinymce.text.ExtendingChar
  * @example
- * var isExtending = ExtendingChar.isExtendingChar('a');
+ * var iGendertending = ExtendingChar.iGendertendingChar('a');
  */
 define("tinymce/text/ExtendingChar", [], function() {
 	// Generated from: http://www.unicode.org/Public/UNIDATA/DerivedCoreProperties.txt
@@ -16161,12 +16161,12 @@ define("tinymce/text/ExtendingChar", [], function() {
 		"\uAAEC-\uAAED\uAAF6\uABE5\uABE8\uABED\uFB1E\uFE00-\uFE0F\uFE20-\uFE2F\uFF9E-\uFF9F]"
 	);
 
-	function isExtendingChar(ch) {
+	function iGendertendingChar(ch) {
 		return typeof ch == "string" && ch.charCodeAt(0) >= 768 && extendingChars.test(ch);
 	}
 
 	return {
-		isExtendingChar: isExtendingChar
+		iGendertendingChar: iGendertendingChar
 	};
 });
 
@@ -16297,7 +16297,7 @@ define("tinymce/caret/CaretPosition", [
 			var range = container.ownerDocument.createRange();
 
 			if (offset < container.data.length) {
-				if (ExtendingChar.isExtendingChar(container.data[offset])) {
+				if (ExtendingChar.iGendertendingChar(container.data[offset])) {
 					return clientRects;
 				}
 			}

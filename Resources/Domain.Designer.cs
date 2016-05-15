@@ -232,7 +232,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Descriptions.
+        ///   Looks up a localized string similar to Products descriptions.
         /// </summary>
         public static string Descriptions {
             get {
@@ -322,6 +322,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gender.
+        /// </summary>
+        public static string Gender {
+            get {
+                return ResourceManager.GetString("Gender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invited.
         /// </summary>
         public static string Invited {
@@ -367,11 +376,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Picture location.
+        /// </summary>
+        public static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Locked.
         /// </summary>
         public static string Locked {
             get {
                 return ResourceManager.GetString("Locked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Me.
+        /// </summary>
+        public static string Me {
+            get {
+                return ResourceManager.GetString("Me", resourceCulture);
             }
         }
         
@@ -399,6 +426,24 @@ namespace Resources {
         public static string Money {
             get {
                 return ResourceManager.GetString("Money", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My products.
+        /// </summary>
+        public static string MyProducts {
+            get {
+                return ResourceManager.GetString("MyProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item is not selected!.
+        /// </summary>
+        public static string NotSelected {
+            get {
+                return ResourceManager.GetString("NotSelected", resourceCulture);
             }
         }
         
@@ -453,6 +498,15 @@ namespace Resources {
         public static string PersonsInPretension {
             get {
                 return ResourceManager.GetString("PersonsInPretension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Picture description.
+        /// </summary>
+        public static string PictureDescription {
+            get {
+                return ResourceManager.GetString("PictureDescription", resourceCulture);
             }
         }
         
@@ -516,15 +570,6 @@ namespace Resources {
         public static string Registered {
             get {
                 return ResourceManager.GetString("Registered", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sex.
-        /// </summary>
-        public static string Sex {
-            get {
-                return ResourceManager.GetString("Sex", resourceCulture);
             }
         }
         

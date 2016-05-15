@@ -3,7 +3,7 @@ define( [
 ], function( jQuery ) {
 
 // Cross-browser xml parsing
-jQuery.parseXML = function( data ) {
+jQuery.parGenderML = function( data ) {
 	var xml;
 	if ( !data || typeof data !== "string" ) {
 		return null;
@@ -22,6 +22,6 @@ jQuery.parseXML = function( data ) {
 	return xml;
 };
 
-return jQuery.parseXML;
+return jQuery.parGenderML;
 
 } );
