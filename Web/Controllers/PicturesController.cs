@@ -28,6 +28,7 @@ namespace Web.Controllers
         // GET: Pictures
         public ActionResult Index()
         {
+            
             return View(_uow.Pictures.All);
         }
 

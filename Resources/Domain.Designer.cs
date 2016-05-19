@@ -295,6 +295,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Find a person to make a deal with.
+        /// </summary>
+        public static string FindCreateDeal {
+            get {
+                return ResourceManager.GetString("FindCreateDeal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First, Lastname.
         /// </summary>
         public static string FirstLastname {

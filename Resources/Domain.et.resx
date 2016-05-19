@@ -180,6 +180,9 @@
   <data name="EmptyFieldError" xml:space="preserve">
     <value>Väli ei tohi jääda tühjaks!</value>
   </data>
+  <data name="FindCreateDeal" xml:space="preserve">
+    <value>Otsi isik kellega tehing teha</value>
+  </data>
   <data name="FirstLastName" xml:space="preserve">
     <value>Ees-, perekonnanimi</value>
   </data>

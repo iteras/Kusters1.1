@@ -150,4 +150,7 @@
   <data name="Select" xml:space="preserve">
     <value>---Vali---</value>
   </data>
+  <data name="Find" xml:space="preserve">
+    <value>Otsi</value>
+  </data>
 </root>

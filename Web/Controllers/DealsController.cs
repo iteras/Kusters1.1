@@ -11,6 +11,7 @@ using Dal.Interfaces;
 using Dal.Repositories;
 using DAL.Interfaces;
 using Domain;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -52,12 +53,55 @@ namespace Web.Controllers
             return View();
         }
 
+
+
+        // GET: Deals/Create with person
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Person person)
+        {
+            var vm = new DealViewModels();
+            if (ModelState.IsValid)
+            {
+                vm.Person = person;
+                 //vm.Deal.
+                //_uow.Deals.Add(vm.Deal);
+                //_uow.Commit();
+                //TODO: PersonsInDeal UNCOMPLETED
+                return View(vm);
+            }
+            return View();
+        }
+
+        // GET: Deals/Create
+        public ActionResult FindCreateDeal()
+        {
+            var vm = new DealViewModels();
+            vm.PersonsList = _uow.Persons.All; //TODO : list is given, user inserts name and must select it and it will be posted
+            return View(vm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult FindCreateDeal(DealViewModels vm)
+        {
+            vm.Person = _uow.Persons.GetPersonByFirstname(vm.PersonFirstName);
+            string str = vm.Person.FirstName;
+            if (ModelState.IsValid)
+            {
+                vm.Person = _uow.Persons.GetPersonByFirstname(vm.Person.FirstName);
+                Create(vm.Person); //give person to creation
+            }
+            
+            return View(vm); //result: something broke, direct back to form filling
+        }
+
         // POST: Deals/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DealId,From,Until,DealDone")] Deal deal)
+        public ActionResult Create([Bind(Include = "DealId,ProductId,From,Until,DealDone")] Deal deal)
         {
             if (ModelState.IsValid)
             {

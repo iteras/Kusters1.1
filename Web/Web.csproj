@@ -2648,6 +2648,7 @@
     <Content Include="Views\Pictures\Index.cshtml" />
     <Content Include="Views\Pictures\Create.cshtml" />
     <Content Include="Views\Pictures\Delete.cshtml" />
+    <Content Include="Views\Deals\FindCreateDeal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

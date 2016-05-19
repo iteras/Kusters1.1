@@ -31,5 +31,13 @@ namespace Dal.Repositories
         {
             return person.PersonId;
         }
+
+        public Person GetPersonByFirstname(string firstName)
+        {
+            Person person = new Person();
+            person = DbSet.FirstOrDefault(p => p.FirstName == firstName);
+            return person;
+            
+        }
     }
 }

@@ -63,9 +63,11 @@ namespace Domain
         [DataType(DataType.Date)]
         public DateTime Registered { get; set; }
 
+        [Required]
         [Display(Name = nameof(Resources.Domain.Gender), ResourceType = typeof(Resources.Domain))]
         public bool Gender { get; set; } //true male, false female
 
+        [Required]
         [Display(Name = nameof(Resources.Domain.Email), ResourceType = typeof(Resources.Domain))]
         [MaxLength(50)]
         public string Email { get; set; }
@@ -73,9 +75,12 @@ namespace Domain
         [MaxLength(32)]
         public string Password { get; set; }
 
+        [Required]
         [Display(Name = nameof(Resources.Domain.TelNr), ResourceType = typeof(Resources.Domain))]
         [MaxLength(20)]
         public string TelNr { get; set; }
+
+        [Required]
         [Display(Name = nameof(Resources.Domain.BankNr), ResourceType = typeof(Resources.Domain))]
         [MaxLength(64)]
         public string BankNr { get; set; }

@@ -192,4 +192,7 @@
   <data name="s" xml:space="preserve">
     <value />
   </data>
+  <data name="Find" xml:space="preserve">
+    <value>Find</value>
+  </data>
 </root>

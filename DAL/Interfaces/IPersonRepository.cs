@@ -14,6 +14,8 @@ namespace Dal.Interfaces
        Person GetForUser(int personid, int userId);
 
        int GetPersonId(Person person);
+
+       Person GetPersonByFirstname(string firstName);
    }
 
     

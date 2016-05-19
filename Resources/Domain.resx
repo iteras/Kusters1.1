@@ -306,4 +306,7 @@
   <data name="Created" xml:space="preserve">
     <value>Created</value>
   </data>
+  <data name="FindCreateDeal" xml:space="preserve">
+    <value>Find a person to make a deal with</value>
+  </data>
 </root>
