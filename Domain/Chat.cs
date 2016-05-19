@@ -20,7 +20,7 @@ namespace Domain
 
        //public int PersonInChatId { get; set; }
        public virtual List<PersonInChat> PersonsInChat { get; set; }
-       public virtual List<ChatInPretension>    ChatsInPretension { get; set; }
+       public virtual List<ChatInPretension>ChatsInPretension { get; set; }
        
 
         //public int PretensionId { get; set; }

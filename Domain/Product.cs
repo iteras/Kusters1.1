@@ -59,5 +59,9 @@ namespace Domain
         [MaxLength(256)]
        public string TrackingCode { get; set; }
 
+        [Display(Name = nameof(Resources.Domain.Created ))]
+        [DataType(DataType.DateTime)]
+        public DateTime Created { get; set; }
+
     }
 }

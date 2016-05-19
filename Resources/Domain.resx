@@ -303,4 +303,7 @@
   <data name="PictureDescription" xml:space="preserve">
     <value>Picture description</value>
   </data>
+  <data name="Created" xml:space="preserve">
+    <value>Created</value>
+  </data>
 </root>

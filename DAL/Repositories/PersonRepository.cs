@@ -26,5 +26,10 @@ namespace Dal.Repositories
         {
             return DbSet.FirstOrDefault(a => a.PersonId == personId && a.UserId == userId);
         }
+
+        public int GetPersonId(Person person)
+        {
+            return person.PersonId;
+        }
     }
 }

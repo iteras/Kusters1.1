@@ -11,12 +11,8 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
+        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+        <th>@Html.DisplayNameFor(model => model.LastName)</th>
         <th>@Html.DisplayNameFor(model => model.Registered)</th>
         <th>@Html.DisplayNameFor(model => model.Gender)</th>
         <th>@Html.DisplayNameFor(model => model.Email)</th>
@@ -60,11 +56,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Raiting)
             </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.PersonId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.PersonId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.PersonId })
-        </td>
+            <td>
+                @Html.ActionLink("Edit ", "Edit", new { id = item.PersonId }) 
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Details ", "Details", new {id = item.PersonId});
+                    @Html.ActionLink("Delete ", "Delete", new {id = item.PersonId});
+                }
+
+
+            </td>
     </tr>
     }
 

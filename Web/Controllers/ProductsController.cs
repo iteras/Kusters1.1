@@ -11,10 +11,12 @@ using Dal.Interfaces;
 using Dal.Repositories;
 using DAL.Interfaces;
 using Domain;
+using Microsoft.AspNet.Identity;
 using Web.ViewModels;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class ProductsController : BaseController
     {
         //private KustersDbContext db = new KustersDbContext();
@@ -30,14 +32,28 @@ namespace Web.Controllers
         public ActionResult Index()
         {
             var vm = new ProductViewModels();
-            vm.AllProducts = _uow.Products.All;
+            if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                vm.AllProducts = _uow.Products.All;
+            }
+            else
+            {
+                //List<Person> person = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>());
+
+
+                Person person = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).First();
+                vm.AllProducts = _uow.Products.GetAllProductsForPerson(person.PersonId);
+
+
+            }
+            
             //vm.AllPersons = new SelectList(_uow.Persons.All.
             //    Select(a => new {a.PersonId, a.FirstName, a.LastName}).ToList()
             //    ,nameof(Person.PersonId)
             //    ,nameof(Person.FirstName)
             //    ,nameof(Person.LastName));
             //vm.AllProducts = _uow.Products.All.ToList();
-            return View(_uow.Products.All);
+            return View(vm);
         }
 
         //// GET: Products by person
@@ -78,10 +94,11 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductId,PersonId,Title,Content,Description,Price,TrackingCode")] Product product)
+        public ActionResult Create( Product product)
         {
             if (ModelState.IsValid)
             {
+                product.Created = DateTime.Now;
                 _uow.Products.Add(product);
                 _uow.Commit();
                 return RedirectToAction("Index");
@@ -117,7 +134,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductId, PersonId,Title,Description,Content,Price,TrackingCode")] Product product)
+        public ActionResult Edit( Product product)
         {
             if (ModelState.IsValid)
             {

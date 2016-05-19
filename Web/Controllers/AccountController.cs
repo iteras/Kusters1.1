@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using DAL.Interfaces;
+using Domain;
 using Domain.Identity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -15,12 +18,17 @@ namespace Web.Controllers
     [Authorize]
     public class AccountController : BaseController
     {
+        private readonly IUOW _uow;
         private readonly NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
         private readonly string _instanceId = Guid.NewGuid().ToString();
         private readonly ApplicationSignInManager _signInManager;
         private readonly ApplicationUserManager _userManager;
         private readonly IAuthenticationManager _authenticationManager;
 
+        public AccountController(IUOW uow)
+        {
+            _uow = uow;
+        }
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager,
             IAuthenticationManager authenticationManager)
         {
@@ -60,6 +68,13 @@ namespace Web.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    //int userInt = User.Identity.GetUserId<int>();
+                    //List<Person> persons;
+                    //persons = _uow.Persons.GetAllForUser(userInt);
+                    //if (persons.Count < 1)
+                    //{
+                    //    return RedirectToAction("Create", "Persons");
+                    //}
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -147,6 +162,10 @@ namespace Web.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
+                    //if (_uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).Count < 1)
+                    //{
+                    //    return RedirectToAction("Create", "Persons");
+                    //}
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

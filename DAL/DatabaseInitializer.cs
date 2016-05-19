@@ -136,7 +136,8 @@ namespace DAL
                 Title = "Samsung 42 tolline TV",
                 Content = "Müüa seisma jäänud telekas. Müügi põhjuseks nurka seismajäämine",
                 Price =280,
-                TrackingCode =""
+                TrackingCode ="",
+                Created = DateTime.Now
             });
             //articleHeadLine = "<h1>ASP.NET</h1>";
             //articleBody =

@@ -3,7 +3,7 @@ namespace DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class aaa : DbMigration
+    public partial class USAD : DbMigration
     {
         public override void Up()
         {
@@ -231,6 +231,7 @@ namespace DAL.Migrations
                         Description = c.String(maxLength: 1024),
                         Price = c.Double(nullable: false),
                         TrackingCode = c.String(maxLength: 256),
+                        Created = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.ProductId)
                 .ForeignKey("dbo.Person", t => t.PersonId)

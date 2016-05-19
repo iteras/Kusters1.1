@@ -17,6 +17,7 @@ using Web.ViewModels;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class PersonsController : BaseController
     {
      //   private KustersDbContext db = new KustersDbContext();
@@ -31,6 +32,15 @@ namespace Web.Controllers
         // GET: Persons
         public ActionResult Index()
         {
+            if (User.Identity.IsAuthenticated && User.IsInRole("Admin")) //admin view sees all persons
+            {
+                return View(_uow.Persons.All);
+            }
+            if (_uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).Count < 1) //Users see only their own persons
+            {
+                return RedirectToAction("Create");
+            }
+            
             return View(_uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()));
         }
 
@@ -52,6 +62,10 @@ namespace Web.Controllers
         // GET: Persons/Create
         public ActionResult Create()
         {
+            if (_uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).Count > 0)
+            {
+                
+            }
             var vm = new PersonViewModels();
             return View(vm);
         }

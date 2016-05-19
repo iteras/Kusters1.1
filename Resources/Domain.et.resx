@@ -147,6 +147,9 @@
   <data name="Create" xml:space="preserve">
     <value>Loo</value>
   </data>
+  <data name="Created" xml:space="preserve">
+    <value>Loodud</value>
+  </data>
   <data name="Datetime" xml:space="preserve">
     <value>Kuupäev ja kellaaeg</value>
   </data>

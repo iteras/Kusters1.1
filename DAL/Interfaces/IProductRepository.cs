@@ -10,5 +10,6 @@ namespace Dal.Interfaces
 {
     public interface  IProductRepository : IEFRepository<Product>
     {
+        List<Product> GetAllProductsForPerson(int personId);
     }
 }

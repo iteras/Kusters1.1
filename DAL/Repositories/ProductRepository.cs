@@ -16,5 +16,13 @@ namespace Dal.Repositories
        public ProductRepository(IDbContext dbContext) : base(dbContext)
        {
        }
+
+       public List<Product> GetAllProductsForPerson(int personId)
+       {
+           List<Product> products;
+           products =
+               DbSet.Where(a => a.PersonId == personId).OrderBy(o => o.Created).ToList();
+           return products;
+       } 
     }
 }

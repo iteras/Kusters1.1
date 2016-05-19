@@ -14,6 +14,7 @@ using Domain;
 using Domain.Identity;
 using Ninject;
 using NLog;
+using Resources;
 
 namespace DAL
 {
@@ -66,6 +67,7 @@ namespace DAL
         public IDbSet<Picture> Pictures { get; set; }
         public IDbSet<Pretension> Pretensions { get; set; }
         public IDbSet<Product> Products { get; set; }
+        //public IDbSet<Account> Accounts { get; set; } 
        // public IDbSet<Role> Roles { get; set; }
 
         public IDbSet<Person> Persons { get; set; }

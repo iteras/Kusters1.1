@@ -12,6 +12,8 @@ namespace Dal.Interfaces
    {
        List<Person> GetAllForUser(int userId);
        Person GetForUser(int personid, int userId);
+
+       int GetPersonId(Person person);
    }
 
     
