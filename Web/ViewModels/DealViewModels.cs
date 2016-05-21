@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +16,13 @@ namespace Web.ViewModels
 
         public int ProductId { get; set; }
        public List<Product> ProductList { get; set; }
+
+        [Required]
         public string PersonFirstName { get; set; }
 
         public Person Person { get; set; }
         public int PersonId { get; set; }
-        public List<Person> PersonsList { get; set; } 
+        public List<Person> PersonsList { get; set; }
+        public string ErrorMessage { get; set; }
     }
 }

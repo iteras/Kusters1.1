@@ -151,6 +151,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The person you tried to find, does not exist or inserted name was wrong!.
+        /// </summary>
+        public static string FindCreateDealPersonNotFound {
+            get {
+                return ResourceManager.GetString("FindCreateDealPersonNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string Login {

@@ -4,10 +4,21 @@
     ViewBag.Title = "Details";
 }
 
-<h2>@Resources.Domain.Persons - @Resources.Domain.Details</h2>
+<h2>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Resources.Domain.Persons  @Resources.Domain.Details;
+    }
+    else
+    {
+        @Resources.Domain.Me
+        @Resources.Domain.Details;
+    }
+</h2>
+
 
 <div>
-    <h4>Person</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>

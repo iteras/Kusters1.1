@@ -1,17 +1,23 @@
 ﻿@model Web.ViewModels.PersonViewModels
 
-@{
-    ViewBag.Title = "Edit";
-}
+<h2>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Resources.Domain.Persons  @Resources.Domain.Edit;
+    }
+    else
+    {
+        @Resources.Domain.Me  @Resources.Domain.Edit;
+    }
+</h2>
 
-<h2>@Resources.Domain.Persons - @Resources.Domain.Edit</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Person</h4>
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.PersonId)

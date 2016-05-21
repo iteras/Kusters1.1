@@ -18,7 +18,8 @@ namespace Domain
         public int? DealId { get; set; }
         public virtual Deal Deal { get; set; }
 
-        [MaxLength(64)]
-       public string Date { get; set; }
+        [Required]
+        [DataType(DataType.DateTime)]
+       public DateTime Date { get; set; }
     }
 }

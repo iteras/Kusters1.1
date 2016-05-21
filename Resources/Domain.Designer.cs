@@ -169,7 +169,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create.
+        ///   Looks up a localized string similar to   Create.
         /// </summary>
         public static string Create {
             get {
@@ -223,7 +223,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
+        ///   Looks up a localized string similar to   Delete.
         /// </summary>
         public static string Delete {
             get {
@@ -250,7 +250,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Details.
+        ///   Looks up a localized string similar to   Details.
         /// </summary>
         public static string Details {
             get {
@@ -259,7 +259,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit.
+        ///   Looks up a localized string similar to   Edit.
         /// </summary>
         public static string Edit {
             get {

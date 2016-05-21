@@ -184,7 +184,7 @@
     <value>Contacts</value>
   </data>
   <data name="Create" xml:space="preserve">
-    <value>Create</value>
+    <value>  Create</value>
   </data>
   <data name="Campaigns" xml:space="preserve">
     <value>Campaigns</value>
@@ -229,16 +229,16 @@
     <value>Are you sure you want to delete this?</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>  Delete</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Campaign's description</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Details</value>
+    <value>  Details</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Edit</value>
+    <value>  Edit</value>
   </data>
   <data name="EmptyFieldError" xml:space="preserve">
     <value>Field must not be empty!</value>

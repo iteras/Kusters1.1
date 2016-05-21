@@ -195,4 +195,7 @@
   <data name="Find" xml:space="preserve">
     <value>Find</value>
   </data>
+  <data name="FindCreateDealPersonNotFound" xml:space="preserve">
+    <value>The person you tried to find, does not exist or inserted name was wrong!</value>
+  </data>
 </root>

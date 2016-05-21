@@ -145,7 +145,7 @@
     <value>Lepingud</value>
   </data>
   <data name="Create" xml:space="preserve">
-    <value>Loo</value>
+    <value>  Loo</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>Loodud</value>
@@ -160,7 +160,7 @@
     <value>Tehingud</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Kustuta</value>
+    <value>  Kustuta</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Kampaania selgitus/kirjeldus</value>
@@ -169,10 +169,10 @@
     <value>Toote kirjeldused</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Detailid</value>
+    <value>  Detailid</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Muuda</value>
+    <value>  Muuda</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>E-mail</value>

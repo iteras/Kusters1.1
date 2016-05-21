@@ -153,4 +153,7 @@
   <data name="Find" xml:space="preserve">
     <value>Otsi</value>
   </data>
+  <data name="FindCreateDealPersonNotFound" xml:space="preserve">
+    <value>Nime järgi otsitud isikut ei leitud!</value>
+  </data>
 </root>

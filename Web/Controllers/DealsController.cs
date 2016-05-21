@@ -11,6 +11,7 @@ using Dal.Interfaces;
 using Dal.Repositories;
 using DAL.Interfaces;
 using Domain;
+using Microsoft.AspNet.Identity;
 using Web.ViewModels;
 
 namespace Web.Controllers
@@ -55,7 +56,7 @@ namespace Web.Controllers
 
 
 
-        // GET: Deals/Create with person
+        // POST: Deals/Create with person
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Person person)
@@ -63,15 +64,41 @@ namespace Web.Controllers
             var vm = new DealViewModels();
             if (ModelState.IsValid)
             {
-                vm.Person = person;
+                PersonInDeal personInDeal1 = new PersonInDeal(); //first or the person who searches for item to purchase
+                PersonInDeal personInDeal2 = new PersonInDeal();// seller of the item
+                Person person1 = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).Last();
+                personInDeal1.Date = DateTime.Now;
+                personInDeal2.Date = DateTime.Now;
+
+                personInDeal1.Person = person1; //purchaser
+                personInDeal1.PersonId = person1.PersonId;
+
+                personInDeal2.Person = person; //seller
+                personInDeal2.PersonId = person.PersonId;
+                //vm.Person = person;
+                _uow.PersonInDeals.Add(personInDeal1);
+                _uow.PersonInDeals.Add(personInDeal2);
+                Deal deal = new Deal();
+                
+                
                  //vm.Deal.
                 //_uow.Deals.Add(vm.Deal);
                 //_uow.Commit();
                 //TODO: PersonsInDeal UNCOMPLETED
                 return View(vm);
             }
+            var errors = ModelState.Values.SelectMany(v => v.Errors); //for debug to see validation errors
             return View();
         }
+
+
+        //protected internal RedirectToRouteResult RedirectToAction(string actionName, Object routeValues)
+        //{
+        //    RedirectToAction("Create", new { id = 3, personId = 43, nimi =“koer”, area = "" })
+        //}
+
+
+
 
         // GET: Deals/Create
         public ActionResult FindCreateDeal()
@@ -85,33 +112,47 @@ namespace Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult FindCreateDeal(DealViewModels vm)
         {
-            vm.Person = _uow.Persons.GetPersonByFirstname(vm.PersonFirstName);
-            string str = vm.Person.FirstName;
+            //vm.Person = _uow.Persons.GetPersonByFirstname(vm.PersonFirstName);
+            string searchedFirstName = vm.PersonFirstName;
             if (ModelState.IsValid)
             {
-                vm.Person = _uow.Persons.GetPersonByFirstname(vm.Person.FirstName);
-                Create(vm.Person); //give person to creation
+                vm.Person = _uow.Persons.GetPersonByFirstname(searchedFirstName);
+                if (vm.Person == null)
+                {
+                    ModelState.AddModelError(vm.PersonFirstName, @Resources.Common.FindCreateDealPersonNotFound);
+                    //ModelState.Remove(vm.PersonFirstName);
+                    if (!ModelState.IsValid)
+                    {
+                        //vm.ErrorMessage = @Resources.Common.FindCreateDealPersonNotFound;
+                        return View(vm);
+                    }
+                   
+                }
+                
+                //Create(vm.Person);
+                return RedirectToAction("Create", vm.Person); //give person to creation
+                //return Create(vm.Person);
             }
             
             return View(vm); //result: something broke, direct back to form filling
         }
 
-        // POST: Deals/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DealId,ProductId,From,Until,DealDone")] Deal deal)
-        {
-            if (ModelState.IsValid)
-            {
-                _uow.Deals.Add(deal);
-                _uow.Commit();
-                return RedirectToAction("Index");
-            }
+        //// POST: Deals/Create
+        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create( Deal deal)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _uow.Deals.Add(deal);
+        //        _uow.Commit();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(deal);
-        }
+        //    return View(deal);
+        //}
 
         // GET: Deals/Edit/5
         public ActionResult Edit(int? id)

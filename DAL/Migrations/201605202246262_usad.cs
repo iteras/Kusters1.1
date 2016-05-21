@@ -3,7 +3,7 @@ namespace DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class USAD : DbMigration
+    public partial class usad : DbMigration
     {
         public override void Up()
         {
@@ -90,8 +90,8 @@ namespace DAL.Migrations
                     {
                         DealId = c.Int(nullable: false, identity: true),
                         ProductId = c.Int(nullable: false),
-                        From = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
-                        Until = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        From = c.DateTime(nullable: false, storeType: "date"),
+                        Until = c.DateTime(nullable: false, storeType: "date"),
                         DealDone = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.DealId)
@@ -121,7 +121,7 @@ namespace DAL.Migrations
                         PersonInDealId = c.Int(nullable: false, identity: true),
                         PersonId = c.Int(),
                         DealId = c.Int(),
-                        Date = c.String(maxLength: 64),
+                        Date = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.PersonInDealId)
                 .ForeignKey("dbo.Deal", t => t.DealId)

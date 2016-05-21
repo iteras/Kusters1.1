@@ -30,12 +30,12 @@ namespace Domain
 
         [Display(Name = nameof(Resources.Domain.From), ResourceType = typeof(Resources.Domain))]
         [Required(ErrorMessageResourceName = "EmptyFieldError", ErrorMessageResourceType = typeof(Resources.Domain))]
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime From { get; set; }
 
         [Display(Name = nameof(Resources.Domain.Until), ResourceType = typeof(Resources.Domain))]
         [Required(ErrorMessageResourceName = "EmptyFieldError", ErrorMessageResourceType = typeof(Resources.Domain))]
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime Until { get; set; }
         
         [Display(Name = nameof(Resources.Domain.DealDone))]

@@ -1,7 +1,19 @@
 ﻿@model Web.ViewModels.PersonViewModels
 
 
-<h2>@Resources.Domain.Persons - @Resources.Domain.Create </h2>
+<h2>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Resources.Domain.Persons
+        @Resources.Domain.Create;
+    }
+    else
+    {
+        @Resources.Domain.Me
+        @Resources.Domain.Create;
+    }
+</h2>
+
 
 @using (Html.BeginForm())
 {

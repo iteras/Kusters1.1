@@ -1,14 +1,21 @@
 ﻿@model IEnumerable<Domain.Person>
 
-@{
-    ViewBag.Title = Resources.Domain.Persons;
-}
 
-<h2>@ViewBag.Title</h2>
+<h2>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Resources.Domain.Persons
+    }
+    else
+    {
+        @Resources.Domain.Me
+    }
+</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
 <table class="table">
     <tr>
         <th>@Html.DisplayNameFor(model => model.FirstName)</th>
