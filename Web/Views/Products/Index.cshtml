@@ -5,7 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Resources.Domain.Products</h2>
+<h2>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Resources.Domain.Products
+    }
+    else
+    {
+        @Resources.Common.MyItems
+    } 
+</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")

@@ -24,7 +24,7 @@ namespace Domain
 
         //[MaxLength(1024, ErrorMessageResourceName = "LengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
         //[MinLength(3, ErrorMessageResourceName = "MinLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
-        [Display(Name = nameof(Resources.Domain.PictureDescription))]
+        [Display(Name = nameof(Resources.Domain.PictureDescription), ResourceType = typeof(Resources.Domain))]
         [MaxLength(255)]
        public string Description { get; set; }
 

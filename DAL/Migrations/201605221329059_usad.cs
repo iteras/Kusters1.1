@@ -90,9 +90,9 @@ namespace DAL.Migrations
                     {
                         DealId = c.Int(nullable: false, identity: true),
                         ProductId = c.Int(nullable: false),
-                        From = c.DateTime(nullable: false, storeType: "date"),
-                        Until = c.DateTime(nullable: false, storeType: "date"),
-                        DealDone = c.Boolean(nullable: false),
+                        From = c.DateTime(precision: 7, storeType: "datetime2"),
+                        Until = c.DateTime(precision: 7, storeType: "datetime2"),
+                        DealDone = c.Boolean(),
                     })
                 .PrimaryKey(t => t.DealId)
                 .ForeignKey("dbo.Product", t => t.ProductId)
@@ -119,8 +119,8 @@ namespace DAL.Migrations
                 c => new
                     {
                         PersonInDealId = c.Int(nullable: false, identity: true),
-                        PersonId = c.Int(),
-                        DealId = c.Int(),
+                        PersonId = c.Int(nullable: false),
+                        DealId = c.Int(nullable: false),
                         Date = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.PersonInDealId)

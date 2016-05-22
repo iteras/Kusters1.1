@@ -29,7 +29,31 @@ namespace Web.Controllers
         // GET: Deals
         public ActionResult Index()
         {
-            return View(_uow.Deals.All);
+
+            if (User.Identity.IsAuthenticated && User.IsInRole("Admin")) //admin view sees all persons
+            {
+                return View(_uow.Deals.All);
+            }
+            else
+            {
+                List<Deal> deals = _uow.Deals.All; //all deals
+                List<Deal> foundDeals = new List<Deal>(); //returns all this person's deals
+                List<int> dealIds = _uow.PersonInDeals.GetAllDealIDsForPerson(User.Identity.GetUserId<int>()).ToList(); //person Deal id's
+         
+                var vm = new DealViewModels();
+                foreach (var item in deals)
+                {
+                    if (dealIds.Contains(item.DealId) )
+                    {
+                        foundDeals.Add(item);
+                        
+                    }
+                }
+               
+                vm.AllDealsForPerson = foundDeals;
+                
+                return View(vm);
+            }
         }
 
         // GET: Deals/Details/5
@@ -48,10 +72,18 @@ namespace Web.Controllers
         }
 
         // GET: Deals/Create
-        public ActionResult Create()
+        public ActionResult Create(Person person)
         {
-
-            return View();
+            var vm = new DealViewModels();
+            vm.PersonProducts = new SelectList(_uow.Products.GetAllProductsForPerson(person.PersonId).Select(a => new { a.ProductId, a.Title }).ToList(), nameof(Product.ProductId), nameof(Product.Title));
+            //if (ModelState.IsValid)
+            //{
+            //    //deal.Product
+            //    //_uow.Deals.Add(deal);
+            //    //_uow.Commit();
+            //    //return RedirectToAction("Index");
+            //}
+            return View(vm);
         }
 
 
@@ -59,44 +91,52 @@ namespace Web.Controllers
         // POST: Deals/Create with person
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Person person)
+        public ActionResult Create(DealViewModels vm)
         {
-            var vm = new DealViewModels();
+            vm.PersonProducts = new SelectList(_uow.Products.GetAllProductsForPerson(vm.PersonId).Select(a => new { a.ProductId, a.Title }).ToList(), nameof(Product.ProductId), nameof(Product.Title));
             if (ModelState.IsValid)
             {
                 PersonInDeal personInDeal1 = new PersonInDeal(); //first or the person who searches for item to purchase
                 PersonInDeal personInDeal2 = new PersonInDeal();// seller of the item
-                Person person1 = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).Last();
+                Person person1 = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).Last(); //get last, as the last can be only 1 user
+                Person person2 = _uow.Persons.GetById(vm.PersonId);
                 personInDeal1.Date = DateTime.Now;
                 personInDeal2.Date = DateTime.Now;
 
+                Deal deal = new Deal()
+                {
+                    From = DateTime.Now,
+                    ProductId = vm.ProductId,
+                    Product =  _uow.Products.GetById(vm.ProductId),
+                    DealDone = false
+            };
+                
+                _uow.Deals.Add(deal);
+
                 personInDeal1.Person = person1; //purchaser
                 personInDeal1.PersonId = person1.PersonId;
+                personInDeal1.Deal = deal;
+                personInDeal1.DealId = deal.DealId;
 
-                personInDeal2.Person = person; //seller
-                personInDeal2.PersonId = person.PersonId;
+                personInDeal2.Person = person2; //seller
+                personInDeal2.PersonId = person2.PersonId;
+                personInDeal2.Deal = deal;
+                personInDeal2.DealId = deal.DealId;
                 //vm.Person = person;
                 _uow.PersonInDeals.Add(personInDeal1);
                 _uow.PersonInDeals.Add(personInDeal2);
-                Deal deal = new Deal();
+                _uow.Commit();
                 
                 
                  //vm.Deal.
                 //_uow.Deals.Add(vm.Deal);
                 //_uow.Commit();
                 //TODO: PersonsInDeal UNCOMPLETED
-                return View(vm);
+                return RedirectToAction("Index");
             }
             var errors = ModelState.Values.SelectMany(v => v.Errors); //for debug to see validation errors
-            return View();
+            return View(vm);
         }
-
-
-        //protected internal RedirectToRouteResult RedirectToAction(string actionName, Object routeValues)
-        //{
-        //    RedirectToAction("Create", new { id = 3, personId = 43, nimi =“koer”, area = "" })
-        //}
-
 
 
 
@@ -123,12 +163,9 @@ namespace Web.Controllers
                     //ModelState.Remove(vm.PersonFirstName);
                     if (!ModelState.IsValid)
                     {
-                        //vm.ErrorMessage = @Resources.Common.FindCreateDealPersonNotFound;
                         return View(vm);
                     }
-                   
                 }
-                
                 //Create(vm.Person);
                 return RedirectToAction("Create", vm.Person); //give person to creation
                 //return Create(vm.Person);
@@ -137,36 +174,23 @@ namespace Web.Controllers
             return View(vm); //result: something broke, direct back to form filling
         }
 
-        //// POST: Deals/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create( Deal deal)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _uow.Deals.Add(deal);
-        //        _uow.Commit();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View(deal);
-        //}
 
         // GET: Deals/Edit/5
         public ActionResult Edit(int? id)
         {
+            var vm = new DealViewModels();
+            vm.Deal = _uow.Deals.GetById(id);
+            vm.PersonProducts = new SelectList(_uow.Products.GetAllProductsForPerson(vm.Deal.ProductId).Select(a => new { a.ProductId, a.Title }).ToList(), nameof(Product.ProductId), nameof(Product.Title));
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Deal deal = _uow.Deals.GetById(id);
-            if (deal == null)
+             
+            if (vm.Deal == null)
             {
                 return HttpNotFound();
             }
-            return View(deal);
+            return View(vm);
         }
 
         // POST: Deals/Edit/5
@@ -174,15 +198,16 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DealId,From,Until,DealDone")] Deal deal)
+        public ActionResult Edit( DealViewModels vm)
         {
+            vm.PersonProducts = new SelectList(_uow.Products.GetAllProductsForPerson(vm.PersonId).Select(a => new { a.ProductId, a.Title }).ToList(), nameof(Product.ProductId), nameof(Product.Title));
             if (ModelState.IsValid)
             {
-                _uow.Deals.Update(deal);
+                _uow.Deals.Update(vm.Deal);
                 _uow.Commit();
                 return RedirectToAction("Index");
             }
-            return View(deal);
+            return View(vm.Deal);
         }
 
         // GET: Deals/Delete/5

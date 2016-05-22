@@ -198,4 +198,7 @@
   <data name="FindCreateDealPersonNotFound" xml:space="preserve">
     <value>The person you tried to find, does not exist or inserted name was wrong!</value>
   </data>
+  <data name="MyItems" xml:space="preserve">
+    <value>My items</value>
+  </data>
 </root>

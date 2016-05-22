@@ -4,7 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Resources.Domain.Products - @Resources.Domain.Edit</h2>
+<h2>@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+{
+    @Resources.Domain.Products @Resources.Domain.Edit
+}
+else
+{
+    @Resources.Common.MyItems  @Resources.Domain.Edit
+}</h2>
 
 @using (Html.BeginForm())
 {

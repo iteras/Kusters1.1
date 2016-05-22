@@ -19,7 +19,7 @@ namespace Domain
         //public int? CampaignId { get; set; }
         //public virtual Campaign Campaign { get; set; }
 
-        [Display(Name = nameof(Resources.Domain.Products))]
+        [Display(Name = nameof(Resources.Domain.Products), ResourceType = typeof(Resources.Domain))]
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
 
@@ -29,16 +29,16 @@ namespace Domain
        public virtual List<PersonInDeal> PersonsInDeal { get; set; }
 
         [Display(Name = nameof(Resources.Domain.From), ResourceType = typeof(Resources.Domain))]
-        [Required(ErrorMessageResourceName = "EmptyFieldError", ErrorMessageResourceType = typeof(Resources.Domain))]
-        [DataType(DataType.Date)]
-        public DateTime From { get; set; }
+        //[Required(ErrorMessageResourceName = "EmptyFieldError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [DataType(DataType.DateTime)]
+        public DateTime? From { get; set; }
 
         [Display(Name = nameof(Resources.Domain.Until), ResourceType = typeof(Resources.Domain))]
-        [Required(ErrorMessageResourceName = "EmptyFieldError", ErrorMessageResourceType = typeof(Resources.Domain))]
-        [DataType(DataType.Date)]
-        public DateTime Until { get; set; }
+        //[Required(ErrorMessageResourceName = "EmptyFieldError", ErrorMessageResourceType = typeof(Resources.Domain))]
+        [DataType(DataType.DateTime)]
+        public DateTime? Until { get; set; }
         
-        [Display(Name = nameof(Resources.Domain.DealDone))]
-       public bool DealDone { get; set; }
+        [Display(Name = nameof(Resources.Domain.DealDone), ResourceType = typeof(Resources.Domain))]
+       public bool? DealDone { get; set; }
     }
 }

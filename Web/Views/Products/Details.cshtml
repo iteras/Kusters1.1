@@ -5,7 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+{
+    @Resources.Domain.Products @Resources.Domain.Details
+}
+else
+{
+    @Resources.Common.MyItems  @Resources.Domain.Details
+}</h2>
 
 <div>
     <h4>@Resources.Domain.Products - @Resources.Domain.Edit</h4>

@@ -38,21 +38,9 @@ namespace Web.Controllers
             }
             else
             {
-                //List<Person> person = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>());
-
-
                 Person person = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).First();
                 vm.AllProducts = _uow.Products.GetAllProductsForPerson(person.PersonId);
-
-
             }
-            
-            //vm.AllPersons = new SelectList(_uow.Persons.All.
-            //    Select(a => new {a.PersonId, a.FirstName, a.LastName}).ToList()
-            //    ,nameof(Person.PersonId)
-            //    ,nameof(Person.FirstName)
-            //    ,nameof(Person.LastName));
-            //vm.AllProducts = _uow.Products.All.ToList();
             return View(vm);
         }
 

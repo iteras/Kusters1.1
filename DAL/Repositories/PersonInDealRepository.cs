@@ -16,5 +16,16 @@ namespace Dal.Repositories
        public PersonInDealRepository(IDbContext dbContext) : base(dbContext)
        {
        }
+
+       public List<int> GetAllDealIDsForPerson(int personId)
+       {
+            
+            return DbSet.Where(a => a.PersonId == personId).Select(a => a.DealId).ToList();
+       }
+
+       //public List<string> GetPersonNameInDealByDealId(int dealId)
+       //{
+       //    return DbSet.Where(a => a.DealId == dealId).Select( a => a.Person.FirstLastName).ToList();
+       //}
     }
 }

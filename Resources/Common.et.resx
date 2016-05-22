@@ -156,4 +156,7 @@
   <data name="FindCreateDealPersonNotFound" xml:space="preserve">
     <value>Nime järgi otsitud isikut ei leitud!</value>
   </data>
+  <data name="MyItems" xml:space="preserve">
+    <value>Minu asjad</value>
+  </data>
 </root>

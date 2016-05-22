@@ -8,6 +8,7 @@ using Dal.Interfaces;
 using DAL.Interfaces;
 using DAL.Repositories;
 using Domain;
+using NLog.LayoutRenderers.Wrappers;
 
 namespace Dal.Repositories
 {
@@ -15,6 +16,11 @@ namespace Dal.Repositories
     {
        public DealRepository(IDbContext dbContext) : base(dbContext)
        {
+       }
+
+       public List<Deal> GetAllDealsForPerson(int PersonId)
+       {
+           throw new NotImplementedException();
        }
     }
 }

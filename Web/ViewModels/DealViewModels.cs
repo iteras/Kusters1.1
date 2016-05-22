@@ -15,11 +15,14 @@ namespace Web.ViewModels
        public Deal Deal { get; set; }
 
         public int ProductId { get; set; }
-       public List<Product> ProductList { get; set; }
+        public Product Product { get; set; }
+        public List<Product> ProductList { get; set; }
+        public SelectList PersonProducts { get; set; }
+        public List<string> ProductOwner { get; set; } 
+        public List<Deal> AllDealsForPerson { get; set; } 
 
-        [Required]
+        //[Required]
         public string PersonFirstName { get; set; }
-
         public Person Person { get; set; }
         public int PersonId { get; set; }
         public List<Person> PersonsList { get; set; }

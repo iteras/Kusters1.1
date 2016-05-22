@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Domain.Deal>
+﻿@model  Web.ViewModels.DealViewModels
 
 @{
 
@@ -8,29 +8,39 @@
 <h2>@Resources.Domain.Deals</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+        @*
+        @Html.ActionLink("Create New", "Create")
+        *@ 
     <br/>
     @Html.ActionLink(@Resources.Domain.FindCreateDeal, "FindCreateDeal")
 </p>
 <table class="table">
     <tr>
+        @* <th>
+        @Html.DisplayNameFor(model => model.ProductOwner)
+    </th>
+        *@
         <th>
             @Html.DisplayNameFor(model => model.Product.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.From)
+            @Html.DisplayNameFor(model => model.Deal.From)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Until)
+            @Html.DisplayNameFor(model => model.Deal.Until)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DealDone)
+            @Html.DisplayNameFor(model => model.Deal.DealDone)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.AllDealsForPerson) {
     <tr>
+        @*
+    <td>
+        @Html.DisplayFor(model => model.ProductOwner.)
+    </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Product.Title)
         </td>
@@ -38,15 +48,16 @@
             @Html.DisplayFor(modelItem => item.From)
         </td>
         <td>
+
             @Html.DisplayFor(modelItem => item.Until)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DealDone)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DealId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DealId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DealId })
+            @Html.ActionLink("Edit", "Edit", new {id = item.DealId}) |
+            @Html.ActionLink("Details", "Details", new {id = item.DealId}) |
+            @*   @Html.ActionLink("Delete", "Delete", new { id=item.DealId })*@
         </td>
     </tr>
 }

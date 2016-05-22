@@ -23,8 +23,10 @@ namespace Web.ViewModels
     }
    public class ProductViewModels
     {
+        [Display(Name = nameof(Resources.Domain.ProductOwner))]
         public int PersonId { get; set; }
         public Person Person { get; set; }
+
 
         public int ProductId { get; set; }
         public Product Product { get; set; }
