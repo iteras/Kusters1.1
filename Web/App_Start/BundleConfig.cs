@@ -5,7 +5,6 @@ namespace Web
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
@@ -13,9 +12,8 @@ namespace Web
 
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                "~/Scripts/app/jquery.validate.fixdata.js",
                 "~/bower_components/jquery-validation/dist/jquery.validate.js",
-                "~/Scripts/jquery.validate.unobtrusive.js", // original ms package
+                "~/Scripts/jquery.validate.unobtrusive.js", // original ms package
                 "~/Scripts/app/jquery.validate.globalize.datetime.js"
                 ));
 
@@ -50,10 +48,14 @@ namespace Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/bower_components/bootstrap/dist/css/bootstrap.css",
                 "~/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css",
-                "~/Content/site.css"));
+                "~/Content/font-awesome-4.6.1/css/font-awesome.css"
+                ));
+
+
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                    "~/Scripts/app/app.js"));
+
 
             BundleTable.EnableOptimizations = false;
         }

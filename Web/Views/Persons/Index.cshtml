@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<Domain.Person>
 
 
-<h2>
+<H2>
+   
     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
     {
         @Resources.Domain.Persons
@@ -10,8 +11,8 @@
     {
         @Resources.Domain.Me
     }
-</h2>
 
+</H2>
 @*<p>
         @Html.ActionLink("Create New", "Create")
     </p>*@

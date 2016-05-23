@@ -15,6 +15,7 @@ using Web.ViewModels;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class PicturesController : BaseController
     {
         //private KustersDbContext db = new KustersDbContext();

@@ -16,6 +16,7 @@ using Web.ViewModels;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class DealsController : BaseController
     {
         //private KustersDbContext db = new KustersDbContext();

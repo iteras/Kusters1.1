@@ -50,9 +50,9 @@
                     @if (Request.IsAuthenticated && !User.IsInRole("Admin"))
                     {
                         @*
-                                <li>@Html.ActionLink(@Resources.Domain.ChatsInPretensions, "Index", "ChatInPretensions", new {area = ""}, null)</li>
-                                <li>@Html.ActionLink(@Resources.Domain.DealsInCampaign, "Index", "DealsInCampaigns", new {area = ""}, null)</li>
-                                <li>@Html.ActionLink(@Resources.Domain.Descriptions, "Index", "Descriptions", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink(@Resources.Domain.ChatsInPretensions, "Index", "ChatInPretensions", new {area = ""}, null)</li>
+                            <li>@Html.ActionLink(@Resources.Domain.DealsInCampaign, "Index", "DealsInCampaigns", new {area = ""}, null)</li>
+                            <li>@Html.ActionLink(@Resources.Domain.Descriptions, "Index", "Descriptions", new { area = "" }, null)</li>
 
                         *@
                         <li>@Html.ActionLink(@Resources.Domain.Chats, "Index", "Chats", new { area = "" }, null)</li>
@@ -66,8 +66,7 @@
 
                         <li></li>
                     }
-                    @*<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>*@@*<li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>*@
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    @*<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>*@@*<li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>*@@if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
@@ -75,7 +74,7 @@
                                 <li>@Html.ActionLink("Contact Types", "Index", new { area = "Admin", controller = "ContactTypes" })</li>
                                 <li>@Html.ActionLink("Articles", "Index", new { area = "Admin", controller = "Articles" })</li>
                                 <li>@Html.ActionLink(@Resources.Domain.Products, "Index", "Products", new { area = "" }, null)</li>
-                                <li>@Html.ActionLink(@Resources.Domain.Persons, "Index", "Persons", new {area = ""}, null)</li>
+                                <li>@Html.ActionLink(@Resources.Domain.Persons, "Index", "Persons", new { area = "" }, null)</li>
                                 <li>@Html.ActionLink(@Resources.Domain.Deals, "Index", "Deals", new { area = "" }, null)</li>
                                 <li>@Html.ActionLink(@Resources.Domain.Contacts, "Index", "Contacts", new { area = "" }, null)</li>
                                 <li>@Html.ActionLink(@Resources.Domain.Contracts, "Index", "Contracts", new { area = "" }, null)</li>
@@ -89,26 +88,17 @@
                                 <li>@Html.ActionLink("Translations", "Index", new { area = "Admin", controller = "Translations" })</li>
                                 <li>@Html.ActionLink("System logs", "Index", new { area = "Admin", controller = "SystemLog" })</li>
                             </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Identity <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Users", "Index", new { area = "Admin", controller = "Users" })</li>
-                                <li>@Html.ActionLink("Roles", "Index", new { area = "Admin", controller = "Roles" })</li>
-                                <li>@Html.ActionLink("Users in Roles", "Index", new { area = "Admin", controller = "UserRoles" })</li>
-                                <li>@Html.ActionLink("Logins", "Index", new { area = "Admin", controller = "UserLogins" })</li>
-                                <li>@Html.ActionLink("Claims", "Index", new { area = "Admin", controller = "UserClaims" })</li>
-                            </ul>
-                        </li>
+                        </li>                                                                                                                                                     
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+    <hr />
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        <hr/>
 
         <footer>
             <p>

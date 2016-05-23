@@ -15,6 +15,7 @@ using Domain;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class ChatsController : BaseController
     {
         //private KustersDbContext db = new KustersDbContext();
