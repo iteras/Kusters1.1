@@ -38,8 +38,18 @@ namespace DAL
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
-            context.UsersInt.Add(us);
+            UserInt us2 = new UserInt()
+            {
+                UserName = "tom@eesti.ee",
+                Email = "tom@eesti.ee",
+                FirstName = "Tom",
+                LastName = "Kari",
+                PasswordHash = pwdHasher.HashPassword("a"),
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
 
+            context.UsersInt.Add(us);
+            context.UsersInt.Add(us2);
             context.SaveChanges();
 
             // Users in Roles
@@ -117,6 +127,25 @@ namespace DAL
                 Registered = DateTime.Today
             };
 
+            Person Tom = new Person
+            {
+                UserId = 1,
+                User = us2,
+                FirstName = "Tom",
+                LastName = "Kari",
+                BankNr = "453543345",
+                Email = "tom@gmail.com",
+                Invited = 1,
+                Locked = false,
+                Money = 0,
+                Password = "asd",
+                Raiting = 0,
+                Gender = true,
+                TelNr = "5435346",
+                Registered = DateTime.Today
+            };
+
+            context.Persons.Add(Tom);
             context.Persons.Add(Imre);
             context.SaveChanges();
 
@@ -137,6 +166,24 @@ namespace DAL
                 Content = "Müüa seisma jäänud telekas. Müügi põhjuseks nurka seismajäämine",
                 Price =280,
                 TrackingCode ="",
+                Created = DateTime.Now
+            });
+            context.Products.Add(new Product()
+            {
+                Person = Tom,
+                Title = "PS3",
+                Content = "Müüa seisma jäänud PS3. Müügi põhjuseks konsooli väljavahetus",
+                Price = 130,
+                TrackingCode = "",
+                Created = DateTime.Now
+            });
+            context.Products.Add(new Product()
+            {
+                Person = Tom,
+                Title = "Müüa lund",
+                Content = "Müüa välja seisma jäänud lund, korralik käru täis.",
+                Price = 15,
+                TrackingCode = "",
                 Created = DateTime.Now
             });
             //articleHeadLine = "<h1>ASP.NET</h1>";
