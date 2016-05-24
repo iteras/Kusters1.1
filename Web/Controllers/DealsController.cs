@@ -85,6 +85,7 @@ namespace Web.Controllers
             //    //_uow.Commit();
             //    //return RedirectToAction("Index");
             //}
+
             return View(vm);
         }
 
@@ -140,7 +141,7 @@ namespace Web.Controllers
         public ActionResult FindCreateDeal()
         {
             var vm = new DealViewModels();
-            vm.PersonsList = _uow.Persons.All; //TODO : list is given, user inserts name and must select it and it will be posted
+            //vm.PersonsList = _uow.Persons.All; //TODO : list is given, user inserts name and must select it and it will be posted
             return View(vm);
         }
 
@@ -148,14 +149,14 @@ namespace Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult FindCreateDeal(DealViewModels vm)
         {
-            //vm.Person = _uow.Persons.GetPersonByFirstname(vm.PersonFirstName);
-            string searchedFirstName = vm.PersonFirstName;
+            vm.Person = _uow.Persons.GetPersonByFullName(vm.PersonFullName);
+            string searchedName = vm.PersonFullName;
             if (ModelState.IsValid)
             {
-                vm.Person = _uow.Persons.GetPersonByFirstname(searchedFirstName);
+                vm.Person = _uow.Persons.GetPersonByFullName(searchedName);
                 if (vm.Person == null)
                 {
-                    ModelState.AddModelError(vm.PersonFirstName, @Resources.Common.FindCreateDealPersonNotFound);
+                    ModelState.AddModelError(vm.PersonFullName, @Resources.Common.FindCreateDealPersonNotFound);
                     //ModelState.Remove(vm.PersonFirstName);
                     if (!ModelState.IsValid)
                     {

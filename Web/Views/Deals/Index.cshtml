@@ -9,7 +9,7 @@
 
 <p>
         @*
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink(@Resources.Common.CreateNew, "Create")
         *@ 
     <br/>
     @Html.ActionLink(@Resources.Domain.FindCreateDeal, "FindCreateDeal")
@@ -41,8 +41,12 @@
     <td>
         @Html.DisplayFor(model => model.ProductOwner.)
     </td>*@
+
         <td>
-            @Html.DisplayFor(modelItem => item.Product.Title)
+            @Html.ActionLink(item.Product.Title, "ProductDetails", "Products", new { id = item.Product.ProductId }, null)
+            @**
+        @Html.DisplayFor(modelItem => item.Product.Title)
+                        *@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.From)

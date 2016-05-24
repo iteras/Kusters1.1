@@ -2,9 +2,11 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.personFullName = Model.PersonFullName + " " + @Resources.Domain.Products;
 }
 
 <h2>@Resources.Domain.Deals - @Resources.Domain.Create</h2>
+<h3>@ViewBag.personFullName</h3>
 
 @using (Html.BeginForm()) 
 {

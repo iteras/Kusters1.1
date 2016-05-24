@@ -15,7 +15,7 @@ namespace Dal.Interfaces
 
        int GetPersonId(Person person);
 
-       Person GetPersonByFirstname(string firstName);
+       Person GetPersonByFullName(string firstName);
    }
 
     

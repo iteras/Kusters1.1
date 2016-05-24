@@ -159,4 +159,10 @@
   <data name="MyItems" xml:space="preserve">
     <value>Minu asjad</value>
   </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Loo uus</value>
+  </data>
+  <data name="BackToDealsList" xml:space="preserve">
+    <value>Tagasi tehingute nimekirja</value>
+  </data>
 </root>

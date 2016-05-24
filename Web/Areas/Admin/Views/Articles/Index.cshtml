@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create") | @Html.ActionLink("Toggle html encoding", "Index", new {viewHtml = !Model.ViewHtml})
+    @Html.ActionLink(@Resources.Common.CreateNew, "Create") | @Html.ActionLink("Toggle html encoding", "Index", new {viewHtml = !Model.ViewHtml})
 </p>
 
 <table class="table">

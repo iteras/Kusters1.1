@@ -32,10 +32,10 @@ namespace Dal.Repositories
             return person.PersonId;
         }
 
-        public Person GetPersonByFirstname(string firstName)
+        public Person GetPersonByFullName(string fullName)
         {
             Person person = new Person();
-            person = DbSet.FirstOrDefault(p => p.FirstName == firstName);
+            person = DbSet.FirstOrDefault(p => p.FirstName + " " + p.LastName == fullName);
             return person;
             
         }

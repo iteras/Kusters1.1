@@ -16,10 +16,11 @@
         <hr />
         @Html.ValidationSummary(false, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.PersonFirstName,@Resources.Domain.Persons, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PersonFullName,@Resources.Domain.Persons , htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PersonFirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.PersonFullName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessage( @Resources.Common.FindCreateDealPersonNotFound, "", new { @class = "text-danger" })
+                
             </div>
         </div>
 

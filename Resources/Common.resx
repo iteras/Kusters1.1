@@ -201,4 +201,10 @@
   <data name="MyItems" xml:space="preserve">
     <value>My items</value>
   </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Create new</value>
+  </data>
+  <data name="BackToDealsList" xml:space="preserve">
+    <value>Back to deals list</value>
+  </data>
 </root>

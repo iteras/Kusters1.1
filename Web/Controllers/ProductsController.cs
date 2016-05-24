@@ -44,15 +44,18 @@ namespace Web.Controllers
             return View(vm);
         }
 
-        //// GET: Products by person
-        //public ActionResult Index(Person person)
-        //{
-        //    var vm = new ProductViewModels();
-        //    vm.GetProductByPerson = _uow.Products.All
-        //            .Where(a => a.PersonId == person.PersonId)
-        //            .ToList();
-        //    return View(vm);
-        //}
+        //GET: Products/ProductDetails/1
+        public ActionResult ProductDetails(int? id)
+        {
+            var vm = new ProductViewModels();
+            vm.Product = _uow.Products.GetById(id);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            return View(vm);
+        }
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)

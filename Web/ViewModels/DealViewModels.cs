@@ -23,7 +23,8 @@ namespace Web.ViewModels
        public int PersoninDealId1 { get; set; }
         public int PersoninDealId2 { get; set; }
         //[Required]
-        public string PersonFirstName { get; set; }
+        
+        public string PersonFullName { get; set; }
         public Person Person { get; set; }
         public int PersonId { get; set; }
         public List<Person> PersonsList { get; set; }
