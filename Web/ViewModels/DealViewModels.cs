@@ -19,8 +19,9 @@ namespace Web.ViewModels
         public List<Product> ProductList { get; set; }
         public SelectList PersonProducts { get; set; }
         public List<string> ProductOwner { get; set; } 
-        public List<Deal> AllDealsForPerson { get; set; } 
-
+        public List<Deal> AllDealsForPerson { get; set; }
+       public int PersoninDealId1 { get; set; }
+        public int PersoninDealId2 { get; set; }
         //[Required]
         public string PersonFirstName { get; set; }
         public Person Person { get; set; }

@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Http.Results;
 using System.Web.Mvc;
 using Dal;
 using Dal.Interfaces;
@@ -127,12 +128,6 @@ namespace Web.Controllers
                 _uow.PersonInDeals.Add(personInDeal1);
                 _uow.PersonInDeals.Add(personInDeal2);
                 _uow.Commit();
-                
-                
-                 //vm.Deal.
-                //_uow.Deals.Add(vm.Deal);
-                //_uow.Commit();
-                //TODO: PersonsInDeal UNCOMPLETED
                 return RedirectToAction("Index");
             }
             var errors = ModelState.Values.SelectMany(v => v.Errors); //for debug to see validation errors
@@ -180,16 +175,32 @@ namespace Web.Controllers
         public ActionResult Edit(int? id)
         {
             var vm = new DealViewModels();
-            vm.Deal = _uow.Deals.GetById(id);
-            vm.PersonProducts = new SelectList(_uow.Products.GetAllProductsForPerson(vm.Deal.ProductId).Select(a => new { a.ProductId, a.Title }).ToList(), nameof(Product.ProductId), nameof(Product.Title));
-            if (id == null)
+            //vm.PersonProducts = new SelectList(_uow.Products.GetAllProductsForPerson(vm.PersonId).Select(a => new { a.ProductId, a.Title }).ToList(), nameof(Product.ProductId), nameof(Product.Title));
+            if (id != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                List<Product> products = _uow.Deals.GetProductForDealByDealId(id); //get 1 certain item on which deal is done at
+                
+                vm.PersonProducts = new SelectList(products.Select(a => new  {a.ProductId,a.Title}).ToList(), nameof(Product.ProductId), nameof(Product.Title));
             }
-             
+            vm.Deal = _uow.Deals.GetById(id);
+            
+            //  vm.DealId = vm.Deal.DealId;
             if (vm.Deal == null)
             {
                 return HttpNotFound();
+            }
+            List<int> personsInDeal = _uow.PersonInDeals.GetAllPersonsInDealByDealId(vm.Deal.DealId);
+
+            vm.PersoninDealId1 = personsInDeal.First();
+            vm.PersoninDealId2 = personsInDeal.Last();
+            foreach (var item in personsInDeal)
+            {
+                vm.Deal.PersonsInDeal.Add(_uow.PersonInDeals.GetById(item)); //get all persons in deal
+                
+            }
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             return View(vm);
         }
@@ -202,13 +213,25 @@ namespace Web.Controllers
         public ActionResult Edit( DealViewModels vm)
         {
             vm.PersonProducts = new SelectList(_uow.Products.GetAllProductsForPerson(vm.PersonId).Select(a => new { a.ProductId, a.Title }).ToList(), nameof(Product.ProductId), nameof(Product.Title));
+
             if (ModelState.IsValid)
             {
-                _uow.Deals.Update(vm.Deal);
+                if (vm.Deal.DealDone == true) //deal done
+                {
+                    vm.Deal.Until = DateTime.Now; // give deal end datetime
+                }
+                
+                vm.Deal.PersonsInDeal = _uow.PersonInDeals.GetAllPersonInDealsByDealId(vm.Deal.DealId);
+                
+                
+                vm.Deal.Product = _uow.Products.GetById(vm.ProductId);
+                vm.Deal.ProductId = vm.ProductId;
+                Deal Deal = vm.Deal;
+                _uow.Deals.Update(Deal);
                 _uow.Commit();
                 return RedirectToAction("Index");
             }
-            return View(vm.Deal);
+            return View(vm);
         }
 
         // GET: Deals/Delete/5

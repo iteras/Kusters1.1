@@ -22,5 +22,12 @@ namespace Dal.Repositories
        {
            throw new NotImplementedException();
        }
+
+       public List<Product> GetProductForDealByDealId(int? DealId)
+       {
+           List<Product> products = DbSet.Where(a => a.DealId == DealId).Select(a => a.Product).ToList();
+           
+           return products;
+       }
     }
 }

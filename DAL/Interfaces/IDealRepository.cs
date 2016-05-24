@@ -12,5 +12,6 @@ namespace Dal.Interfaces
     public interface IDealRepository : IEFRepository<Deal>
     {
         List<Deal> GetAllDealsForPerson(int PersonId);
+        List<Product> GetProductForDealByDealId(int? DealId);
     }
 }

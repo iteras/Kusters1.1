@@ -8,10 +8,12 @@ using Dal.Interfaces;
 using DAL.Interfaces;
 using DAL.Repositories;
 using Domain;
+using Domain.Identity;
+
 
 namespace Dal.Repositories
 {
-   public class PersonInDealRepository : EFRepository<PersonInDeal>, IPersonInDealRepository
+    public class PersonInDealRepository : EFRepository<PersonInDeal>, IPersonInDealRepository
     {
        public PersonInDealRepository(IDbContext dbContext) : base(dbContext)
        {
@@ -23,7 +25,23 @@ namespace Dal.Repositories
             return DbSet.Where(a => a.PersonId == personId).Select(a => a.DealId).ToList();
        }
 
-       //public List<string> GetPersonNameInDealByDealId(int dealId)
+       public List<int> GetAllPersonsInDealByDealId(int dealId)
+       {
+           List<int> personsInDeal = DbSet.Where(a => a.DealId == dealId).Select(a => a.PersonId).ToList();
+           return personsInDeal;
+       }
+
+       public List<int> GetAllPersonInDealIdsByDealId(int dealId)
+       {
+           return DbSet.Where(a => a.DealId == dealId).Select(a => a.PersonInDealId).ToList();
+       }
+
+        public List<PersonInDeal> GetAllPersonInDealsByDealId(int dealId)
+        {
+            return DbSet.Where(a => a.DealId == dealId).ToList();
+        }
+
+        //public List<string> GetPersonNameInDealByDealId(int dealId)
        //{
        //    return DbSet.Where(a => a.DealId == dealId).Select( a => a.Person.FirstLastName).ToList();
        //}
