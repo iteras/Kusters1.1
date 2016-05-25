@@ -1,0 +1,155 @@
+﻿@using System.Threading
+@using Web.Helpers
+@{
+    var titleTag = (string.IsNullOrWhiteSpace(ViewBag.Title) ? "" : ViewBag.Title + " - ") + Resources.Common.ApplicationName;
+
+    // set up global js variable, to hold culture code
+    // it is later used for globalize, cldr and moment
+    var currentCultureCode = "root";
+    switch (Thread.CurrentThread.CurrentCulture.ToString())
+    {
+        case "et-EE":
+            currentCultureCode = "et";
+            break;
+        case "en-US":
+            currentCultureCode = "en";
+            break;
+        default:
+            currentCultureCode = Thread.CurrentThread.CurrentCulture.ToString();
+            break;
+    }
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@titleTag</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Theme/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript">
+        var currentCultureCode = '@currentCultureCode';
+    </script>
+    @RenderSection("headerscripts", required: false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Resources.Common.ApplicationName*@
+                @Html.ActionLink("Kusters", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (Request.IsAuthenticated && !User.IsInRole("Admin"))
+                    {
+                        @*
+                            <li>@Html.ActionLink(@Resources.Domain.ChatsInPretensions, "Index", "ChatInPretensions", new {area = ""}, null)</li>
+                            <li>@Html.ActionLink(@Resources.Domain.DealsInCampaign, "Index", "DealsInCampaigns", new {area = ""}, null)</li>
+                            <li>@Html.ActionLink(@Resources.Domain.Descriptions, "Index", "Descriptions", new { area = "" }, null)</li>
+
+                        *@
+                        <li>@Html.ActionLink(@Resources.Domain.Chats, "Index", "Chats", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink(@Resources.Domain.Pictures, "Index", "Pictures", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink(@Resources.Domain.Deals, "Index", "Deals", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink(@Resources.Domain.Pretensions, "Index", "Pretensions", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink(@Resources.Domain.MyProducts, "Index", "Products", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink(@Resources.Domain.Me, "Index", "Persons", new { area = "" }, null)</li>
+
+
+
+                        <li></li>
+                    }
+                    @*<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>*@@*<li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>*@@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Contact Types", "Index", new { area = "Admin", controller = "ContactTypes" })</li>
+                                <li>@Html.ActionLink("Articles", "Index", new { area = "Admin", controller = "Articles" })</li>
+                                <li>@Html.ActionLink(@Resources.Domain.Products, "Index", "Products", new { area = "" }, null)</li>
+                                <li>@Html.ActionLink(@Resources.Domain.Persons, "Index", "Persons", new { area = "" }, null)</li>
+                                <li>@Html.ActionLink(@Resources.Domain.Deals, "Index", "Deals", new { area = "" }, null)</li>
+                                <li>@Html.ActionLink(@Resources.Domain.Contacts, "Index", "Contacts", new { area = "" }, null)</li>
+                                <li>@Html.ActionLink(@Resources.Domain.Contracts, "Index", "Contracts", new { area = "" }, null)</li>
+                                <li>@Html.ActionLink(@Resources.Domain.Campaigns, "Index", "Campaigns", new { area = "" }, null)</li>
+                                <li>@Html.ActionLink(@Resources.Domain.PersonsInChat, "Index", "PersonsInChat", new { area = "" }, null)</li>
+                                <li>@Html.ActionLink(@Resources.Domain.PersonsInContract, "Index", "PersonsInContract", new { area = "" }, null)</li>
+                                <li>@Html.ActionLink(@Resources.Domain.PersonsInDeal, "Index", "PersonsInDeal", new { area = "" }, null)</li>
+                                <li>@Html.ActionLink(@Resources.Domain.PersonsInPretension, "Index", "PersonsInPretension", new { area = "" }, null)</li>
+                                <li class="divider"></li>
+                                <li>@Html.ActionLink("MultiLangStrings", "Index", new { area = "Admin", controller = "MultiLangStrings" })</li>
+                                <li>@Html.ActionLink("Translations", "Index", new { area = "Admin", controller = "Translations" })</li>
+                                <li>@Html.ActionLink("System logs", "Index", new { area = "Admin", controller = "SystemLog" })</li>
+                            </ul>
+                        </li>                                                                                                                                                     
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="container body-content">
+        @RenderBody()
+        <hr/>
+
+        <footer>
+            <p>
+                &copy; @DateTime.Now.Year - @Resources.Common.ApplicationName
+                @if (Request.IsAuthenticated)
+            {
+                    <text>(<a href="javascript:document.getElementById('logoutForm').submit()">@Resources.Common.LogOff</a>)</text>
+                }
+                else
+                {
+                    <text>(@Html.ActionLink(@Resources.Common.Login, "Login", new { area = "", controller = "Account" }, htmlAttributes: new { id = "loginLink" }) | @Html.ActionLink(@Resources.Common.Register, "Register", new { area = "", controller = "Account" }, htmlAttributes: new { id = "registerLink" }))</text>
+                }
+                (Culture:<b>@Culture</b> UICulture:<b>@UICulture</b>)
+            </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/cldr")
+    @Scripts.Render("~/bundles/globalize")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/moment")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/tinymce/tinymce.min.js")
+    @Scripts.Render("~/bundles/app")
+
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        var currentCultureCode; //global variable, created in _Layout.cshtml - et, en, etc
+
+        $.when(
+            $.get("/bower_components/cldr-data/supplemental/likelySubtags.json"),
+            $.get("/bower_components/cldr-data/main/" + currentCultureCode + "/numbers.json"),
+            $.get("/bower_components/cldr-data/supplemental/numberingSystems.json"),
+            $.get("/bower_components/cldr-data/main/" + currentCultureCode + "/ca-gregorian.json"),
+            $.get("/bower_components/cldr-data/main/" + currentCultureCode + "/ca-generic.json"),
+            $.get("/bower_components/cldr-data/main/" + currentCultureCode + "/timeZoneNames.json"),
+            $.get("/bower_components/cldr-data/supplemental/timeData.json"),
+            $.get("/bower_components/cldr-data/supplemental/weekData.json")
+        ).then(function () {
+            // Normalize $.get results, we only need the JSON, not the request statuses.
+            return [].slice.apply(arguments, [0]).map(function (result) {
+                return result[0];
+            });
+        }).then(Globalize.load).then(function () {
+            // Initialise Globalize to the current UI culture
+            Globalize.locale(currentCultureCode);
+            moment.locale(currentCultureCode);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿@model Web.ViewModels.PersonViewModels
+
+<h2>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Resources.Domain.Persons  @Resources.Domain.Edit;
+    }
+    else
+    {
+        @Resources.Domain.Me  @Resources.Domain.Edit;
+    }
+</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.PersonId)
+
+        @Html.Partial("_CreateEdit", Model)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

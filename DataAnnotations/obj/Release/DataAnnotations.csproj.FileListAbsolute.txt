@@ -1,0 +1,12 @@
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\bin\Release\DataAnnotations.dll.config
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\bin\Release\DataAnnotations.dll
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\bin\Release\DataAnnotations.pdb
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\bin\Release\EntityFramework.dll
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\bin\Release\NLog.dll
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\bin\Release\EntityFramework.xml
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\bin\Release\NLog.xml
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\obj\Release\DataAnnotations.csprojResolveAssemblyReference.cache
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\obj\Release\DataAnnotations.dll
+C:\Users\Ompzu\Documents\VisualStudio2015\Projects\Kusters2\Kusters1.1\DataAnnotations\obj\Release\DataAnnotations.pdb

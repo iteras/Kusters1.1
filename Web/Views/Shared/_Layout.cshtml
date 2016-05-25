@@ -50,16 +50,16 @@
                 <ul class="nav navbar-nav">
                     @if (Request.IsAuthenticated && !User.IsInRole("Admin"))
                     {
-                        @*
-                            <li>@Html.ActionLink(@Resources.Domain.ChatsInPretensions, "Index", "ChatInPretensions", new {area = ""}, null)</li>
-                            <li>@Html.ActionLink(@Resources.Domain.DealsInCampaign, "Index", "DealsInCampaigns", new {area = ""}, null)</li>
-                            <li>@Html.ActionLink(@Resources.Domain.Descriptions, "Index", "Descriptions", new { area = "" }, null)</li>
+                                                                @*
+                <li>@Html.ActionLink(@Resources.Domain.ChatsInPretensions, "Index", "ChatInPretensions", new {area = ""}, null)</li>
+                <li>@Html.ActionLink(@Resources.Domain.DealsInCampaign, "Index", "DealsInCampaigns", new {area = ""}, null)</li>
+                <li>@Html.ActionLink(@Resources.Domain.Descriptions, "Index", "Descriptions", new { area = "" }, null)</li>
+                <li>@Html.ActionLink(@Resources.Domain.Pretensions, "Index", "Pretensions", new { area = "" }, null)</li>
+        <li>@Html.ActionLink(@Resources.Domain.Chats, "Index", "Chats", new { area = "" }, null)</li>
 
-                        *@
-                        <li>@Html.ActionLink(@Resources.Domain.Chats, "Index", "Chats", new { area = "" }, null)</li>
+                                                                *@
                         <li>@Html.ActionLink(@Resources.Domain.Pictures, "Index", "Pictures", new { area = "" }, null)</li>
                         <li>@Html.ActionLink(@Resources.Domain.Deals, "Index", "Deals", new { area = "" }, null)</li>
-                        <li>@Html.ActionLink(@Resources.Domain.Pretensions, "Index", "Pretensions", new { area = "" }, null)</li>
                         <li>@Html.ActionLink(@Resources.Domain.MyProducts, "Index", "Products", new { area = "" }, null)</li>
                         <li>@Html.ActionLink(@Resources.Domain.Me, "Index", "Persons", new { area = "" }, null)</li>
 

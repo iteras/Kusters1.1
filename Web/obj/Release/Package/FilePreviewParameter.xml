@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Kusters" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Ompzu\\Documents\\VisualStudio2015\\Projects\\Kusters2\\Kusters1\.1\\Web\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Ompzu\\Documents\\VisualStudio2015\\Projects\\Kusters2\\Kusters1\.1\\Web\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DataBaseConnectionStr-Web.config Connection String" description="" value="Server=tcp:kustersserver.database.windows.net,1433;Data Source=kustersserver.database.windows.net;Initial Catalog=Kusters2;Persist Security Info=False;User ID={Iteras};Password={Master15};Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ompzu\\Documents\\VisualStudio2015\\Projects\\Kusters2\\Kusters1\.1\\Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataBaseConnectionStr']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,87 @@
+﻿@model Web.ViewModels.ProductViewModels
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Resources.Domain.Products
+    }
+    else
+    {
+        @Resources.Common.MyItems
+    } 
+</h2>
+
+<p>
+    @Html.ActionLink(@Resources.Common.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Person.FirstLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Content)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Price)
+        </th>
+       @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+       {
+           <th>@Html.DisplayNameFor(model => model.Product.Created)</th>
+       }
+        <th>
+            @Html.DisplayNameFor(model => model.Product.TrackingCode)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model.AllProducts) //list of products in ProductViewModels
+    {   
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.FirstLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created)
+                </td>
+            }
+            
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrackingCode)
+                </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+            </td>
+        </tr>
+    }
+
+</table>

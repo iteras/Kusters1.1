@@ -1,0 +1,50 @@
+﻿@model Domain.Deal
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Resources.Domain.Deals - @Resources.Domain.Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.From)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.From)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Until)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Until)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DealDone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DealDone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DealId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
