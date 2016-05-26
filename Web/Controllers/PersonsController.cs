@@ -64,7 +64,7 @@ namespace Web.Controllers
         {
             if (_uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).Count > 0)
             {
-                
+                //WTF IS THIS
             }
             var vm = new PersonViewModels();
             return View(vm);

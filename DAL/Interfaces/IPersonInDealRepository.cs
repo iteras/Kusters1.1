@@ -14,6 +14,8 @@ namespace Dal.Interfaces
         List<int> GetAllPersonsInDealByDealId(int dealId);
         List<int> GetAllPersonInDealIdsByDealId(int dealId);
         List<PersonInDeal> GetAllPersonInDealsByDealId(int dealId);
+        Person GetBuyerInDealByDealId(int personInDealId, int personId);
+        List<int> GetPersonInDealIdById(int personId);
         //List<string> GetPersonNameInDealByDealId(int dealId);
     }
 }

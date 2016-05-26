@@ -23,6 +23,11 @@ namespace Dal.Repositories
            products =
                DbSet.Where(a => a.PersonId == personId).OrderBy(o => o.Created).ToList();
            return products;
-       } 
+       }
+
+       //public List<Person> GetThisPersonByPersonId(int personId)
+       //{
+       //   return  DbSet.Where(a => a.PersonId == personId).Select(a => a.Person).ToList();
+       //}
     }
 }

@@ -10,13 +10,14 @@ namespace Dal.Interfaces
 {
    public interface IPersonRepository : IEFRepository<Person>
    {
-       List<Person> GetAllForUser(int userId);
-       Person GetForUser(int personid, int userId);
+        List<Person> GetAllForUser(int userId);
+        Person GetForUser(int personid, int userId);
 
-       int GetPersonId(Person person);
+        int GetPersonId(Person person);
 
-       Person GetPersonByFullName(string firstName);
-   }
+        Person GetPersonByFullName(string firstName);
+        List<Person> GetThisPersonByPersonId(int personId);
+    }
 
     
 }

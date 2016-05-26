@@ -45,6 +45,12 @@
             @Html.DisplayNameFor(model => model.Product.TrackingCode)
         </th>
 
+
+        @*TODO: display list of Buyers, atm displays only 1 buyer
+        <th>
+        @Html.DisplayNameFor(model => model.Buyer)
+    </th>*@
+
     </tr>
 
     @foreach (var item in Model.AllProducts) //list of products in ProductViewModels
@@ -71,10 +77,18 @@
                     @Html.DisplayFor(modelItem => item.Created)
                 </td>
             }
-            
-                <td>
-                    @Html.DisplayFor(modelItem => item.TrackingCode)
-                </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.TrackingCode)
+            </td>
+
+            @*
+               TODO: display list of Buyers, atm displays only 1 buyer 
+            *@
+            @*<td>
+                @Html.DisplayFor(Model.Buyer.FirstLastName)
+            </td>*@
+
             
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |

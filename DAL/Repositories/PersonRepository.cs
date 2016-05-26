@@ -22,6 +22,8 @@ namespace Dal.Repositories
             return DbSet.Where(p => p.UserId == userId).OrderBy(o => o.LastName).ThenBy(o => o.FirstName).ToList();
         }
 
+
+
         public Person GetForUser(int personId, int userId)
         {
             return DbSet.FirstOrDefault(a => a.PersonId == personId && a.UserId == userId);
@@ -38,6 +40,11 @@ namespace Dal.Repositories
             person = DbSet.FirstOrDefault(p => p.FirstName + " " + p.LastName == fullName);
             return person;
             
+        }
+
+        public List<Person> GetThisPersonByPersonId(int personId)
+        {
+            return DbSet.Where(a => a.PersonId == personId).Select(a => a).ToList();
         }
     }
 }

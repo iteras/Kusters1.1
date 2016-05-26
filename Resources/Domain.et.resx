@@ -183,7 +183,7 @@
   <data name="FindCreateDeal" xml:space="preserve">
     <value>Otsi isik kellega tehing teha</value>
   </data>
-  <data name="FirstLastName" xml:space="preserve">
+  <data name="FirstLastname" xml:space="preserve">
     <value>Ees-, perekonnanimi</value>
   </data>
   <data name="Firstname" xml:space="preserve">

@@ -207,4 +207,10 @@
   <data name="BackToDealsList" xml:space="preserve">
     <value>Back to deals list</value>
   </data>
+  <data name="Buyer" xml:space="preserve">
+    <value>Buyer</value>
+  </data>
+  <data name="CreateNewAccount" xml:space="preserve">
+    <value>Create new account</value>
+  </data>
 </root>

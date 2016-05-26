@@ -168,4 +168,7 @@
   <data name="Login_UseLocalAccountToLogin" xml:space="preserve">
     <value>Logi sisse kasutades kohaliku kontot.</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registeerimine</value>
+  </data>
 </root>

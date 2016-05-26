@@ -165,4 +165,13 @@
   <data name="BackToDealsList" xml:space="preserve">
     <value>Tagasi tehingute nimekirja</value>
   </data>
+  <data name="Buyer" xml:space="preserve">
+    <value>Huviline/ostja</value>
+  </data>
+  <data name="CreateNewAccount" xml:space="preserve">
+    <value>Loo uus kasutaja</value>
+  </data>
+  <data name="RegisterNewAccount" xml:space="preserve">
+    <value>Registeeri</value>
+  </data>
 </root>

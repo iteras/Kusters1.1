@@ -32,15 +32,22 @@ namespace Web.Controllers
         public ActionResult Index()
         {
             var vm = new ProductViewModels();
+            Person person = new Person();
             if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
             {
                 vm.AllProducts = _uow.Products.All;
             }
             else
             {
-                Person person = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).First();
+                person = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).First();
                 vm.AllProducts = _uow.Products.GetAllProductsForPerson(person.PersonId);
             }
+            /*TODO: section below here is not completed, gets only 1 dealId but should get all
+              TODO: gets only 1 buyer, but should get all
+             */
+            //int dealId = _uow.PersonInDeals.GetAllDealIDsForPerson(person.PersonId).First(); //gets all Deal ID's for this person
+            //vm.Buyer = _uow.PersonInDeals.GetBuyerInDealByDealId(dealId,person.PersonId); 
+            //TODO: display buyer in seller Index View
             return View(vm);
         }
 
@@ -76,10 +83,16 @@ namespace Web.Controllers
         public ActionResult Create()
         {
             var vm = new ProductViewModels();
-            vm.AllPersons = new SelectList(_uow.Persons.All.Select(a => new {a.PersonId,a.FirstLastName}).ToList(), nameof(Person.PersonId), nameof(Person.FirstLastName));
+            //TODO: get only this person for dropdownlist
+            vm.AllPersons = new SelectList(_uow.Persons.GetThisPersonByPersonId(User.Identity.GetUserId<int>()).Take(1).Select(a => new { a.PersonId, a.FirstLastName }), nameof(Person.PersonId), nameof(Person.FirstLastName));
+            //if (vm.AllPersons.Count() > 1)
+            //{
+            //    vm.AllPersons = vm.AllPersons.GetEnumerator(vm.Person);
+            //}
+            //vm.AllPersons = new SelectList(_uow.Persons.All.Select(a => new {a.PersonId,a.FirstLastName}).ToList(), nameof(Person.PersonId), nameof(Person.FirstLastName));
             return View(vm);
         }
-
+        
         // POST: Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.

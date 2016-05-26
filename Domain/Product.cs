@@ -43,11 +43,13 @@ namespace Domain
         [MaxLength(1024, ErrorMessageResourceName = "LengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
         [MinLength(3, ErrorMessageResourceName = "MinLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
         [Display(Name = nameof(Resources.Domain.Content), ResourceType = typeof(Resources.Domain))]
+        [DataType(DataType.MultilineText)]
         public string Content { get; set; }
 
         [MaxLength(1024, ErrorMessageResourceName = "LengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
         [MinLength(3, ErrorMessageResourceName = "MinLengthError", ErrorMessageResourceType = typeof(Resources.Domain))]
         [Display(Name = nameof(Resources.Domain.Descriptions), ResourceType = typeof(Resources.Domain))]
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
         [Required]
