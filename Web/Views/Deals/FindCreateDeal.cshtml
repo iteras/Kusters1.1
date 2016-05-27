@@ -6,12 +6,16 @@
 }
 
 <h2>@Resources.Domain.FindCreateDeal</h2>
-
-
+<p class="danger">
+    @if (!Model.NoItemErrorMessage.IsEmpty())
+    {
+       @Model.NoItemErrorMessage
+    }
+</p>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
+    @*@Html.HiddenFor(model => model.PersonFullName)*@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(false, "", new { @class = "text-danger" })

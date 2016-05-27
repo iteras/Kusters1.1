@@ -151,6 +151,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deal is done.
+        /// </summary>
+        public static string DealDone {
+            get {
+                return ResourceManager.GetString("DealDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deals.
         /// </summary>
         public static string Deals {
@@ -237,6 +246,15 @@ namespace Resources {
         public static string Next {
             get {
                 return ResourceManager.GetString("Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  has no items for making deals!.
+        /// </summary>
+        public static string NoItemError {
+            get {
+                return ResourceManager.GetString("NoItemError", resourceCulture);
             }
         }
         

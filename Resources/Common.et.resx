@@ -174,4 +174,10 @@
   <data name="RegisterNewAccount" xml:space="preserve">
     <value>Registeeri</value>
   </data>
+  <data name="DealDone" xml:space="preserve">
+    <value>Tehing on sooritatud</value>
+  </data>
+  <data name="NoItemError" xml:space="preserve">
+    <value> ei oma ühtegi toodet, millega tehingut teha!</value>
+  </data>
 </root>

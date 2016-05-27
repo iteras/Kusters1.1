@@ -213,4 +213,10 @@
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Create new account</value>
   </data>
+  <data name="DealDone" xml:space="preserve">
+    <value>Deal is done</value>
+  </data>
+  <data name="NoItemError" xml:space="preserve">
+    <value> has no items for making deals!</value>
+  </data>
 </root>

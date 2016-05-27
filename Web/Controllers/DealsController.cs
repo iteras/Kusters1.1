@@ -77,15 +77,9 @@ namespace Web.Controllers
         public ActionResult Create(Person person)
         {
             var vm = new DealViewModels();
-            vm.PersonProducts = new SelectList(_uow.Products.GetAllProductsForPerson(person.PersonId).Select(a => new { a.ProductId, a.Title }).ToList(), nameof(Product.ProductId), nameof(Product.Title));
-            //if (ModelState.IsValid)
-            //{
-            //    //deal.Product
-            //    //_uow.Deals.Add(deal);
-            //    //_uow.Commit();
-            //    //return RedirectToAction("Index");
-            //}
-
+            //TODO: get ALL products for this person BUT only these products, that arent in any deal
+            vm.PersonProducts = new SelectList(_uow.Products.GetAllProductsForPerson(person.PersonId).Where(a => a.Deals.Count() == 0).Select(a => new { a.ProductId, a.Title }).ToList(), nameof(Product.ProductId), nameof(Product.Title));
+            vm.Person = person;
             return View(vm);
         }
 
@@ -151,12 +145,16 @@ namespace Web.Controllers
         {
             vm.Person = _uow.Persons.GetPersonByFullName(vm.PersonFullName);
             string searchedName = vm.PersonFullName;
-            if (ModelState.IsValid)
+            List<Product> allProductsForThisPerson =
+                _uow.Products.GetAllProductsForPerson(vm.Person.PersonId).Where(a => a.Deals.Count() == 0).ToList();
+            
+            if (ModelState.IsValid && allProductsForThisPerson.Any())
             {
                 vm.Person = _uow.Persons.GetPersonByFullName(searchedName);
                 if (vm.Person == null)
                 {
                     ModelState.AddModelError(vm.PersonFullName, @Resources.Common.FindCreateDealPersonNotFound);
+                    
                     //ModelState.Remove(vm.PersonFirstName);
                     if (!ModelState.IsValid)
                     {
@@ -167,7 +165,11 @@ namespace Web.Controllers
                 return RedirectToAction("Create", vm.Person); //give person to creation
                 //return Create(vm.Person);
             }
-            
+            if (!allProductsForThisPerson.Any())
+            {
+                vm.NoItemErrorMessage = searchedName + Resources.Common.NoItemError;
+            }
+            vm.Person = new Person(); //reset person
             return View(vm); //result: something broke, direct back to form filling
         }
 

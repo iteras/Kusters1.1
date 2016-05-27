@@ -268,7 +268,7 @@
     <value>Message</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Title</value>
+    <value>Product title</value>
   </data>
   <data name="Products" xml:space="preserve">
     <value>Products</value>
@@ -308,5 +308,8 @@
   </data>
   <data name="FindCreateDeal" xml:space="preserve">
     <value>Find a person to make a deal with</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
   </data>
 </root>

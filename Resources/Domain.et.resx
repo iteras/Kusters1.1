@@ -267,6 +267,9 @@
   <data name="Price" xml:space="preserve">
     <value>Hind</value>
   </data>
+  <data name="Product" xml:space="preserve">
+    <value>Toode</value>
+  </data>
   <data name="ProductOwner" xml:space="preserve">
     <value>Müüja</value>
   </data>
@@ -283,7 +286,7 @@
     <value>Telefoni nr</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Pealkiri</value>
+    <value>Toote pealkiri</value>
   </data>
   <data name="TooLongError" xml:space="preserve">
     <value>Sisestatud tekst on liiga pikk! Tekst peab olema vähem kui 3500 tähemärki!</value>

@@ -21,7 +21,10 @@
     </th>
         *@
         <th>
-            @Html.DisplayNameFor(model => model.Product.Title)
+            @Html.DisplayNameFor(model => model.Product)
+        </th>
+        <th>
+          @Resources.Domain.ProductOwner @Html.DisplayNameFor(model => model.Person.FirstLastName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Deal.From)
@@ -43,10 +46,13 @@
     </td>*@
 
         <td>
-            @Html.ActionLink(item.Product.Title, "ProductDetails", "Products", new { id = item.Product.ProductId }, null)
+            @Html.ActionLink(item.Product.Title, "ProductDetails", "Products", new {id = item.Product.ProductId}, null)
             @**
         @Html.DisplayFor(modelItem => item.Product.Title)
                         *@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonsInDeal.Last().Person.FirstLastName) @*We pick last, cuz First() person is Buyer and Last() is seller*@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.From)
@@ -59,9 +65,13 @@
             @Html.DisplayFor(modelItem => item.DealDone)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {id = item.DealId}) |
-            @Html.ActionLink("Details", "Details", new {id = item.DealId}) 
-            @*   @Html.ActionLink("Delete", "Delete", new { id=item.DealId })*@
+            @if (item.DealDone == false)
+            {
+                @Html.ActionLink(@Resources.Common.DealDone, "Edit", new { id = item.DealId })
+                @*| @Html.ActionLink("Details", "Details", new {id = item.DealId})*@
+                @*   @Html.ActionLink("Delete", "Delete", new { id=item.DealId })*@
+            }
+            
         </td>
     </tr>
 }

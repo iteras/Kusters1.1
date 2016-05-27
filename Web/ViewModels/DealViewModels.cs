@@ -15,15 +15,19 @@ namespace Web.ViewModels
        public Deal Deal { get; set; }
 
         public int ProductId { get; set; }
+
+        [Display(Name = nameof(Resources.Domain.Product), ResourceType = typeof(Resources.Domain))]
         public Product Product { get; set; }
         public List<Product> ProductList { get; set; }
         public SelectList PersonProducts { get; set; }
         public List<string> ProductOwner { get; set; } 
         public List<Deal> AllDealsForPerson { get; set; }
+         
        public int PersoninDealId1 { get; set; }
         public int PersoninDealId2 { get; set; }
         //[Required]
-        
+        public string NoItemErrorMessage { get; set; }
+       
         public string PersonFullName { get; set; }
         public Person Person { get; set; }
         public int PersonId { get; set; }
