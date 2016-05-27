@@ -30,6 +30,7 @@ namespace Domain
         //public int PersonInPretensionId { get; set; }
         public virtual List<PersonInPretension> PersonsInPretension { get; set; }
 
+        //public virtual List<Deal> Deals { get; set; } 
         //public int PictureId { get; set; }
         //public virtual List<Picture> Pictures { get; set; }
 

@@ -27,7 +27,7 @@ namespace Web.ViewModels
         public int PersoninDealId2 { get; set; }
         //[Required]
         public string NoItemErrorMessage { get; set; }
-       
+        
         public string PersonFullName { get; set; }
         public Person Person { get; set; }
         public int PersonId { get; set; }

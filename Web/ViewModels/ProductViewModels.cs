@@ -27,15 +27,18 @@ namespace Web.ViewModels
         public int PersonId { get; set; }
         public Person Person { get; set; }
 
+        public List<Person> AllBuyers { get; set; }
 
         public int ProductId { get; set; }
         public Product Product { get; set; }
 
         //public PersonInDeal PersonInDeal { get; set; }
         public Deal Deal { get; set; }
+
         [Display(Name = nameof(@Resources.Common.Buyer))]
         public Person Buyer { get; set; }
 
+        
         [Required(ErrorMessageResourceName = "NotSelected", ErrorMessageResourceType = typeof(Resources.Domain) )]
         public SelectList AllPersons { get; set; }
         public List<Description> GetDescriptionsByProduct { get; set; } 
@@ -44,4 +47,5 @@ namespace Web.ViewModels
         public List<Product> AllProducts { get; set; } 
         public List<Product> GetProductByPerson { get; set; }
     }
+
 }

@@ -121,6 +121,7 @@ namespace DAL.Migrations
                         PersonInDealId = c.Int(nullable: false, identity: true),
                         PersonId = c.Int(nullable: false),
                         DealId = c.Int(nullable: false),
+                        IsSeller = c.Boolean(nullable: false),
                         Date = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.PersonInDealId)

@@ -18,6 +18,7 @@ namespace Domain
         public int DealId { get; set; }
         public virtual Deal Deal { get; set; }
 
+        public bool IsSeller { get; set; }
         [Required]
         [DataType(DataType.DateTime)]
        public DateTime Date { get; set; }

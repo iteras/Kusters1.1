@@ -18,6 +18,8 @@ namespace Domain
 
         //public int? CampaignId { get; set; }
         //public virtual Campaign Campaign { get; set; }
+       // public int PersonId { get; set; }
+       //public Person Person { get; set; }
 
         [Display(Name = nameof(Resources.Domain.Products), ResourceType = typeof(Resources.Domain))]
         public int ProductId { get; set; }

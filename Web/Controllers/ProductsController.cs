@@ -40,11 +40,18 @@ namespace Web.Controllers
             else
             {
                 person = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).First();
-                vm.AllProducts = _uow.Products.GetAllProductsForPerson(person.PersonId);
+                vm.AllProducts = _uow.Products.GetAllProductsForPerson(person.PersonId); //gets all Products for this certain person
+                List<Deal> AllThisPersonDealIds = _uow.Deals.GetAllDealsForPerson(person.PersonId); //gets all Deals for this certain person
+                foreach (var item in vm.AllProducts)
+                {
+                    //TODO: get ALL THIS person's products Buyers IF there is someone to buy it
+
+                }
             }
             /*TODO: section below here is not completed, gets only 1 dealId but should get all
               TODO: gets only 1 buyer, but should get all
              */
+             
             //int dealId = _uow.PersonInDeals.GetAllDealIDsForPerson(person.PersonId).First(); //gets all Deal ID's for this person
             //vm.Buyer = _uow.PersonInDeals.GetBuyerInDealByDealId(dealId,person.PersonId); 
             //TODO: display buyer in seller Index View

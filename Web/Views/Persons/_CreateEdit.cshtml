@@ -1,7 +1,6 @@
 ﻿@model Web.ViewModels.PersonViewModels
 
-@Html.HiddenFor(model => model.Person.PersonId)
-@Html.HiddenFor(model => model.Person.UserId)
+
 <div class="form-group">
     @Html.LabelFor(model => model.Person.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
@@ -57,7 +56,8 @@
         @Html.ValidationMessageFor(model => model.Person.BankNr, "", new {@class = "text-danger"})
     </div>
 </div>
-
+@*@Html.HiddenFor(model => model.Person.PersonId)
+@Html.HiddenFor(model => model.Person.UserId)*@
 
 
 

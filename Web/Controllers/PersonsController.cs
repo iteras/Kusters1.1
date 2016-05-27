@@ -75,25 +75,25 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( Person person)
+        public ActionResult Create( PersonViewModels vm)
         {
 
             if (ModelState.IsValid)
             {
                 //var vm = new PersonViewModels();
-                person.Money = 0;
-                person.Locked = false;
-                person.Registered = DateTime.Now;
-                person.Invited = 0;
-                person.Raiting = 0;
-                person.UserId = User.Identity.GetUserId<int>();
+                vm.Person.Money = 0;
+                vm.Person.Locked = false;
+                vm.Person.Registered = DateTime.Now;
+                vm.Person.Invited = 0;
+                vm.Person.Raiting = 0;
+                vm.Person.UserId = User.Identity.GetUserId<int>();
 
-                _uow.Persons.Add(person);
+                _uow.Persons.Add(vm.Person);
                 _uow.Commit();
                 return RedirectToAction("Index");
             }
 
-            return View(person);
+            return View(vm.Person);
         }
 
         // GET: Persons/Edit/5
