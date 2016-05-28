@@ -11,6 +11,7 @@ using Dal.Interfaces;
 using Dal.Repositories;
 using DAL.Interfaces;
 using Domain;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using Web.ViewModels;
 
@@ -41,11 +42,22 @@ namespace Web.Controllers
             {
                 person = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).First();
                 vm.AllProducts = _uow.Products.GetAllProductsForPerson(person.PersonId); //gets all Products for this certain person
-                List<Deal> AllThisPersonDealIds = _uow.Deals.GetAllDealsForPerson(person.PersonId); //gets all Deals for this certain person
-                foreach (var item in vm.AllProducts)
+                List<Deal> allThisPersonDealIds = _uow.Deals.GetAllDealsForPerson(person.PersonId); //gets all Deals for this certain person
+                PersonInDeal asd = new PersonInDeal();
+                List<int> allBuyerIds = new List<int>();
+                vm.AllBuyers = new List<Person>();
+                foreach (var item in allThisPersonDealIds)
                 {
+                        if (item.PersonsInDeal.First().IsSeller != true)
+                        {
+                            asd = (item.PersonsInDeal.First());
+                            vm.AllBuyers.Add(_uow.Persons.GetById(asd.PersonId));
+                        } else
+                        {
+                            asd = (item.PersonsInDeal.OrderByDescending(a => a.PersonInDealId).First());
+                            vm.AllBuyers.Add(_uow.Persons.GetById(asd.PersonId));
+                    }
                     //TODO: get ALL THIS person's products Buyers IF there is someone to buy it
-
                 }
             }
             /*TODO: section below here is not completed, gets only 1 dealId but should get all

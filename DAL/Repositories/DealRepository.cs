@@ -21,10 +21,16 @@ namespace Dal.Repositories
        public List<Deal> GetAllDealsForPerson(int personId)
        {
             //TODO: get all Deals for Sellers
-            throw new NotImplementedException();
-           // return DbSet.Where(a => a.PersonsInDeal
-           //.Where(b => b.Person.PersonId == personId))
-           //.ToList();
+            List<int> asd = DbSet.Where(a => a.Product.PersonId == personId).Select(a => a.DealId).ToList(); //list of all this persons Deal
+            List<Deal> allDealsForPerson = new List<Deal>();
+           foreach (var item in asd)
+           {
+               allDealsForPerson.Add(DbSet.FirstOrDefault( a => a.DealId == item));
+           }
+           return allDealsForPerson;
+           //List<PersonInDeal> allPersonInDealsForPerson = DbSet.Where(a => a.Product.)
+
+
        }
 
        public List<Product> GetProductForDealByDealId(int? DealId)
