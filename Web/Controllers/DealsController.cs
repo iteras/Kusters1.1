@@ -31,18 +31,20 @@ namespace Web.Controllers
         // GET: Deals
         public ActionResult Index()
         {
-
+            var vm = new DealViewModels();
             if (User.Identity.IsAuthenticated && User.IsInRole("Admin")) //admin view sees all persons
             {
-                return View(_uow.Deals.All);
+                vm.AllDealsForPerson = _uow.Deals.All;
+                return View(vm);
             }
             else
             {
                 List<Deal> deals = _uow.Deals.All; //all deals
                 List<Deal> foundDeals = new List<Deal>(); //returns all this person's deals
-                List<int> dealIds = _uow.PersonInDeals.GetAllDealIDsForPerson(User.Identity.GetUserId<int>()).ToList(); //person Deal id's
+                Person person = _uow.Persons.GetById(User.Identity.GetUserId<int>());
+                List<int> dealIds = _uow.PersonInDeals.GetAllDealIDsForPerson(person.PersonId).ToList(); //person Deal id's
          
-                var vm = new DealViewModels();
+                
                 foreach (var item in deals)
                 {
                     if (dealIds.Contains(item.DealId) )
@@ -93,12 +95,13 @@ namespace Web.Controllers
             vm.PersonProducts = new SelectList(_uow.Products.GetAllProductsForPerson(vm.PersonId).Select(a => new { a.ProductId, a.Title }).ToList(), nameof(Product.ProductId), nameof(Product.Title));
             if (ModelState.IsValid)
             {
-                PersonInDeal personInDeal1 = new PersonInDeal(); //first or the person who searches for item to purchase
-                PersonInDeal personInDeal2 = new PersonInDeal();// seller of the item
-                Person person1 = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).Last(); //get last, as the last can be only 1 user
-                Person person2 = _uow.Persons.GetById(vm.PersonId);
-                personInDeal1.Date = DateTime.Now;
-                personInDeal2.Date = DateTime.Now;
+                PersonInDeal SellerInDeal = new PersonInDeal();// seller of the item
+                PersonInDeal BuyerInDeal = new PersonInDeal();//first or the person who searches for item to purchase
+
+                Person buyer = _uow.Persons.GetAllForUser(User.Identity.GetUserId<int>()).Last(); //get last, as the last can be only 1 user
+                Person seller = _uow.Persons.GetById(vm.PersonId);
+                SellerInDeal.Date = DateTime.Now;
+                BuyerInDeal.Date = DateTime.Now;
 
                 Deal deal = new Deal()
                 {
@@ -110,18 +113,20 @@ namespace Web.Controllers
                 
                 _uow.Deals.Add(deal);
 
-                personInDeal1.Person = person1; //purchaser
-                personInDeal1.PersonId = person1.PersonId;
-                personInDeal1.Deal = deal;
-                personInDeal1.DealId = deal.DealId;
+                BuyerInDeal.Person = buyer;
+                BuyerInDeal.PersonId = buyer.PersonId;//purchaser
+                BuyerInDeal.Deal = deal;
+                BuyerInDeal.DealId = deal.DealId;
 
-                personInDeal2.Person = person2; //seller
-                personInDeal2.PersonId = person2.PersonId;
-                personInDeal2.Deal = deal;
-                personInDeal2.DealId = deal.DealId;
+                SellerInDeal.Person = seller; //seller
+                SellerInDeal.PersonId = seller.PersonId;
+                SellerInDeal.Deal = deal;
+                SellerInDeal.DealId = deal.DealId;
+                SellerInDeal.IsSeller = true;
                 //vm.Person = person;
-                _uow.PersonInDeals.Add(personInDeal1);
-                _uow.PersonInDeals.Add(personInDeal2);
+                _uow.PersonInDeals.Add(SellerInDeal);
+                _uow.PersonInDeals.Add(BuyerInDeal);
+                
                 _uow.Commit();
                 return RedirectToAction("Index");
             }

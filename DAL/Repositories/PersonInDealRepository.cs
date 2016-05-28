@@ -22,7 +22,7 @@ namespace Dal.Repositories
         public List<int> GetAllDealIDsForPerson(int personId)
         {
 
-            return DbSet.Where(a => a.PersonId == personId).Select(a => a.DealId).ToList();
+            return DbSet.Where(a => a.PersonId == personId ).Select(a => a.DealId).ToList();
         }
 
         public List<int> GetAllPersonsInDealByDealId(int dealId)

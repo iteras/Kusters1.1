@@ -144,9 +144,9 @@ namespace DAL
                 TelNr = "5435346",
                 Registered = DateTime.Today
             };
-
-            context.Persons.Add(Tom);
             context.Persons.Add(Imre);
+            context.Persons.Add(Tom);
+            
             context.SaveChanges();
 
             context.Campaigns.Add(new Campaign()
