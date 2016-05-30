@@ -52,11 +52,23 @@ namespace Web
                 //,"/Content/Theme/main.css"
                 ));
 
+            bundles.Add(new StyleBundle("~/Content/admincss").Include(
+                "~/Content/dist/css/AdminLte.css",
+                "~/Content/dist/css/skins/_all-skins.min.css"
+                ));
 
-
-            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+           bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                   "~/Content/plugins/slimScroll/jquery.slimscroll.js",
                    "~/Scripts/app/app.js"));
 
+            bundles.Add(new ScriptBundle("~/Content/sitecss").Include(
+                "~/Content/Site.css"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/adminltejs").Include(
+                "~/Scripts/AdminLTE/app.js"
+                //"~/Scripts/plugins/jQuery/jQuery-2.2.0.min.js"
+                ));
 
             BundleTable.EnableOptimizations = false;
         }

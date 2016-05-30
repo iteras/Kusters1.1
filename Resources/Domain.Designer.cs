@@ -448,7 +448,16 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My products.
+        ///   Looks up a localized string similar to My deals.
+        /// </summary>
+        public static string MyDeals {
+            get {
+                return ResourceManager.GetString("MyDeals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My items.
         /// </summary>
         public static string MyProducts {
             get {
@@ -556,7 +565,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Product.
+        ///   Looks up a localized string similar to Item.
         /// </summary>
         public static string Product {
             get {
@@ -574,7 +583,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Products.
+        ///   Looks up a localized string similar to Items.
         /// </summary>
         public static string Products {
             get {
@@ -597,6 +606,15 @@ namespace Resources {
         public static string Registered {
             get {
                 return ResourceManager.GetString("Registered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

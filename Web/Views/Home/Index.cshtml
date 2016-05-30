@@ -3,19 +3,51 @@
     ViewBag.Title = Resources.Common.ApplicationName;
 }
 <!-- TODO -->
-<div class="jumbotron">
+<div class="content">
     @if (Request.IsAuthenticated && !User.IsInRole("Admin"))
     {
-        @Html.Raw(Model.Article.ArticleHeadline)
-        @Html.Raw(Model.Article.ArticleBody)
+        <H1>@Html.Raw(Model.Article.ArticleHeadline)</H1>
+        <div>@Html.Raw(Model.Article.ArticleBody)</div>
+        <hr/>
+        <hr/>
+        <hr/>
+        <hr/>
+        <hr/>
+        <hr/>
+        <hr/>
+        <hr/>
+        <hr/>
+        <hr/>
+        <hr />
+        <hr />
+        <hr />
+        <hr />
     }
     else
     {
-        @Html.Raw(Model.Article.ArticleHeadline)
-        @Html.Raw(Model.Article.ArticleBody)
+        <H1>@Html.Raw(Model.Article.ArticleHeadline)</H1>
+        <div>@Html.Raw(Model.Article.ArticleBody)</div>
+        <hr/>
+        <div class="loginRegisterBtn center-block">
+            <div class="btn-group-lg">
+                @if (!Request.IsAuthenticated)
+                {
+                    <a class="btn-lg  btn   btn-primary " href="~/Account/Login"> @Resources.Common.Login</a>
+                    <a class="btn-lg btn  btn-primary" href="~/Account/Register"> @Resources.Common.Register</a>
+                }
+            </div>
+        </div>
+        <hr/>
+        <div>@Html.Raw(Model.Article.ArticleBody)</div>
+        <hr />
+        <div>@Html.Raw(Model.Article.ArticleBody)</div>
+        <hr />
+        <div>@Html.Raw(Model.Article.ArticleBody)</div>
+        
+        
     }
     
-    <div class="loginRegisterBtn center-block">
+    @*<div class="loginRegisterBtn center-block">
         <div class="col-md-16">
             @if (!Request.IsAuthenticated)
             {
@@ -23,5 +55,5 @@
                 <a class="btn btn-default" href="~/Account/Register"> @Resources.Common.Register</a>
             } </div>
 
-    </div>
+    </div>*@
 </div>

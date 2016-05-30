@@ -358,6 +358,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sign in to start your session.
+        /// </summary>
+        public static string Signintostartyoursession {
+            get {
+                return ResourceManager.GetString("Signintostartyoursession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Submit.
         /// </summary>
         public static string Submit {

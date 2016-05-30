@@ -40,7 +40,7 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right" >
         <li class="@Html.Raw(culture == "et" ? "list-group-item-success" : "")">
             @Html.ActionLink("Est", "SetLanguage", new {area = "", controller = "Language", culture = "et", returnUrl}, htmlAttributes: new {id = "langLinkEst"})
         </li>

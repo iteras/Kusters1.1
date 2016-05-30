@@ -231,6 +231,9 @@
   <data name="Money" xml:space="preserve">
     <value>Rahasumma</value>
   </data>
+  <data name="MyDeals" xml:space="preserve">
+    <value>Minu tehingud</value>
+  </data>
   <data name="MyProducts" xml:space="preserve">
     <value>Minu asjad</value>
   </data>

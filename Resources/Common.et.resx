@@ -180,4 +180,7 @@
   <data name="NoItemError" xml:space="preserve">
     <value> ei oma ühtegi toodet, millega tehingut teha!</value>
   </data>
+  <data name="Signintostartyoursession" xml:space="preserve">
+    <value>Logi sisse</value>
+  </data>
 </root>

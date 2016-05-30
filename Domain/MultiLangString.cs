@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Domain
 {
@@ -18,6 +19,7 @@ namespace Domain
         /// Default value, when translation is not found
         /// </summary>
         [MaxLength(40960)]
+        [AllowHtml]
         public string Value { get; set; }
 
         [MaxLength(255)]

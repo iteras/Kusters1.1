@@ -219,4 +219,7 @@
   <data name="NoItemError" xml:space="preserve">
     <value> has no items for making deals!</value>
   </data>
+  <data name="Signintostartyoursession" xml:space="preserve">
+    <value>Sign in to start your session</value>
+  </data>
 </root>
