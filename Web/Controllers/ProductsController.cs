@@ -48,14 +48,15 @@ namespace Web.Controllers
                 vm.AllBuyers = new List<Person>();
                 foreach (var item in allThisPersonDealIds)
                 {
-                        if (item.PersonsInDeal.First().IsSeller != true)
-                        {
-                            asd = (item.PersonsInDeal.First());
-                            vm.AllBuyers.Add(_uow.Persons.GetById(asd.PersonId));
-                        } else
-                        {
-                            asd = (item.PersonsInDeal.OrderByDescending(a => a.PersonInDealId).First());
-                            vm.AllBuyers.Add(_uow.Persons.GetById(asd.PersonId));
+                    if (item.PersonsInDeal.First().IsSeller != true)
+                    {
+                        asd = (item.PersonsInDeal.First());
+                        vm.AllBuyers.Add(_uow.Persons.GetById(asd.PersonId));
+                    }
+                    else
+                    {
+                        asd = (item.PersonsInDeal.OrderByDescending(a => a.PersonInDealId).First());
+                        vm.AllBuyers.Add(_uow.Persons.GetById(asd.PersonId));
                     }
                     //TODO: get ALL THIS person's products Buyers IF there is someone to buy it
                 }
@@ -63,7 +64,7 @@ namespace Web.Controllers
             /*TODO: section below here is not completed, gets only 1 dealId but should get all
               TODO: gets only 1 buyer, but should get all
              */
-             
+
             //int dealId = _uow.PersonInDeals.GetAllDealIDsForPerson(person.PersonId).First(); //gets all Deal ID's for this person
             //vm.Buyer = _uow.PersonInDeals.GetBuyerInDealByDealId(dealId,person.PersonId); 
             //TODO: display buyer in seller Index View
@@ -111,25 +112,25 @@ namespace Web.Controllers
             //vm.AllPersons = new SelectList(_uow.Persons.All.Select(a => new {a.PersonId,a.FirstLastName}).ToList(), nameof(Person.PersonId), nameof(Person.FirstLastName));
             return View(vm);
         }
-        
+
         // POST: Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( Product product)
+        public void Create(Product product)
         {
             if (ModelState.IsValid)
             {
                 product.Created = DateTime.Now;
                 _uow.Products.Add(product);
                 _uow.Commit();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
             }
             var vm = new ProductViewModels();
             vm.AllPersons = new SelectList(_uow.Persons.All.Select(a => new { a.PersonId, a.FirstLastName }).ToList(), nameof(Person.PersonId), nameof(Person.FirstLastName));
 
-            return View(vm);
+            //return View(vm);
         }
 
         // GET: Products/Edit/5
@@ -157,7 +158,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit( Product product)
+        public ActionResult Edit(Product product)
         {
             if (ModelState.IsValid)
             {

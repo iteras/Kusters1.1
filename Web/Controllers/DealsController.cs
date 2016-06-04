@@ -150,8 +150,32 @@ namespace Web.Controllers
         {
             vm.Person = _uow.Persons.GetPersonByFullName(vm.PersonFullName);
             string searchedName = vm.PersonFullName;
-            List<Product> allProductsForThisPerson =
+            List<Product> allProductsForThisPerson = new List<Product>();
+            try
+            {
+                allProductsForThisPerson =
                 _uow.Products.GetAllProductsForPerson(vm.Person.PersonId).Where(a => a.Deals.Count() == 0).ToList();
+            }
+            catch (NullReferenceException e)
+            {
+                if (!searchedName.Contains(" "))
+                {
+                    ModelState.AddModelError(vm.PersonFullName, @Resources.Common.FindCreateDealPersonNotFullname);
+                }
+                else
+                {
+                    ModelState.AddModelError(vm.PersonFullName, @Resources.Common.FindCreateDealPersonNotFound);
+                }
+
+                    //ModelState.Remove(vm.PersonFirstName);
+                    if (!ModelState.IsValid)
+                    {
+                        return View(vm);
+                    }
+                
+            }
+            //List<Product> allProductsForThisPerson =
+            //    _uow.Products.GetAllProductsForPerson(vm.Person.PersonId).Where(a => a.Deals.Count() == 0).ToList();
             
             if (ModelState.IsValid && allProductsForThisPerson.Any())
             {

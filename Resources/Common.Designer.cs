@@ -205,6 +205,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must search person by full name!.
+        /// </summary>
+        public static string FindCreateDealPersonNotFullname {
+            get {
+                return ResourceManager.GetString("FindCreateDealPersonNotFullname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I forgot my password.
+        /// </summary>
+        public static string ForgotPassword {
+            get {
+                return ResourceManager.GetString("ForgotPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I already have a membership.
+        /// </summary>
+        public static string IAlreadyHaveAMembership {
+            get {
+                return ResourceManager.GetString("IAlreadyHaveAMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string Login {
@@ -264,6 +291,15 @@ namespace Resources {
         public static string OK {
             get {
                 return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Või.
+        /// </summary>
+        public static string or {
+            get {
+                return ResourceManager.GetString("or", resourceCulture);
             }
         }
         
@@ -336,6 +372,15 @@ namespace Resources {
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register a new membership.
+        /// </summary>
+        public static string RegisterANewMembership {
+            get {
+                return ResourceManager.GetString("RegisterANewMembership", resourceCulture);
             }
         }
         

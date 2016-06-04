@@ -4,106 +4,109 @@
 
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>
-    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-    {
-        @Resources.Domain.Products
-    }
-    else
-    {
-        @Resources.Common.MyItems
-    } 
-</h2>
-
-<p>
-    @Html.ActionLink(@Resources.Common.CreateNew, "Create")
-</p>
-<table class="table">
-    <tr>
+<div class="content-header">
+    <h2>
         @if (Request.IsAuthenticated && User.IsInRole("Admin"))
         {
-            <th>
-                @Html.DisplayNameFor(model => model.Person.FirstLastName)
-            </th>
+            @Resources.Domain.Products
         }
-
-        <th>
-            @Html.DisplayNameFor(model => model.Product.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.Content)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.Product.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.Price)
-        </th>
-        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+        else
         {
-            <th>@Html.DisplayNameFor(model => model.Product.Created)</th>
+            @Resources.Common.MyItems
         }
-        <th>
-            @Html.DisplayNameFor(model => model.Product.TrackingCode)
-        </th>
+    </h2>
+</div>
 
-
-        @*TODO: display list of Buyers, atm displays only 1 buyer
-        <th>
-            @Html.DisplayNameFor(model => model.Buyer)
-        </th>*@
-
-    </tr>
-
-    @foreach (var item in Model.AllProducts) //list of products in ProductViewModels
-    {
+<div class="content">
+    <p>
+        @Html.ActionLink(@Resources.Common.CreateNew, "Create")
+    </p>
+    <table class="table table-bordered table-striped dataTable">
         <tr>
             @if (Request.IsAuthenticated && User.IsInRole("Admin"))
             {
-                <td>
-                    @Html.DisplayFor(modelItem => item.Person.FirstLastName)
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Person.FirstLastName)
+                </th>
             }
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Content)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Price)
+            </th>
             @if (Request.IsAuthenticated && User.IsInRole("Admin"))
             {
-                <td>
-                    @Html.DisplayFor(modelItem => item.Created)
-                </td>
+                <th>@Html.DisplayNameFor(model => model.Product.Created)</th>
             }
-
-            <td>
-                @Html.DisplayFor(modelItem => item.TrackingCode)
-            </td>
-
-            @*
-               TODO: display list of Buyers, atm displays only 1 buyer 
-            *@
-           
-            @*<td>
-                @Html.DisplayForModel(Model.AllBuyers.)
-            </td>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Product.TrackingCode)
+            </th>
 
 
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {id = item.ProductId}) |
-                @Html.ActionLink("Details", "Details", new {id = item.ProductId}) |
-                @Html.ActionLink("Delete", "Delete", new {id = item.ProductId})
-            </td>
+            @*TODO: display list of Buyers, atm displays only 1 buyer
+                <th>
+                    @Html.DisplayNameFor(model => model.Buyer)
+                </th>*@
+
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model.AllProducts) //list of products in ProductViewModels
+        {
+            <tr>
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.FirstLastName)
+                    </td>
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Created)
+                    </td>
+                }
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrackingCode)
+                </td>
+
+                @*
+                    TODO: display list of Buyers, atm displays only 1 buyer
+                *@
+
+                @*<td>
+                        @Html.DisplayForModel(Model.AllBuyers.)
+                    </td>*@
+
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

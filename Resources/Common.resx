@@ -222,4 +222,19 @@
   <data name="Signintostartyoursession" xml:space="preserve">
     <value>Sign in to start your session</value>
   </data>
+  <data name="RegisterANewMembership" xml:space="preserve">
+    <value>Register a new membership</value>
+  </data>
+  <data name="IAlreadyHaveAMembership" xml:space="preserve">
+    <value>I already have a membership</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>Või</value>
+  </data>
+  <data name="FindCreateDealPersonNotFullname" xml:space="preserve">
+    <value>You must search person by full name!</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>I forgot my password</value>
+  </data>
 </root>

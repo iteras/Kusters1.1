@@ -72,5 +72,5 @@ namespace Web
 
             BundleTable.EnableOptimizations = false;
         }
-    }
+    }   
 }

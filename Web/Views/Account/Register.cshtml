@@ -1,9 +1,12 @@
 ﻿@model Web.ViewModels.RegisterViewModel
-@{
-    ViewBag.Title = Resources.Account.RegisterTitle;
-}
 
-<h2>@ViewBag.Title</h2>
+<div class="register-box">
+    <div class="register-logo">
+        <b>@Resources.Common.ApplicationName</b>
+    </div>
+    <div class="register-box-body">
+        <p class="login-box-msg">@Resources.Common.RegisterANewMembership</p>
+
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
 {
@@ -12,30 +15,42 @@
     <hr/>
     @Html.ValidationSummary("", new {@class = "text-danger"})
     <div class="form-group">
-        @Html.LabelFor(m => m.Email, new {@class = "col-md-2 control-label"})
+       
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new {@class = "form-control"})
+            @Html.TextBoxFor(m => m.Email, new {@placeholder ="Email", @class = "form-control"})
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Password, new {@class = "col-md-2 control-label"})
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new {@class = "form-control"})
+            @Html.PasswordFor(m => m.Password, new { @placeholder ="Password", @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new {@class = "col-md-2 control-label"})
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control"})
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @placeholder = "Password again", @class = "form-control"})
         </div>
     </div>
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="@Resources.Account.RegisterButtonRegister"/>
+        <div class="social-auth-links text-center">
+            <input type="submit" class="btn btn-primary btn-block btn-flat" value="@Resources.Account.RegisterButtonRegister" />
         </div>
     </div>
 }
-
+        <div class="social-auth-links text-center">
+            <p>- @Resources.Common.or -</p>
+            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
+                <i class="fa fa-facebook"></i> Sign up using
+                Facebook
+            </a>
+            <a href="#" class="btn btn-block btn-social btn-google btn-flat">
+                <i class="fa fa-google-plus"></i> Sign up using
+                Google+
+            </a>
+        </div>
+        @Html.ActionLink(@Resources.Common.IAlreadyHaveAMembership, "Login","Account")
+    </div>
+    <!-- /.form-box -->
+</div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

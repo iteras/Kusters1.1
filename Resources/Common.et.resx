@@ -183,4 +183,19 @@
   <data name="Signintostartyoursession" xml:space="preserve">
     <value>Logi sisse</value>
   </data>
+  <data name="RegisterANewMembership" xml:space="preserve">
+    <value>Registeeri uus kasutaja</value>
+  </data>
+  <data name="IAlreadyHaveAMembership" xml:space="preserve">
+    <value>Mul on konto juba olemas</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>Või</value>
+  </data>
+  <data name="FindCreateDealPersonNotFullname" xml:space="preserve">
+    <value>Teist isikut peab otsima täisnimega!</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Ma unustasin parooli</value>
+  </data>
 </root>
