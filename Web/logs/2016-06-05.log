@@ -1,0 +1,1115 @@
+2016-06-05 14:06:38.4361 | DEBUG |          DAL.Helpers.EFRepositoryFactories.Dispose | InstanceId: 934b25e1-f742-4a3a-8b0b-5ead708563bb
+2016-06-05 14:06:57.9275 | DEBUG |            DAL.Helpers.EFRepositoryFactories..ctor | InstanceId: 35ef528e-29ed-45bb-988c-ea80ee78ecb4
+2016-06-05 14:06:57.9751 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: 39fa1f9f-6d2d-455c-a684-2572b6072941
+2016-06-05 14:06:59.9251 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: 52a8c3ae-d347-4bb0-8b6d-8d3ec1456f31
+2016-06-05 14:06:59.9321 | DEBUG |                                      DAL.UOW..ctor | InstanceId: e88cb6e5-791c-4fd4-9a4b-49f0f720f6fb
+2016-06-05 14:06:59.9600 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56
+2016-06-05 14:07:00.0030 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: 0d6f0d0d-22e1-416f-9508-8e8c2ceffbb3
+2016-06-05 14:07:00.0861 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56 userId:1
+2016-06-05 14:07:00.1271 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: 5139205f-c2f3-479f-be04-2c624be26768 dbSet: System.Data.Entity.DbSet`1[Domain.Identity.UserInt]
+2016-06-05 14:07:10.8759 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 2:07:10 PM +03:00
+2016-06-05 14:07:10.9413 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.Article','dbo.MultiLangString','dbo.Translation','dbo.Campaign','dbo.Contract','dbo.DealInContract','dbo.Deal','dbo.DealInCampaign','dbo.PersonInDeal','dbo.Person','dbo.PersonInChat','dbo.Chat','dbo.ChatInPretension','dbo.Pretension','dbo.PersonInPretension','dbo.Product','dbo.Description','dbo.Picture','dbo.PersonInContract','dbo.UserInt','dbo.UserClaimInt','dbo.UserLoginInt','dbo.UserRoleInt','dbo.RoleInt','dbo.Contact','dbo.ContactType')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-06-05 14:07:10.9794 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:11.0024 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 2:07:10 PM +03:00
+2016-06-05 14:07:11.3442 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 335 ms with result: 26
+2016-06-05 14:07:11.3442 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:11.3838 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 2:07:11 PM +03:00
+2016-06-05 14:07:11.6631 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 2:07:11 PM +03:00
+2016-06-05 14:07:11.9774 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-06-05 14:07:12.0065 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:12.0175 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: 'DAL.Migrations.Configuration' (Type = String, Size = 4000)
+2016-06-05 14:07:12.0265 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.1636 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 131 ms with result: SqlDataReader
+2016-06-05 14:07:12.1676 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:12.1943 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.2105 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.2457 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+2016-06-05 14:07:12.2457 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:12.2457 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: 'DAL.Migrations.Configuration' (Type = String, Size = 4000)
+2016-06-05 14:07:12.2457 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.2841 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 24 ms with result: SqlDataReader
+2016-06-05 14:07:12.2841 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:12.2921 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.3425 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.6120 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName]
+    FROM [dbo].[UserInt] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+2016-06-05 14:07:12.6120 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:12.6220 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p0: '1' (Type = Int32)
+2016-06-05 14:07:12.6220 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.7226 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 92 ms with result: SqlDataReader
+2016-06-05 14:07:12.7276 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:12.7496 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.7496 | INFO |                Identity.UserStore`11.FindByIdAsync | result: 1@eesti.ee
+2016-06-05 14:07:12.7636 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56 userId:1
+2016-06-05 14:07:12.7777 | INFO |                Identity.UserStore`11.FindByIdAsync | result: 1@eesti.ee
+2016-06-05 14:07:12.7777 | INFO |        Identity.UserStore`11.GetSecurityStampAsync | _instanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56 user.SecurityStamp:1d2d1ba7-f4f1-4c80-9aae-572376db95a5
+2016-06-05 14:07:12.7917 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56 userId:1
+2016-06-05 14:07:12.7917 | INFO |                Identity.UserStore`11.FindByIdAsync | result: 1@eesti.ee
+2016-06-05 14:07:12.7917 | INFO |        Identity.UserStore`11.GetSecurityStampAsync | _instanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56 user.SecurityStamp:1d2d1ba7-f4f1-4c80-9aae-572376db95a5
+2016-06-05 14:07:12.8157 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56 userId:1
+2016-06-05 14:07:12.8217 | INFO |                Identity.UserStore`11.FindByIdAsync | result: 1@eesti.ee
+2016-06-05 14:07:12.8217 | INFO |                Identity.UserStore`11.GetRolesAsync | _instanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56 user.Email:1@eesti.ee
+2016-06-05 14:07:12.8217 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: e8bdc23a-d68a-48be-b71e-d47fbe1c9213 dbSet: System.Data.Entity.DbSet`1[Domain.Identity.RoleInt]
+2016-06-05 14:07:12.8407 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.8642 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM  [dbo].[RoleInt] AS [Extent1]
+    INNER JOIN [dbo].[UserRoleInt] AS [Extent2] ON ([Extent1].[Id] = [Extent2].[RoleId]) AND ([Extent2].[UserId] = @p__linq__0)
+2016-06-05 14:07:12.8683 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:12.8683 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: '1' (Type = Int32, IsNullable = false)
+2016-06-05 14:07:12.8683 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.9293 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 47 ms with result: SqlDataReader
+2016-06-05 14:07:12.9343 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:12.9343 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:12.9523 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56 userId:1
+2016-06-05 14:07:12.9523 | INFO |                Identity.UserStore`11.FindByIdAsync | result: 1@eesti.ee
+2016-06-05 14:07:12.9628 | DEBUG |               Identity.UserStore`11.GetClaimsAsync | InstanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56
+2016-06-05 14:07:12.9628 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 2:07:12 PM +03:00
+2016-06-05 14:07:13.0224 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaimInt] AS [Extent1]
+    WHERE [Extent1].[UserId] = @EntityKeyValue1
+2016-06-05 14:07:13.0264 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:13.0264 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- EntityKeyValue1: '1' (Type = Int32, IsNullable = false)
+2016-06-05 14:07:13.0264 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 2:07:13 PM +03:00
+2016-06-05 14:07:13.0404 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 1 ms with result: SqlDataReader
+2016-06-05 14:07:13.0404 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:13.0404 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 2:07:13 PM +03:00
+2016-06-05 14:07:13.3801 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: 1f29bc52-75f1-4980-b80e-b3101dcd969f dbSet: System.Data.Entity.DbSet`1[Domain.Person]
+2016-06-05 14:07:13.3861 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 14:07 +03:00
+2016-06-05 14:07:13.4071 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Extent1].[PersonId] AS [PersonId], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Registered] AS [Registered], 
+    [Extent1].[Gender] AS [Gender], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[TelNr] AS [TelNr], 
+    [Extent1].[BankNr] AS [BankNr], 
+    [Extent1].[Locked] AS [Locked], 
+    [Extent1].[Money] AS [Money], 
+    [Extent1].[Invited] AS [Invited], 
+    [Extent1].[Raiting] AS [Raiting]
+    FROM [dbo].[Person] AS [Extent1]
+2016-06-05 14:07:13.4071 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:13.4151 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 14:07 +03:00
+2016-06-05 14:07:13.4918 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 72 ms with result: SqlDataReader
+2016-06-05 14:07:13.5018 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:07:13.5308 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 14:07 +03:00
+2016-06-05 14:07:16.5696 | DEBUG |            DAL.Repositories.EFRepository`1.Dispose | InstanceId: 1f29bc52-75f1-4980-b80e-b3101dcd969f
+2016-06-05 14:07:16.6834 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: a0f468dd-d76e-4c3e-abfd-bdf79a746d56
+2016-06-05 14:07:16.6985 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: 39fa1f9f-6d2d-455c-a684-2572b6072941
+2016-06-05 14:07:16.6985 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: 52a8c3ae-d347-4bb0-8b6d-8d3ec1456f31
+2016-06-05 14:07:16.6985 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: e88cb6e5-791c-4fd4-9a4b-49f0f720f6fb Disposing:True
+2016-06-05 14:08:20.2081 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: 0423f38a-1136-4c82-92fd-d654b49dad88
+2016-06-05 14:08:20.2161 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: d19262b2-19bd-4e6a-bdd0-b8c82de933ef
+2016-06-05 14:08:20.2306 | DEBUG |                                      DAL.UOW..ctor | InstanceId: 0442aa88-d12c-4c05-93d3-2bec8662c59e
+2016-06-05 14:08:20.2306 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 58e015a8-a8a5-4a2a-840a-47e32c867982
+2016-06-05 14:08:20.2451 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: 31fc9c8c-c54c-4093-93e8-5ccfccb0bf63
+2016-06-05 14:08:20.4553 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: 58e015a8-a8a5-4a2a-840a-47e32c867982
+2016-06-05 14:08:20.4553 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: 0423f38a-1136-4c82-92fd-d654b49dad88
+2016-06-05 14:08:20.4658 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: d19262b2-19bd-4e6a-bdd0-b8c82de933ef
+2016-06-05 14:08:20.4813 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: 0442aa88-d12c-4c05-93d3-2bec8662c59e Disposing:True
+2016-06-05 14:08:28.6764 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: eb425f41-af35-4482-a530-199966e8ab51
+2016-06-05 14:08:28.6814 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: 5ce25935-ee35-418d-9de0-81db4d637ca7
+2016-06-05 14:08:28.6814 | DEBUG |                                      DAL.UOW..ctor | InstanceId: cd13953b-c697-4b27-b662-8eae35d82c54
+2016-06-05 14:08:28.6814 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 0e430c2f-258a-45cf-9d92-d1ad70b2442d
+2016-06-05 14:08:28.6814 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: fb555a48-d161-4cba-9001-056746330693
+2016-06-05 14:08:28.7064 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: 555ce9c3-33ba-423a-bf4f-ac1ca6f65e88 dbSet: System.Data.Entity.DbSet`1[Domain.Article]
+2016-06-05 14:08:28.8302 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 14:08 +03:00
+2016-06-05 14:08:29.0410 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [UnionAll1].[ArticleId] AS [C1], 
+    [UnionAll1].[ArticleId1] AS [C2], 
+    [UnionAll1].[ArticleName] AS [C3], 
+    [UnionAll1].[ArticleHeadlineId] AS [C4], 
+    [UnionAll1].[ArticleBodyId] AS [C5], 
+    [UnionAll1].[ArticleId2] AS [C6], 
+    [UnionAll1].[MultiLangStringId] AS [C7], 
+    [UnionAll1].[Value] AS [C8], 
+    [UnionAll1].[Owner] AS [C9], 
+    [UnionAll1].[ArticleId3] AS [C10], 
+    [UnionAll1].[MultiLangStringId1] AS [C11], 
+    [UnionAll1].[Value1] AS [C12], 
+    [UnionAll1].[Owner1] AS [C13], 
+    [UnionAll1].[C1] AS [C14], 
+    [UnionAll1].[TranslationId] AS [C15], 
+    [UnionAll1].[Value2] AS [C16], 
+    [UnionAll1].[MultiLangStringId2] AS [C17], 
+    [UnionAll1].[Culture] AS [C18], 
+    [UnionAll1].[C2] AS [C19], 
+    [UnionAll1].[C3] AS [C20], 
+    [UnionAll1].[C4] AS [C21], 
+    [UnionAll1].[C5] AS [C22]
+    FROM  (SELECT 
+        CASE WHEN ([Extent4].[TranslationId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1], 
+        [Limit1].[ArticleId] AS [ArticleId], 
+        [Limit1].[ArticleId] AS [ArticleId1], 
+        [Limit1].[ArticleName] AS [ArticleName], 
+        [Limit1].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+        [Limit1].[ArticleBodyId] AS [ArticleBodyId], 
+        [Limit1].[ArticleId] AS [ArticleId2], 
+        [Limit1].[MultiLangStringId] AS [MultiLangStringId], 
+        [Limit1].[Value] AS [Value], 
+        [Limit1].[Owner] AS [Owner], 
+        [Limit1].[ArticleId] AS [ArticleId3], 
+        [Limit1].[MultiLangStringId1] AS [MultiLangStringId1], 
+        [Limit1].[Value1] AS [Value1], 
+        [Limit1].[Owner1] AS [Owner1], 
+        [Extent4].[TranslationId] AS [TranslationId], 
+        [Extent4].[Value] AS [Value2], 
+        [Extent4].[MultiLangStringId] AS [MultiLangStringId2], 
+        [Extent4].[Culture] AS [Culture], 
+        CAST(NULL AS int) AS [C2], 
+        CAST(NULL AS varchar(1)) AS [C3], 
+        CAST(NULL AS int) AS [C4], 
+        CAST(NULL AS varchar(1)) AS [C5]
+        FROM   (SELECT TOP (1) 
+            [Extent1].[ArticleId] AS [ArticleId], 
+            [Extent1].[ArticleName] AS [ArticleName], 
+            [Extent1].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+            [Extent1].[ArticleBodyId] AS [ArticleBodyId], 
+            [Extent2].[MultiLangStringId] AS [MultiLangStringId], 
+            [Extent2].[Value] AS [Value], 
+            [Extent2].[Owner] AS [Owner], 
+            [Extent3].[MultiLangStringId] AS [MultiLangStringId1], 
+            [Extent3].[Value] AS [Value1], 
+            [Extent3].[Owner] AS [Owner1]
+            FROM   [dbo].[Article] AS [Extent1]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent2] ON [Extent1].[ArticleHeadlineId] = [Extent2].[MultiLangStringId]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent3] ON [Extent1].[ArticleBodyId] = [Extent3].[MultiLangStringId]
+            WHERE ([Extent1].[ArticleName] = @p__linq__0) OR (([Extent1].[ArticleName] IS NULL) AND (@p__linq__0 IS NULL)) ) AS [Limit1]
+        LEFT OUTER JOIN [dbo].[Translation] AS [Extent4] ON [Limit1].[ArticleHeadlineId] = [Extent4].[MultiLangStringId]
+    UNION ALL
+        SELECT 
+        2 AS [C1], 
+        [Limit2].[ArticleId] AS [ArticleId], 
+        [Limit2].[ArticleId] AS [ArticleId1], 
+        [Limit2].[ArticleName] AS [ArticleName], 
+        [Limit2].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+        [Limit2].[ArticleBodyId] AS [ArticleBodyId], 
+        [Limit2].[ArticleId] AS [ArticleId2], 
+        [Limit2].[MultiLangStringId] AS [MultiLangStringId], 
+        [Limit2].[Value] AS [Value], 
+        [Limit2].[Owner] AS [Owner], 
+        [Limit2].[ArticleId] AS [ArticleId3], 
+        [Limit2].[MultiLangStringId1] AS [MultiLangStringId1], 
+        [Limit2].[Value1] AS [Value1], 
+        [Limit2].[Owner1] AS [Owner1], 
+        CAST(NULL AS int) AS [C2], 
+        CAST(NULL AS varchar(1)) AS [C3], 
+        CAST(NULL AS int) AS [C4], 
+        CAST(NULL AS varchar(1)) AS [C5], 
+        [Extent8].[TranslationId] AS [TranslationId], 
+        [Extent8].[Value] AS [Value2], 
+        [Extent8].[MultiLangStringId] AS [MultiLangStringId2], 
+        [Extent8].[Culture] AS [Culture]
+        FROM   (SELECT TOP (1) 
+            [Extent5].[ArticleId] AS [ArticleId], 
+            [Extent5].[ArticleName] AS [ArticleName], 
+            [Extent5].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+            [Extent5].[ArticleBodyId] AS [ArticleBodyId], 
+            [Extent6].[MultiLangStringId] AS [MultiLangStringId], 
+            [Extent6].[Value] AS [Value], 
+            [Extent6].[Owner] AS [Owner], 
+            [Extent7].[MultiLangStringId] AS [MultiLangStringId1], 
+            [Extent7].[Value] AS [Value1], 
+            [Extent7].[Owner] AS [Owner1]
+            FROM   [dbo].[Article] AS [Extent5]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent6] ON [Extent5].[ArticleHeadlineId] = [Extent6].[MultiLangStringId]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent7] ON [Extent5].[ArticleBodyId] = [Extent7].[MultiLangStringId]
+            WHERE ([Extent5].[ArticleName] = @p__linq__0) OR (([Extent5].[ArticleName] IS NULL) AND (@p__linq__0 IS NULL)) ) AS [Limit2]
+        INNER JOIN [dbo].[Translation] AS [Extent8] ON [Limit2].[ArticleBodyId] = [Extent8].[MultiLangStringId]) AS [UnionAll1]
+    ORDER BY [UnionAll1].[ArticleId1] ASC, [UnionAll1].[MultiLangStringId] ASC, [UnionAll1].[MultiLangStringId1] ASC, [UnionAll1].[C1] ASC
+2016-06-05 14:08:29.0410 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:08:29.0410 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: 'HomeIndex' (Type = String, Size = 4000)
+2016-06-05 14:08:29.0410 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 14:08 +03:00
+2016-06-05 14:08:29.4019 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 342 ms with result: SqlDataReader
+2016-06-05 14:08:29.4019 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:08:29.4770 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 14:08 +03:00
+2016-06-05 14:08:29.4870 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: cfbe1973-e578-49fb-8051-ea2cebe49b5b dbSet: System.Data.Entity.DbSet`1[Domain.Person]
+2016-06-05 14:08:29.4960 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 14:08 +03:00
+2016-06-05 14:08:29.4960 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Project1].[PersonId] AS [PersonId], 
+    [Project1].[UserId] AS [UserId], 
+    [Project1].[FirstName] AS [FirstName], 
+    [Project1].[LastName] AS [LastName], 
+    [Project1].[Registered] AS [Registered], 
+    [Project1].[Gender] AS [Gender], 
+    [Project1].[Email] AS [Email], 
+    [Project1].[Password] AS [Password], 
+    [Project1].[TelNr] AS [TelNr], 
+    [Project1].[BankNr] AS [BankNr], 
+    [Project1].[Locked] AS [Locked], 
+    [Project1].[Money] AS [Money], 
+    [Project1].[Invited] AS [Invited], 
+    [Project1].[Raiting] AS [Raiting]
+    FROM ( SELECT 
+        [Extent1].[PersonId] AS [PersonId], 
+        [Extent1].[UserId] AS [UserId], 
+        [Extent1].[FirstName] AS [FirstName], 
+        [Extent1].[LastName] AS [LastName], 
+        [Extent1].[Registered] AS [Registered], 
+        [Extent1].[Gender] AS [Gender], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[Password] AS [Password], 
+        [Extent1].[TelNr] AS [TelNr], 
+        [Extent1].[BankNr] AS [BankNr], 
+        [Extent1].[Locked] AS [Locked], 
+        [Extent1].[Money] AS [Money], 
+        [Extent1].[Invited] AS [Invited], 
+        [Extent1].[Raiting] AS [Raiting]
+        FROM [dbo].[Person] AS [Extent1]
+        WHERE [Extent1].[UserId] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[LastName] ASC, [Project1].[FirstName] ASC
+2016-06-05 14:08:29.5110 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:08:29.5110 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: '1' (Type = Int32, IsNullable = false)
+2016-06-05 14:08:29.5110 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 14:08 +03:00
+2016-06-05 14:08:29.5330 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 3 ms with result: SqlDataReader
+2016-06-05 14:08:29.5330 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 14:08:29.5460 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 14:08 +03:00
+2016-06-05 14:08:29.5993 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: 0e430c2f-258a-45cf-9d92-d1ad70b2442d
+2016-06-05 14:08:29.6034 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: eb425f41-af35-4482-a530-199966e8ab51
+2016-06-05 14:08:29.6034 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: 5ce25935-ee35-418d-9de0-81db4d637ca7
+2016-06-05 14:08:29.6034 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: cd13953b-c697-4b27-b662-8eae35d82c54 Disposing:True
+2016-06-05 14:08:33.2741 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: dd734ae7-5a15-485c-a48a-26a3473a2003
+2016-06-05 14:08:33.2801 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: c614b75f-8ce3-4e9c-967c-012f3eb736f5
+2016-06-05 14:08:33.2801 | DEBUG |                                      DAL.UOW..ctor | InstanceId: 0103e6fb-1082-4294-b51d-7f76e5e1fb35
+2016-06-05 14:08:33.2926 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 61369775-bca4-4e57-8866-bc72c267876c
+2016-06-05 14:08:33.2926 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: b014dec4-aaab-4465-b0cd-c1434ceba168
+2016-06-05 14:08:33.9933 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: 61369775-bca4-4e57-8866-bc72c267876c
+2016-06-05 14:08:33.9933 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: dd734ae7-5a15-485c-a48a-26a3473a2003
+2016-06-05 14:08:33.9933 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: c614b75f-8ce3-4e9c-967c-012f3eb736f5
+2016-06-05 14:08:33.9933 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: 0103e6fb-1082-4294-b51d-7f76e5e1fb35 Disposing:True
+2016-06-05 14:08:55.4581 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: 6cf8efe0-ee54-41e7-a667-3315519904b7
+2016-06-05 14:08:55.4631 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: 547fa41f-0ae5-493f-9e9c-7760ae0edc6a
+2016-06-05 14:08:55.4631 | DEBUG |                                      DAL.UOW..ctor | InstanceId: b1676622-e875-4848-bb81-ea012f540fdd
+2016-06-05 14:08:55.4631 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: dc1acf57-409a-4844-a73f-8c91dcfead9a
+2016-06-05 14:08:55.4791 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: 4bfb7e3e-95c4-402b-872b-96881e7777fa
+2016-06-05 14:08:55.4791 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: dc1acf57-409a-4844-a73f-8c91dcfead9a
+2016-06-05 14:08:55.4791 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: 6cf8efe0-ee54-41e7-a667-3315519904b7
+2016-06-05 14:08:55.4931 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: 547fa41f-0ae5-493f-9e9c-7760ae0edc6a
+2016-06-05 14:08:55.4931 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: b1676622-e875-4848-bb81-ea012f540fdd Disposing:True
+2016-06-05 15:28:18.6345 | DEBUG |          DAL.Helpers.EFRepositoryFactories.Dispose | InstanceId: 35ef528e-29ed-45bb-988c-ea80ee78ecb4
+2016-06-05 15:28:35.2352 | DEBUG |            DAL.Helpers.EFRepositoryFactories..ctor | InstanceId: 45d70e67-091f-4d4b-96b1-04698e33f01d
+2016-06-05 15:28:35.2632 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: ca7c82c0-9e79-4965-b929-8e7154942feb
+2016-06-05 15:28:35.9275 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: 2e49fa48-1839-430a-8a18-9c5afc966ae2
+2016-06-05 15:28:35.9385 | DEBUG |                                      DAL.UOW..ctor | InstanceId: 47bc294a-ab6b-46ae-9258-2551f8696bd4
+2016-06-05 15:28:35.9496 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c
+2016-06-05 15:28:35.9496 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: 8864195b-76b4-4eb0-8fc8-2beb4f23bbff
+2016-06-05 15:28:36.0031 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c userId:1
+2016-06-05 15:28:36.0141 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: 371e437e-f995-4c78-b69a-3fea6c9c5509 dbSet: System.Data.Entity.DbSet`1[Domain.Identity.UserInt]
+2016-06-05 15:28:40.5855 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 3:28:40 PM +03:00
+2016-06-05 15:28:40.5925 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.Article','dbo.MultiLangString','dbo.Translation','dbo.Campaign','dbo.Contract','dbo.DealInContract','dbo.Deal','dbo.DealInCampaign','dbo.PersonInDeal','dbo.Person','dbo.PersonInChat','dbo.Chat','dbo.ChatInPretension','dbo.Pretension','dbo.PersonInPretension','dbo.Product','dbo.Description','dbo.Picture','dbo.PersonInContract','dbo.UserInt','dbo.UserClaimInt','dbo.UserLoginInt','dbo.UserRoleInt','dbo.RoleInt','dbo.Contact','dbo.ContactType')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-06-05 15:28:40.5925 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:40.6040 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 3:28:40 PM +03:00
+2016-06-05 15:28:40.8337 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 223 ms with result: 26
+2016-06-05 15:28:40.8407 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:40.8547 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 3:28:40 PM +03:00
+2016-06-05 15:28:41.3331 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 3:28:41 PM +03:00
+2016-06-05 15:28:43.1587 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-06-05 15:28:43.1587 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:43.1707 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: 'DAL.Migrations.Configuration' (Type = String, Size = 4000)
+2016-06-05 15:28:43.1707 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 3:28:43 PM +03:00
+2016-06-05 15:28:43.3546 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 175 ms with result: SqlDataReader
+2016-06-05 15:28:43.3546 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:43.3726 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 3:28:43 PM +03:00
+2016-06-05 15:28:43.3901 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 3:28:43 PM +03:00
+2016-06-05 15:28:43.4657 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+2016-06-05 15:28:43.4657 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:43.4657 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: 'DAL.Migrations.Configuration' (Type = String, Size = 4000)
+2016-06-05 15:28:43.4807 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 3:28:43 PM +03:00
+2016-06-05 15:28:43.4967 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 11 ms with result: SqlDataReader
+2016-06-05 15:28:43.4967 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:43.5168 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 3:28:43 PM +03:00
+2016-06-05 15:28:43.7085 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 3:28:43 PM +03:00
+2016-06-05 15:28:44.0412 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName]
+    FROM [dbo].[UserInt] AS [Extent1]
+    WHERE [Extent1].[Id] = @p0
+2016-06-05 15:28:44.0412 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:44.0412 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p0: '1' (Type = Int32)
+2016-06-05 15:28:44.0412 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 3:28:44 PM +03:00
+2016-06-05 15:28:44.2204 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 161 ms with result: SqlDataReader
+2016-06-05 15:28:44.2204 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:44.3405 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 3:28:44 PM +03:00
+2016-06-05 15:28:44.3405 | INFO |                Identity.UserStore`11.FindByIdAsync | result: 1@eesti.ee
+2016-06-05 15:28:44.3575 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c userId:1
+2016-06-05 15:28:44.4275 | INFO |                Identity.UserStore`11.FindByIdAsync | result: 1@eesti.ee
+2016-06-05 15:28:44.4345 | INFO |        Identity.UserStore`11.GetSecurityStampAsync | _instanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c user.SecurityStamp:1d2d1ba7-f4f1-4c80-9aae-572376db95a5
+2016-06-05 15:28:44.4485 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c userId:1
+2016-06-05 15:28:44.4485 | INFO |                Identity.UserStore`11.FindByIdAsync | result: 1@eesti.ee
+2016-06-05 15:28:44.4485 | INFO |        Identity.UserStore`11.GetSecurityStampAsync | _instanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c user.SecurityStamp:1d2d1ba7-f4f1-4c80-9aae-572376db95a5
+2016-06-05 15:28:44.4716 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c userId:1
+2016-06-05 15:28:44.4786 | INFO |                Identity.UserStore`11.FindByIdAsync | result: 1@eesti.ee
+2016-06-05 15:28:44.4786 | INFO |                Identity.UserStore`11.GetRolesAsync | _instanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c user.Email:1@eesti.ee
+2016-06-05 15:28:44.4946 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: e274b35a-604f-495d-9d91-0f1d87cb0eb8 dbSet: System.Data.Entity.DbSet`1[Domain.Identity.RoleInt]
+2016-06-05 15:28:44.4946 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 3:28:44 PM +03:00
+2016-06-05 15:28:44.6437 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM  [dbo].[RoleInt] AS [Extent1]
+    INNER JOIN [dbo].[UserRoleInt] AS [Extent2] ON ([Extent1].[Id] = [Extent2].[RoleId]) AND ([Extent2].[UserId] = @p__linq__0)
+2016-06-05 15:28:44.6587 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:44.6587 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: '1' (Type = Int32, IsNullable = false)
+2016-06-05 15:28:44.6702 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 3:28:44 PM +03:00
+2016-06-05 15:28:44.7092 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 34 ms with result: SqlDataReader
+2016-06-05 15:28:44.7142 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:44.7142 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 3:28:44 PM +03:00
+2016-06-05 15:28:44.7338 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c userId:1
+2016-06-05 15:28:44.7338 | INFO |                Identity.UserStore`11.FindByIdAsync | result: 1@eesti.ee
+2016-06-05 15:28:44.7453 | DEBUG |               Identity.UserStore`11.GetClaimsAsync | InstanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c
+2016-06-05 15:28:44.7638 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 6/5/2016 3:28:44 PM +03:00
+2016-06-05 15:28:44.7888 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaimInt] AS [Extent1]
+    WHERE [Extent1].[UserId] = @EntityKeyValue1
+2016-06-05 15:28:44.7948 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:44.7948 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- EntityKeyValue1: '1' (Type = Int32, IsNullable = false)
+2016-06-05 15:28:44.7948 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 6/5/2016 3:28:44 PM +03:00
+2016-06-05 15:28:44.8133 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 2 ms with result: SqlDataReader
+2016-06-05 15:28:44.8133 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:44.8248 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 6/5/2016 3:28:44 PM +03:00
+2016-06-05 15:28:44.9979 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: d138625f-8827-416a-b27c-0f2bf7fbc592 dbSet: System.Data.Entity.DbSet`1[Domain.Person]
+2016-06-05 15:28:44.9979 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 15:28 +03:00
+2016-06-05 15:28:45.0400 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Extent1].[PersonId] AS [PersonId], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName], 
+    [Extent1].[Registered] AS [Registered], 
+    [Extent1].[Gender] AS [Gender], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[TelNr] AS [TelNr], 
+    [Extent1].[BankNr] AS [BankNr], 
+    [Extent1].[Locked] AS [Locked], 
+    [Extent1].[Money] AS [Money], 
+    [Extent1].[Invited] AS [Invited], 
+    [Extent1].[Raiting] AS [Raiting]
+    FROM [dbo].[Person] AS [Extent1]
+2016-06-05 15:28:45.0400 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:45.0640 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 15:28 +03:00
+2016-06-05 15:28:45.1868 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 106 ms with result: SqlDataReader
+2016-06-05 15:28:45.1868 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:28:45.2424 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 15:28 +03:00
+2016-06-05 15:28:48.2188 | DEBUG |            DAL.Repositories.EFRepository`1.Dispose | InstanceId: d138625f-8827-416a-b27c-0f2bf7fbc592
+2016-06-05 15:28:48.2678 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: 3ff187d3-1255-4765-b98e-5fa2e5005c8c
+2016-06-05 15:28:48.2868 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: ca7c82c0-9e79-4965-b929-8e7154942feb
+2016-06-05 15:28:48.2928 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: 2e49fa48-1839-430a-8a18-9c5afc966ae2
+2016-06-05 15:28:48.2928 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: 47bc294a-ab6b-46ae-9258-2551f8696bd4 Disposing:True
+2016-06-05 15:29:26.1540 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: 3f59c4de-1458-4017-903d-ba2a74491346
+2016-06-05 15:29:26.1540 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: 031b0e2d-894a-4fd1-b17c-395ca76fcd9d
+2016-06-05 15:29:26.1660 | DEBUG |                                      DAL.UOW..ctor | InstanceId: b5fec46e-cb68-4d51-920a-cedb7da983bb
+2016-06-05 15:29:26.1660 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 6a63e299-d0a2-4cc9-9222-210a888f5b18
+2016-06-05 15:29:26.1660 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: e826b321-95c9-4241-ab98-582c65c10eb6
+2016-06-05 15:29:26.1941 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 477602f9-4316-4334-b8e7-e5e8d6a6cec8
+2016-06-05 15:29:26.2001 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: b8526e26-65f0-45a4-823c-a1e190d84c45
+2016-06-05 15:29:26.2001 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: b17b1ba6-5a27-4c39-9f31-6a511d497601
+2016-06-05 15:29:26.2131 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: 40bac574-c47f-41a5-babf-3d2b3a0d515f
+2016-06-05 15:29:26.2131 | DEBUG |                 Web.ApplicationSignInManager..ctor | InstanceId: 720797f3-8536-45ac-882c-68f90e96b0d4
+2016-06-05 15:29:26.2366 | DEBUG |            Web.Controllers.AccountController..ctor | InstanceId: 2e83f8e6-1325-4af1-aec7-e81a0c3b7817
+2016-06-05 15:29:26.2960 | DEBUG |          Web.Controllers.AccountController.Dispose | InstanceId: 2e83f8e6-1325-4af1-aec7-e81a0c3b7817 Disposing:True
+2016-06-05 15:29:26.3060 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: 6a63e299-d0a2-4cc9-9222-210a888f5b18
+2016-06-05 15:29:26.3060 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: 3f59c4de-1458-4017-903d-ba2a74491346
+2016-06-05 15:29:26.3060 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: 031b0e2d-894a-4fd1-b17c-395ca76fcd9d
+2016-06-05 15:29:26.3060 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: b5fec46e-cb68-4d51-920a-cedb7da983bb Disposing:True
+2016-06-05 15:29:26.4651 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: 8f557d9d-1125-4597-8b9f-d24ef5612679
+2016-06-05 15:29:26.4651 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: b833085c-8c79-4785-8834-074cc15accf9
+2016-06-05 15:29:26.4781 | DEBUG |                                      DAL.UOW..ctor | InstanceId: 64c239ad-bac2-4cd0-a24a-c0ecebb016e5
+2016-06-05 15:29:26.4781 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 22da02aa-f471-469e-9a87-dc89cac7e358
+2016-06-05 15:29:26.4781 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: 17b8ad93-2839-43c3-b3de-3dc438e23482
+2016-06-05 15:29:26.5051 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: 8d678a77-39aa-41f9-8592-a0dc953c5daa dbSet: System.Data.Entity.DbSet`1[Domain.Article]
+2016-06-05 15:29:26.5302 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 15:29 +03:00
+2016-06-05 15:29:26.8426 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [UnionAll1].[ArticleId] AS [C1], 
+    [UnionAll1].[ArticleId1] AS [C2], 
+    [UnionAll1].[ArticleName] AS [C3], 
+    [UnionAll1].[ArticleHeadlineId] AS [C4], 
+    [UnionAll1].[ArticleBodyId] AS [C5], 
+    [UnionAll1].[ArticleId2] AS [C6], 
+    [UnionAll1].[MultiLangStringId] AS [C7], 
+    [UnionAll1].[Value] AS [C8], 
+    [UnionAll1].[Owner] AS [C9], 
+    [UnionAll1].[ArticleId3] AS [C10], 
+    [UnionAll1].[MultiLangStringId1] AS [C11], 
+    [UnionAll1].[Value1] AS [C12], 
+    [UnionAll1].[Owner1] AS [C13], 
+    [UnionAll1].[C1] AS [C14], 
+    [UnionAll1].[TranslationId] AS [C15], 
+    [UnionAll1].[Value2] AS [C16], 
+    [UnionAll1].[MultiLangStringId2] AS [C17], 
+    [UnionAll1].[Culture] AS [C18], 
+    [UnionAll1].[C2] AS [C19], 
+    [UnionAll1].[C3] AS [C20], 
+    [UnionAll1].[C4] AS [C21], 
+    [UnionAll1].[C5] AS [C22]
+    FROM  (SELECT 
+        CASE WHEN ([Extent4].[TranslationId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1], 
+        [Limit1].[ArticleId] AS [ArticleId], 
+        [Limit1].[ArticleId] AS [ArticleId1], 
+        [Limit1].[ArticleName] AS [ArticleName], 
+        [Limit1].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+        [Limit1].[ArticleBodyId] AS [ArticleBodyId], 
+        [Limit1].[ArticleId] AS [ArticleId2], 
+        [Limit1].[MultiLangStringId] AS [MultiLangStringId], 
+        [Limit1].[Value] AS [Value], 
+        [Limit1].[Owner] AS [Owner], 
+        [Limit1].[ArticleId] AS [ArticleId3], 
+        [Limit1].[MultiLangStringId1] AS [MultiLangStringId1], 
+        [Limit1].[Value1] AS [Value1], 
+        [Limit1].[Owner1] AS [Owner1], 
+        [Extent4].[TranslationId] AS [TranslationId], 
+        [Extent4].[Value] AS [Value2], 
+        [Extent4].[MultiLangStringId] AS [MultiLangStringId2], 
+        [Extent4].[Culture] AS [Culture], 
+        CAST(NULL AS int) AS [C2], 
+        CAST(NULL AS varchar(1)) AS [C3], 
+        CAST(NULL AS int) AS [C4], 
+        CAST(NULL AS varchar(1)) AS [C5]
+        FROM   (SELECT TOP (1) 
+            [Extent1].[ArticleId] AS [ArticleId], 
+            [Extent1].[ArticleName] AS [ArticleName], 
+            [Extent1].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+            [Extent1].[ArticleBodyId] AS [ArticleBodyId], 
+            [Extent2].[MultiLangStringId] AS [MultiLangStringId], 
+            [Extent2].[Value] AS [Value], 
+            [Extent2].[Owner] AS [Owner], 
+            [Extent3].[MultiLangStringId] AS [MultiLangStringId1], 
+            [Extent3].[Value] AS [Value1], 
+            [Extent3].[Owner] AS [Owner1]
+            FROM   [dbo].[Article] AS [Extent1]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent2] ON [Extent1].[ArticleHeadlineId] = [Extent2].[MultiLangStringId]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent3] ON [Extent1].[ArticleBodyId] = [Extent3].[MultiLangStringId]
+            WHERE ([Extent1].[ArticleName] = @p__linq__0) OR (([Extent1].[ArticleName] IS NULL) AND (@p__linq__0 IS NULL)) ) AS [Limit1]
+        LEFT OUTER JOIN [dbo].[Translation] AS [Extent4] ON [Limit1].[ArticleHeadlineId] = [Extent4].[MultiLangStringId]
+    UNION ALL
+        SELECT 
+        2 AS [C1], 
+        [Limit2].[ArticleId] AS [ArticleId], 
+        [Limit2].[ArticleId] AS [ArticleId1], 
+        [Limit2].[ArticleName] AS [ArticleName], 
+        [Limit2].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+        [Limit2].[ArticleBodyId] AS [ArticleBodyId], 
+        [Limit2].[ArticleId] AS [ArticleId2], 
+        [Limit2].[MultiLangStringId] AS [MultiLangStringId], 
+        [Limit2].[Value] AS [Value], 
+        [Limit2].[Owner] AS [Owner], 
+        [Limit2].[ArticleId] AS [ArticleId3], 
+        [Limit2].[MultiLangStringId1] AS [MultiLangStringId1], 
+        [Limit2].[Value1] AS [Value1], 
+        [Limit2].[Owner1] AS [Owner1], 
+        CAST(NULL AS int) AS [C2], 
+        CAST(NULL AS varchar(1)) AS [C3], 
+        CAST(NULL AS int) AS [C4], 
+        CAST(NULL AS varchar(1)) AS [C5], 
+        [Extent8].[TranslationId] AS [TranslationId], 
+        [Extent8].[Value] AS [Value2], 
+        [Extent8].[MultiLangStringId] AS [MultiLangStringId2], 
+        [Extent8].[Culture] AS [Culture]
+        FROM   (SELECT TOP (1) 
+            [Extent5].[ArticleId] AS [ArticleId], 
+            [Extent5].[ArticleName] AS [ArticleName], 
+            [Extent5].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+            [Extent5].[ArticleBodyId] AS [ArticleBodyId], 
+            [Extent6].[MultiLangStringId] AS [MultiLangStringId], 
+            [Extent6].[Value] AS [Value], 
+            [Extent6].[Owner] AS [Owner], 
+            [Extent7].[MultiLangStringId] AS [MultiLangStringId1], 
+            [Extent7].[Value] AS [Value1], 
+            [Extent7].[Owner] AS [Owner1]
+            FROM   [dbo].[Article] AS [Extent5]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent6] ON [Extent5].[ArticleHeadlineId] = [Extent6].[MultiLangStringId]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent7] ON [Extent5].[ArticleBodyId] = [Extent7].[MultiLangStringId]
+            WHERE ([Extent5].[ArticleName] = @p__linq__0) OR (([Extent5].[ArticleName] IS NULL) AND (@p__linq__0 IS NULL)) ) AS [Limit2]
+        INNER JOIN [dbo].[Translation] AS [Extent8] ON [Limit2].[ArticleBodyId] = [Extent8].[MultiLangStringId]) AS [UnionAll1]
+    ORDER BY [UnionAll1].[ArticleId1] ASC, [UnionAll1].[MultiLangStringId] ASC, [UnionAll1].[MultiLangStringId1] ASC, [UnionAll1].[C1] ASC
+2016-06-05 15:29:26.8426 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:29:26.8546 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: 'HomeIndex' (Type = String, Size = 4000)
+2016-06-05 15:29:26.8546 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 15:29 +03:00
+2016-06-05 15:29:26.9251 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 59 ms with result: SqlDataReader
+2016-06-05 15:29:26.9307 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:29:26.9597 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 15:29 +03:00
+2016-06-05 15:29:26.9647 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: b70b2c2d-1812-4231-b869-8922cdd3c5fb dbSet: System.Data.Entity.DbSet`1[Domain.Person]
+2016-06-05 15:29:26.9647 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 15:29 +03:00
+2016-06-05 15:29:26.9817 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Project1].[PersonId] AS [PersonId], 
+    [Project1].[UserId] AS [UserId], 
+    [Project1].[FirstName] AS [FirstName], 
+    [Project1].[LastName] AS [LastName], 
+    [Project1].[Registered] AS [Registered], 
+    [Project1].[Gender] AS [Gender], 
+    [Project1].[Email] AS [Email], 
+    [Project1].[Password] AS [Password], 
+    [Project1].[TelNr] AS [TelNr], 
+    [Project1].[BankNr] AS [BankNr], 
+    [Project1].[Locked] AS [Locked], 
+    [Project1].[Money] AS [Money], 
+    [Project1].[Invited] AS [Invited], 
+    [Project1].[Raiting] AS [Raiting]
+    FROM ( SELECT 
+        [Extent1].[PersonId] AS [PersonId], 
+        [Extent1].[UserId] AS [UserId], 
+        [Extent1].[FirstName] AS [FirstName], 
+        [Extent1].[LastName] AS [LastName], 
+        [Extent1].[Registered] AS [Registered], 
+        [Extent1].[Gender] AS [Gender], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[Password] AS [Password], 
+        [Extent1].[TelNr] AS [TelNr], 
+        [Extent1].[BankNr] AS [BankNr], 
+        [Extent1].[Locked] AS [Locked], 
+        [Extent1].[Money] AS [Money], 
+        [Extent1].[Invited] AS [Invited], 
+        [Extent1].[Raiting] AS [Raiting]
+        FROM [dbo].[Person] AS [Extent1]
+        WHERE [Extent1].[UserId] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[LastName] ASC, [Project1].[FirstName] ASC
+2016-06-05 15:29:26.9817 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:29:26.9817 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: '0' (Type = Int32, IsNullable = false)
+2016-06-05 15:29:26.9967 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 15:29 +03:00
+2016-06-05 15:29:26.9967 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 2 ms with result: SqlDataReader
+2016-06-05 15:29:27.0097 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:29:27.0097 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 15:29 +03:00
+2016-06-05 15:29:27.1254 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: 22da02aa-f471-469e-9a87-dc89cac7e358
+2016-06-05 15:29:27.1254 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: 8f557d9d-1125-4597-8b9f-d24ef5612679
+2016-06-05 15:29:27.1349 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: b833085c-8c79-4785-8834-074cc15accf9
+2016-06-05 15:29:27.1349 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: 64c239ad-bac2-4cd0-a24a-c0ecebb016e5 Disposing:True
+2016-06-05 15:30:07.4995 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: ec6b436c-724c-42a9-8bb9-2dff55985ee1
+2016-06-05 15:30:07.4995 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: 20a4b3ab-04be-4de3-939c-40c2506784a7
+2016-06-05 15:30:07.5110 | DEBUG |                                      DAL.UOW..ctor | InstanceId: a01acec7-5040-4aac-a5b4-3973a2e68489
+2016-06-05 15:30:07.5110 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 6389a8e3-958d-4af7-897b-a6c2a7cadc8c
+2016-06-05 15:30:07.5110 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: ee53ab18-3d15-4e4f-bef9-a38ee32c03d4
+2016-06-05 15:30:07.5273 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 3e7b4a1b-3938-4158-a4f6-f71e24125490
+2016-06-05 15:30:07.5273 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: e49ff428-fde7-4765-a724-77f240a315bc
+2016-06-05 15:30:07.5273 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 97df4577-14ab-4a5c-990e-75b2d32fd251
+2016-06-05 15:30:07.5403 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: 38012ca4-eb4b-4cf9-a19a-c9102b1adb2e
+2016-06-05 15:30:07.5403 | DEBUG |                 Web.ApplicationSignInManager..ctor | InstanceId: 18be5c39-1f2e-4681-a177-097e004d5444
+2016-06-05 15:30:07.5403 | DEBUG |            Web.Controllers.AccountController..ctor | InstanceId: c5cd6a71-56ed-40f4-bed9-664512292c3b
+2016-06-05 15:30:17.3471 | DEBUG |          Web.Controllers.AccountController.Dispose | InstanceId: c5cd6a71-56ed-40f4-bed9-664512292c3b Disposing:True
+2016-06-05 15:30:17.3591 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: 6389a8e3-958d-4af7-897b-a6c2a7cadc8c
+2016-06-05 15:30:17.3591 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: ec6b436c-724c-42a9-8bb9-2dff55985ee1
+2016-06-05 15:30:17.3781 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: 20a4b3ab-04be-4de3-939c-40c2506784a7
+2016-06-05 15:30:17.3897 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: a01acec7-5040-4aac-a5b4-3973a2e68489 Disposing:True
+2016-06-05 15:30:47.2364 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: 39a0ec55-e253-4351-b0ce-e20cb4e8db91
+2016-06-05 15:30:47.5131 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: 7797ced0-81cd-49c6-bb64-93e4eed25702
+2016-06-05 15:30:47.5131 | DEBUG |                                      DAL.UOW..ctor | InstanceId: cf1125e9-8383-42a8-b25a-6521b77c480a
+2016-06-05 15:30:47.5331 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 2b0ee5dc-0152-484e-a431-e35a783080f0
+2016-06-05 15:30:47.5411 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: 19d69576-8399-4719-a01a-138374c5e83e
+2016-06-05 15:30:47.5411 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 424532d6-1e72-4f0b-98af-9a2260cd4715
+2016-06-05 15:30:47.5561 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: 1c37751a-2857-49da-ad6d-39ee95802ce1
+2016-06-05 15:30:47.5561 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832
+2016-06-05 15:30:47.5561 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: daa16eb9-daa3-4dc8-8d37-c846d3aa9e67
+2016-06-05 15:30:47.5561 | DEBUG |                 Web.ApplicationSignInManager..ctor | InstanceId: 215d9b17-8dba-470e-b344-0afb2445cc6a
+2016-06-05 15:30:47.5731 | DEBUG |            Web.Controllers.AccountController..ctor | InstanceId: 9ddba5cc-2277-47d4-bdad-b8b5439cd2c9
+2016-06-05 15:30:47.6382 | DEBUG |              Identity.UserStore`11.FindByNameAsync | InstanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832
+2016-06-05 15:30:47.6382 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: a887cefa-4218-48b0-933b-6b5e70bf3972 dbSet: System.Data.Entity.DbSet`1[Domain.Identity.UserInt]
+2016-06-05 15:30:47.6512 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:47.6759 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT TOP (1) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[SecurityStamp] AS [SecurityStamp], 
+    [Extent1].[PhoneNumber] AS [PhoneNumber], 
+    [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Extent1].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[FirstName] AS [FirstName], 
+    [Extent1].[LastName] AS [LastName]
+    FROM [dbo].[UserInt] AS [Extent1]
+    WHERE ((UPPER([Extent1].[UserName])) = (UPPER(@p__linq__0))) OR ((UPPER([Extent1].[UserName]) IS NULL) AND (UPPER(@p__linq__0) IS NULL))
+2016-06-05 15:30:47.6809 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:30:47.6809 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: 'test@mail.com' (Type = String, Size = 4000)
+2016-06-05 15:30:47.6809 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:47.7915 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 95 ms with result: SqlDataReader
+2016-06-05 15:30:47.7915 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:30:47.7915 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:47.8095 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832 userId:3
+2016-06-05 15:30:47.8095 | INFO |                Identity.UserStore`11.FindByIdAsync | result: test@mail.com
+2016-06-05 15:30:47.8095 | DEBUG |       Identity.UserStore`11.GetLockoutEnabledAsync | InstanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832
+2016-06-05 15:30:47.8225 | DEBUG |       Identity.UserStore`11.GetLockoutEndDateAsync | InstanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832
+2016-06-05 15:30:47.8225 | DEBUG |         Identity.UserStore`11.GetPasswordHashAsync | InstanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832
+2016-06-05 15:30:47.8966 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832 userId:3
+2016-06-05 15:30:47.9016 | INFO |                Identity.UserStore`11.FindByIdAsync | result: test@mail.com
+2016-06-05 15:30:47.9016 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832 userId:3
+2016-06-05 15:30:47.9016 | INFO |                Identity.UserStore`11.FindByIdAsync | result: test@mail.com
+2016-06-05 15:30:47.9196 | DEBUG |    Identity.UserStore`11.GetAccessFailedCountAsync | InstanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832
+2016-06-05 15:30:47.9306 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832 userId:3
+2016-06-05 15:30:47.9306 | INFO |                Identity.UserStore`11.FindByIdAsync | result: test@mail.com
+2016-06-05 15:30:47.9306 | DEBUG |     Identity.UserStore`11.GetTwoFactorEnabledAsync | InstanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832
+2016-06-05 15:30:47.9491 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832 userId:3
+2016-06-05 15:30:47.9491 | INFO |                Identity.UserStore`11.FindByIdAsync | result: test@mail.com
+2016-06-05 15:30:47.9491 | INFO |        Identity.UserStore`11.GetSecurityStampAsync | _instanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832 user.SecurityStamp:3e891972-a3b5-4656-a09a-4e93daccd294
+2016-06-05 15:30:47.9621 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832 userId:3
+2016-06-05 15:30:47.9621 | INFO |                Identity.UserStore`11.FindByIdAsync | result: test@mail.com
+2016-06-05 15:30:47.9621 | INFO |                Identity.UserStore`11.GetRolesAsync | _instanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832 user.Email:test@mail.com
+2016-06-05 15:30:47.9621 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: e6a98428-00b4-4ac7-af93-e45641d6cd13 dbSet: System.Data.Entity.DbSet`1[Domain.Identity.RoleInt]
+2016-06-05 15:30:47.9816 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:47.9816 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name]
+    FROM  [dbo].[RoleInt] AS [Extent1]
+    INNER JOIN [dbo].[UserRoleInt] AS [Extent2] ON ([Extent1].[Id] = [Extent2].[RoleId]) AND ([Extent2].[UserId] = @p__linq__0)
+2016-06-05 15:30:47.9816 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:30:47.9966 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: '3' (Type = Int32, IsNullable = false)
+2016-06-05 15:30:47.9966 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:47.9966 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 0 ms with result: SqlDataReader
+2016-06-05 15:30:48.0127 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:30:48.0127 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:48.0127 | INFO |                Identity.UserStore`11.FindByIdAsync | _instanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832 userId:3
+2016-06-05 15:30:48.0267 | INFO |                Identity.UserStore`11.FindByIdAsync | result: test@mail.com
+2016-06-05 15:30:48.0267 | DEBUG |               Identity.UserStore`11.GetClaimsAsync | InstanceId: 4eb25646-6db2-4d22-8f8b-1df1bed0a832
+2016-06-05 15:30:48.0267 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:48.0267 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[UserId] AS [UserId], 
+    [Extent1].[ClaimType] AS [ClaimType], 
+    [Extent1].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[UserClaimInt] AS [Extent1]
+    WHERE [Extent1].[UserId] = @EntityKeyValue1
+2016-06-05 15:30:48.0447 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:30:48.0447 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- EntityKeyValue1: '3' (Type = Int32, IsNullable = false)
+2016-06-05 15:30:48.0447 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:48.0587 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 0 ms with result: SqlDataReader
+2016-06-05 15:30:48.0587 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:30:48.0587 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:48.0807 | DEBUG |          Web.Controllers.AccountController.Dispose | InstanceId: 9ddba5cc-2277-47d4-bdad-b8b5439cd2c9 Disposing:True
+2016-06-05 15:30:48.0807 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: 2b0ee5dc-0152-484e-a431-e35a783080f0
+2016-06-05 15:30:48.0907 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: 39a0ec55-e253-4351-b0ce-e20cb4e8db91
+2016-06-05 15:30:48.0907 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: 7797ced0-81cd-49c6-bb64-93e4eed25702
+2016-06-05 15:30:48.0907 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: cf1125e9-8383-42a8-b25a-6521b77c480a Disposing:True
+2016-06-05 15:30:48.2118 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: e24512c9-fbc5-4985-afe9-537ce9e5bf38
+2016-06-05 15:30:48.2118 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: 4ae3bc4f-a64a-4ee0-a982-af29ed3dafba
+2016-06-05 15:30:48.2118 | DEBUG |                                      DAL.UOW..ctor | InstanceId: a2658f72-6abd-4184-8f51-0e7ebd14dcaf
+2016-06-05 15:30:48.2118 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: ac62afd7-e9e5-4e15-aa02-5d8361ad5e51
+2016-06-05 15:30:48.2278 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: 098af75e-8107-472c-94c3-e6f65c8b400a
+2016-06-05 15:30:48.2278 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: 22c152d4-abb4-4352-915c-9ed9c643a211 dbSet: System.Data.Entity.DbSet`1[Domain.Article]
+2016-06-05 15:30:48.2278 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:48.2278 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [UnionAll1].[ArticleId] AS [C1], 
+    [UnionAll1].[ArticleId1] AS [C2], 
+    [UnionAll1].[ArticleName] AS [C3], 
+    [UnionAll1].[ArticleHeadlineId] AS [C4], 
+    [UnionAll1].[ArticleBodyId] AS [C5], 
+    [UnionAll1].[ArticleId2] AS [C6], 
+    [UnionAll1].[MultiLangStringId] AS [C7], 
+    [UnionAll1].[Value] AS [C8], 
+    [UnionAll1].[Owner] AS [C9], 
+    [UnionAll1].[ArticleId3] AS [C10], 
+    [UnionAll1].[MultiLangStringId1] AS [C11], 
+    [UnionAll1].[Value1] AS [C12], 
+    [UnionAll1].[Owner1] AS [C13], 
+    [UnionAll1].[C1] AS [C14], 
+    [UnionAll1].[TranslationId] AS [C15], 
+    [UnionAll1].[Value2] AS [C16], 
+    [UnionAll1].[MultiLangStringId2] AS [C17], 
+    [UnionAll1].[Culture] AS [C18], 
+    [UnionAll1].[C2] AS [C19], 
+    [UnionAll1].[C3] AS [C20], 
+    [UnionAll1].[C4] AS [C21], 
+    [UnionAll1].[C5] AS [C22]
+    FROM  (SELECT 
+        CASE WHEN ([Extent4].[TranslationId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1], 
+        [Limit1].[ArticleId] AS [ArticleId], 
+        [Limit1].[ArticleId] AS [ArticleId1], 
+        [Limit1].[ArticleName] AS [ArticleName], 
+        [Limit1].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+        [Limit1].[ArticleBodyId] AS [ArticleBodyId], 
+        [Limit1].[ArticleId] AS [ArticleId2], 
+        [Limit1].[MultiLangStringId] AS [MultiLangStringId], 
+        [Limit1].[Value] AS [Value], 
+        [Limit1].[Owner] AS [Owner], 
+        [Limit1].[ArticleId] AS [ArticleId3], 
+        [Limit1].[MultiLangStringId1] AS [MultiLangStringId1], 
+        [Limit1].[Value1] AS [Value1], 
+        [Limit1].[Owner1] AS [Owner1], 
+        [Extent4].[TranslationId] AS [TranslationId], 
+        [Extent4].[Value] AS [Value2], 
+        [Extent4].[MultiLangStringId] AS [MultiLangStringId2], 
+        [Extent4].[Culture] AS [Culture], 
+        CAST(NULL AS int) AS [C2], 
+        CAST(NULL AS varchar(1)) AS [C3], 
+        CAST(NULL AS int) AS [C4], 
+        CAST(NULL AS varchar(1)) AS [C5]
+        FROM   (SELECT TOP (1) 
+            [Extent1].[ArticleId] AS [ArticleId], 
+            [Extent1].[ArticleName] AS [ArticleName], 
+            [Extent1].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+            [Extent1].[ArticleBodyId] AS [ArticleBodyId], 
+            [Extent2].[MultiLangStringId] AS [MultiLangStringId], 
+            [Extent2].[Value] AS [Value], 
+            [Extent2].[Owner] AS [Owner], 
+            [Extent3].[MultiLangStringId] AS [MultiLangStringId1], 
+            [Extent3].[Value] AS [Value1], 
+            [Extent3].[Owner] AS [Owner1]
+            FROM   [dbo].[Article] AS [Extent1]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent2] ON [Extent1].[ArticleHeadlineId] = [Extent2].[MultiLangStringId]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent3] ON [Extent1].[ArticleBodyId] = [Extent3].[MultiLangStringId]
+            WHERE ([Extent1].[ArticleName] = @p__linq__0) OR (([Extent1].[ArticleName] IS NULL) AND (@p__linq__0 IS NULL)) ) AS [Limit1]
+        LEFT OUTER JOIN [dbo].[Translation] AS [Extent4] ON [Limit1].[ArticleHeadlineId] = [Extent4].[MultiLangStringId]
+    UNION ALL
+        SELECT 
+        2 AS [C1], 
+        [Limit2].[ArticleId] AS [ArticleId], 
+        [Limit2].[ArticleId] AS [ArticleId1], 
+        [Limit2].[ArticleName] AS [ArticleName], 
+        [Limit2].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+        [Limit2].[ArticleBodyId] AS [ArticleBodyId], 
+        [Limit2].[ArticleId] AS [ArticleId2], 
+        [Limit2].[MultiLangStringId] AS [MultiLangStringId], 
+        [Limit2].[Value] AS [Value], 
+        [Limit2].[Owner] AS [Owner], 
+        [Limit2].[ArticleId] AS [ArticleId3], 
+        [Limit2].[MultiLangStringId1] AS [MultiLangStringId1], 
+        [Limit2].[Value1] AS [Value1], 
+        [Limit2].[Owner1] AS [Owner1], 
+        CAST(NULL AS int) AS [C2], 
+        CAST(NULL AS varchar(1)) AS [C3], 
+        CAST(NULL AS int) AS [C4], 
+        CAST(NULL AS varchar(1)) AS [C5], 
+        [Extent8].[TranslationId] AS [TranslationId], 
+        [Extent8].[Value] AS [Value2], 
+        [Extent8].[MultiLangStringId] AS [MultiLangStringId2], 
+        [Extent8].[Culture] AS [Culture]
+        FROM   (SELECT TOP (1) 
+            [Extent5].[ArticleId] AS [ArticleId], 
+            [Extent5].[ArticleName] AS [ArticleName], 
+            [Extent5].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+            [Extent5].[ArticleBodyId] AS [ArticleBodyId], 
+            [Extent6].[MultiLangStringId] AS [MultiLangStringId], 
+            [Extent6].[Value] AS [Value], 
+            [Extent6].[Owner] AS [Owner], 
+            [Extent7].[MultiLangStringId] AS [MultiLangStringId1], 
+            [Extent7].[Value] AS [Value1], 
+            [Extent7].[Owner] AS [Owner1]
+            FROM   [dbo].[Article] AS [Extent5]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent6] ON [Extent5].[ArticleHeadlineId] = [Extent6].[MultiLangStringId]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent7] ON [Extent5].[ArticleBodyId] = [Extent7].[MultiLangStringId]
+            WHERE ([Extent5].[ArticleName] = @p__linq__0) OR (([Extent5].[ArticleName] IS NULL) AND (@p__linq__0 IS NULL)) ) AS [Limit2]
+        INNER JOIN [dbo].[Translation] AS [Extent8] ON [Limit2].[ArticleBodyId] = [Extent8].[MultiLangStringId]) AS [UnionAll1]
+    ORDER BY [UnionAll1].[ArticleId1] ASC, [UnionAll1].[MultiLangStringId] ASC, [UnionAll1].[MultiLangStringId1] ASC, [UnionAll1].[C1] ASC
+2016-06-05 15:30:48.2468 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:30:48.2468 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: 'HomeIndex' (Type = String, Size = 4000)
+2016-06-05 15:30:48.2468 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:48.2624 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 0 ms with result: SqlDataReader
+2016-06-05 15:30:48.2624 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:30:48.2624 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:48.2759 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: e4d44ef5-dff0-471b-9163-bc79140bbd05 dbSet: System.Data.Entity.DbSet`1[Domain.Person]
+2016-06-05 15:30:48.2759 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:48.2759 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Project1].[PersonId] AS [PersonId], 
+    [Project1].[UserId] AS [UserId], 
+    [Project1].[FirstName] AS [FirstName], 
+    [Project1].[LastName] AS [LastName], 
+    [Project1].[Registered] AS [Registered], 
+    [Project1].[Gender] AS [Gender], 
+    [Project1].[Email] AS [Email], 
+    [Project1].[Password] AS [Password], 
+    [Project1].[TelNr] AS [TelNr], 
+    [Project1].[BankNr] AS [BankNr], 
+    [Project1].[Locked] AS [Locked], 
+    [Project1].[Money] AS [Money], 
+    [Project1].[Invited] AS [Invited], 
+    [Project1].[Raiting] AS [Raiting]
+    FROM ( SELECT 
+        [Extent1].[PersonId] AS [PersonId], 
+        [Extent1].[UserId] AS [UserId], 
+        [Extent1].[FirstName] AS [FirstName], 
+        [Extent1].[LastName] AS [LastName], 
+        [Extent1].[Registered] AS [Registered], 
+        [Extent1].[Gender] AS [Gender], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[Password] AS [Password], 
+        [Extent1].[TelNr] AS [TelNr], 
+        [Extent1].[BankNr] AS [BankNr], 
+        [Extent1].[Locked] AS [Locked], 
+        [Extent1].[Money] AS [Money], 
+        [Extent1].[Invited] AS [Invited], 
+        [Extent1].[Raiting] AS [Raiting]
+        FROM [dbo].[Person] AS [Extent1]
+        WHERE [Extent1].[UserId] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[LastName] ASC, [Project1].[FirstName] ASC
+2016-06-05 15:30:48.2759 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:30:48.2919 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: '3' (Type = Int32, IsNullable = false)
+2016-06-05 15:30:48.2919 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:48.2919 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 0 ms with result: SqlDataReader
+2016-06-05 15:30:48.2919 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:30:48.3099 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 15:30 +03:00
+2016-06-05 15:30:48.3099 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: ac62afd7-e9e5-4e15-aa02-5d8361ad5e51
+2016-06-05 15:30:48.3239 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: e24512c9-fbc5-4985-afe9-537ce9e5bf38
+2016-06-05 15:30:48.3239 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: 4ae3bc4f-a64a-4ee0-a982-af29ed3dafba
+2016-06-05 15:30:48.3399 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: a2658f72-6abd-4184-8f51-0e7ebd14dcaf Disposing:True
+2016-06-05 15:32:12.7738 | DEBUG |             DAL.Helpers.EFRepositoryProvider..ctor | InstanceId: 1c8fd77c-d430-45c1-82da-f5ac17fa8b26
+2016-06-05 15:32:12.7818 | DEBUG |                          DAL.DataBaseContext..ctor | InstanceId: 30a708da-752a-4368-976c-183f54cca57c
+2016-06-05 15:32:12.7818 | DEBUG |                                      DAL.UOW..ctor | InstanceId: 08f1a166-971d-47af-8c6c-ab6e622eb99d
+2016-06-05 15:32:12.7928 | DEBUG |                        Identity.UserStore`11..ctor | InstanceId: de79fc91-b101-4a80-ad91-67dca2e3fed3
+2016-06-05 15:32:12.7928 | DEBUG |                   Web.ApplicationUserManager..ctor | InstanceId: db80cf19-59c2-4b8f-a5bb-cc277d25b1c0
+2016-06-05 15:32:12.7928 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: 031dd31e-f324-4fcb-b068-592afb107f7b dbSet: System.Data.Entity.DbSet`1[Domain.Article]
+2016-06-05 15:32:12.8088 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 15:32 +03:00
+2016-06-05 15:32:12.8088 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [UnionAll1].[ArticleId] AS [C1], 
+    [UnionAll1].[ArticleId1] AS [C2], 
+    [UnionAll1].[ArticleName] AS [C3], 
+    [UnionAll1].[ArticleHeadlineId] AS [C4], 
+    [UnionAll1].[ArticleBodyId] AS [C5], 
+    [UnionAll1].[ArticleId2] AS [C6], 
+    [UnionAll1].[MultiLangStringId] AS [C7], 
+    [UnionAll1].[Value] AS [C8], 
+    [UnionAll1].[Owner] AS [C9], 
+    [UnionAll1].[ArticleId3] AS [C10], 
+    [UnionAll1].[MultiLangStringId1] AS [C11], 
+    [UnionAll1].[Value1] AS [C12], 
+    [UnionAll1].[Owner1] AS [C13], 
+    [UnionAll1].[C1] AS [C14], 
+    [UnionAll1].[TranslationId] AS [C15], 
+    [UnionAll1].[Value2] AS [C16], 
+    [UnionAll1].[MultiLangStringId2] AS [C17], 
+    [UnionAll1].[Culture] AS [C18], 
+    [UnionAll1].[C2] AS [C19], 
+    [UnionAll1].[C3] AS [C20], 
+    [UnionAll1].[C4] AS [C21], 
+    [UnionAll1].[C5] AS [C22]
+    FROM  (SELECT 
+        CASE WHEN ([Extent4].[TranslationId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1], 
+        [Limit1].[ArticleId] AS [ArticleId], 
+        [Limit1].[ArticleId] AS [ArticleId1], 
+        [Limit1].[ArticleName] AS [ArticleName], 
+        [Limit1].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+        [Limit1].[ArticleBodyId] AS [ArticleBodyId], 
+        [Limit1].[ArticleId] AS [ArticleId2], 
+        [Limit1].[MultiLangStringId] AS [MultiLangStringId], 
+        [Limit1].[Value] AS [Value], 
+        [Limit1].[Owner] AS [Owner], 
+        [Limit1].[ArticleId] AS [ArticleId3], 
+        [Limit1].[MultiLangStringId1] AS [MultiLangStringId1], 
+        [Limit1].[Value1] AS [Value1], 
+        [Limit1].[Owner1] AS [Owner1], 
+        [Extent4].[TranslationId] AS [TranslationId], 
+        [Extent4].[Value] AS [Value2], 
+        [Extent4].[MultiLangStringId] AS [MultiLangStringId2], 
+        [Extent4].[Culture] AS [Culture], 
+        CAST(NULL AS int) AS [C2], 
+        CAST(NULL AS varchar(1)) AS [C3], 
+        CAST(NULL AS int) AS [C4], 
+        CAST(NULL AS varchar(1)) AS [C5]
+        FROM   (SELECT TOP (1) 
+            [Extent1].[ArticleId] AS [ArticleId], 
+            [Extent1].[ArticleName] AS [ArticleName], 
+            [Extent1].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+            [Extent1].[ArticleBodyId] AS [ArticleBodyId], 
+            [Extent2].[MultiLangStringId] AS [MultiLangStringId], 
+            [Extent2].[Value] AS [Value], 
+            [Extent2].[Owner] AS [Owner], 
+            [Extent3].[MultiLangStringId] AS [MultiLangStringId1], 
+            [Extent3].[Value] AS [Value1], 
+            [Extent3].[Owner] AS [Owner1]
+            FROM   [dbo].[Article] AS [Extent1]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent2] ON [Extent1].[ArticleHeadlineId] = [Extent2].[MultiLangStringId]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent3] ON [Extent1].[ArticleBodyId] = [Extent3].[MultiLangStringId]
+            WHERE ([Extent1].[ArticleName] = @p__linq__0) OR (([Extent1].[ArticleName] IS NULL) AND (@p__linq__0 IS NULL)) ) AS [Limit1]
+        LEFT OUTER JOIN [dbo].[Translation] AS [Extent4] ON [Limit1].[ArticleHeadlineId] = [Extent4].[MultiLangStringId]
+    UNION ALL
+        SELECT 
+        2 AS [C1], 
+        [Limit2].[ArticleId] AS [ArticleId], 
+        [Limit2].[ArticleId] AS [ArticleId1], 
+        [Limit2].[ArticleName] AS [ArticleName], 
+        [Limit2].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+        [Limit2].[ArticleBodyId] AS [ArticleBodyId], 
+        [Limit2].[ArticleId] AS [ArticleId2], 
+        [Limit2].[MultiLangStringId] AS [MultiLangStringId], 
+        [Limit2].[Value] AS [Value], 
+        [Limit2].[Owner] AS [Owner], 
+        [Limit2].[ArticleId] AS [ArticleId3], 
+        [Limit2].[MultiLangStringId1] AS [MultiLangStringId1], 
+        [Limit2].[Value1] AS [Value1], 
+        [Limit2].[Owner1] AS [Owner1], 
+        CAST(NULL AS int) AS [C2], 
+        CAST(NULL AS varchar(1)) AS [C3], 
+        CAST(NULL AS int) AS [C4], 
+        CAST(NULL AS varchar(1)) AS [C5], 
+        [Extent8].[TranslationId] AS [TranslationId], 
+        [Extent8].[Value] AS [Value2], 
+        [Extent8].[MultiLangStringId] AS [MultiLangStringId2], 
+        [Extent8].[Culture] AS [Culture]
+        FROM   (SELECT TOP (1) 
+            [Extent5].[ArticleId] AS [ArticleId], 
+            [Extent5].[ArticleName] AS [ArticleName], 
+            [Extent5].[ArticleHeadlineId] AS [ArticleHeadlineId], 
+            [Extent5].[ArticleBodyId] AS [ArticleBodyId], 
+            [Extent6].[MultiLangStringId] AS [MultiLangStringId], 
+            [Extent6].[Value] AS [Value], 
+            [Extent6].[Owner] AS [Owner], 
+            [Extent7].[MultiLangStringId] AS [MultiLangStringId1], 
+            [Extent7].[Value] AS [Value1], 
+            [Extent7].[Owner] AS [Owner1]
+            FROM   [dbo].[Article] AS [Extent5]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent6] ON [Extent5].[ArticleHeadlineId] = [Extent6].[MultiLangStringId]
+            INNER JOIN [dbo].[MultiLangString] AS [Extent7] ON [Extent5].[ArticleBodyId] = [Extent7].[MultiLangStringId]
+            WHERE ([Extent5].[ArticleName] = @p__linq__0) OR (([Extent5].[ArticleName] IS NULL) AND (@p__linq__0 IS NULL)) ) AS [Limit2]
+        INNER JOIN [dbo].[Translation] AS [Extent8] ON [Limit2].[ArticleBodyId] = [Extent8].[MultiLangStringId]) AS [UnionAll1]
+    ORDER BY [UnionAll1].[ArticleId1] ASC, [UnionAll1].[MultiLangStringId] ASC, [UnionAll1].[MultiLangStringId1] ASC, [UnionAll1].[C1] ASC
+2016-06-05 15:32:12.8088 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:32:12.8248 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: 'HomeIndex' (Type = String, Size = 4000)
+2016-06-05 15:32:12.8248 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 15:32 +03:00
+2016-06-05 15:32:12.8248 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 0 ms with result: SqlDataReader
+2016-06-05 15:32:12.8398 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:32:12.8398 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 15:32 +03:00
+2016-06-05 15:32:12.8398 | INFO |              DAL.Repositories.EFRepository`1..ctor | _instanceId: 2ddb1110-cdeb-4560-a541-2626e09073e8 dbSet: System.Data.Entity.DbSet`1[Domain.Person]
+2016-06-05 15:32:12.8569 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Opened connection at 05.06.2016 15:32 +03:00
+2016-06-05 15:32:12.8569 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+SELECT 
+    [Project1].[PersonId] AS [PersonId], 
+    [Project1].[UserId] AS [UserId], 
+    [Project1].[FirstName] AS [FirstName], 
+    [Project1].[LastName] AS [LastName], 
+    [Project1].[Registered] AS [Registered], 
+    [Project1].[Gender] AS [Gender], 
+    [Project1].[Email] AS [Email], 
+    [Project1].[Password] AS [Password], 
+    [Project1].[TelNr] AS [TelNr], 
+    [Project1].[BankNr] AS [BankNr], 
+    [Project1].[Locked] AS [Locked], 
+    [Project1].[Money] AS [Money], 
+    [Project1].[Invited] AS [Invited], 
+    [Project1].[Raiting] AS [Raiting]
+    FROM ( SELECT 
+        [Extent1].[PersonId] AS [PersonId], 
+        [Extent1].[UserId] AS [UserId], 
+        [Extent1].[FirstName] AS [FirstName], 
+        [Extent1].[LastName] AS [LastName], 
+        [Extent1].[Registered] AS [Registered], 
+        [Extent1].[Gender] AS [Gender], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[Password] AS [Password], 
+        [Extent1].[TelNr] AS [TelNr], 
+        [Extent1].[BankNr] AS [BankNr], 
+        [Extent1].[Locked] AS [Locked], 
+        [Extent1].[Money] AS [Money], 
+        [Extent1].[Invited] AS [Invited], 
+        [Extent1].[Raiting] AS [Raiting]
+        FROM [dbo].[Person] AS [Extent1]
+        WHERE [Extent1].[UserId] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[LastName] ASC, [Project1].[FirstName] ASC
+2016-06-05 15:32:12.8684 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:32:12.8684 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- p__linq__0: '3' (Type = Int32, IsNullable = false)
+2016-06-05 15:32:12.8684 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Executing at 05.06.2016 15:32 +03:00
+2016-06-05 15:32:12.9179 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | -- Completed in 32 ms with result: SqlDataReader
+2016-06-05 15:32:12.9179 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | 
+2016-06-05 15:32:12.9179 | INFO |                  DAL.DataBaseContext.<.ctor>b__2_1 | Closed connection at 05.06.2016 15:32 +03:00
+2016-06-05 15:32:17.1576 | DEBUG |                      Identity.UserStore`11.Dispose | InstanceId: de79fc91-b101-4a80-ad91-67dca2e3fed3
+2016-06-05 15:32:17.1576 | DEBUG |           DAL.Helpers.EFRepositoryProvider.Dispose | InstanceId: 1c8fd77c-d430-45c1-82da-f5ac17fa8b26
+2016-06-05 15:32:17.1656 | INFO |                        DAL.DataBaseContext.Dispose | Disposing: True _instanceId: 30a708da-752a-4368-976c-183f54cca57c
+2016-06-05 15:32:17.1656 | DEBUG |                                    DAL.UOW.Dispose | InstanceId: 08f1a166-971d-47af-8c6c-ab6e622eb99d Disposing:True
