@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using BLL.DTO;
@@ -13,7 +8,6 @@ using BLL.Services;
 using DAL;
 using DAL.Interfaces;
 using DAL.Repositories;
-using Domain.Video;
 
 namespace Web.Controllers.api
 {
@@ -40,18 +34,12 @@ namespace Web.Controllers.api
         //}
 
         // GET: Videos
-        [HttpGet]
-        public List<VideoDTO> GetRekt()
+        [ResponseType(typeof(VideoDTO))]
+        public List<VideoDTO> Get()
         {
             return _service.GetAllVideoDtos();
         }
         //private DataBaseContext db = new DataBaseContext();
-
-        //// GET: api/Videos
-        //public IQueryable<Domain.Video.Video> GetVideos()
-        //{
-        //    return db.Videos;
-        //}
 
         // GET: api/Videos/5
         [ResponseType(typeof(VideoDTO))]
@@ -64,6 +52,63 @@ namespace Web.Controllers.api
             }
 
             return Ok(video);
+        }
+
+
+        // POST: api/Videos
+        [ResponseType(typeof(VideoDTO))]
+        public IHttpActionResult PostVideo(Domain.Video.Video video)
+        {
+            if (!ModelState.IsValid)
+            {
+                
+                return BadRequest(ModelState);
+            }
+            //VideoDTO videoDto = new VideoDTO()
+            //{
+            //    VideoId =  video.VideoId,
+            //    Title = video.Title,
+            //    YoutubeVideoId = video.YoutubeVideoId
+            //};
+            _repo.Add(video);
+            _repo.SaveChanges();
+            return Ok();
+            //May breake, "DefaultApi" replaced with "api/Videos"
+            //return CreatedAtRoute("api/Videos", new { id = video.VideoId }, video); //TODO shows post result in redirected page
+        }
+
+
+
+        // PUT: api/Videos/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutVideoByIntId(int id, Domain.Video.Video video)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != video.VideoId)
+            {
+                return BadRequest();
+            }
+            _repo.Add(video);
+            try
+            {
+                _repo.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (_service.GetVideoByIntIdDto(id) == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         //// PUT: api/Videos/5

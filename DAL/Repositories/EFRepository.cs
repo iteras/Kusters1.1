@@ -168,5 +168,10 @@ namespace DAL.Repositories
         {
             _logger.Debug("InstanceId: " + _instanceId);
         }
+
+        public void SaveChanges()
+        {
+            ((DbContext)DbContext).SaveChanges(); //should work
+        }
     }
 }
