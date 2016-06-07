@@ -17,7 +17,7 @@ namespace BLL.Factories
             {
                 PlaylistId = playlist.PlaylistId,
                 PlaylistName = playlist.PlaylistName,
-                VideoIds = playlist.VideoIds
+                YoutubeVideoId = playlist.YoutubeVideoId
             };
         }
     }

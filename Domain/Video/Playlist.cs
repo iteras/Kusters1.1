@@ -13,11 +13,14 @@ namespace Domain.Video
     {
         [Key]
        public int PlaylistId { get; set; }
-
+        [Required]
         [MaxLength(64)]
         [MinLength(1)]
        public string PlaylistName { get; set; }
-       public List<int> VideoIds { get; set; }
+        [MaxLength(20)]
+        [MinLength(1)]
+        [Required]
+       public string YoutubeVideoId { get; set; }
 
         [ForeignKey(nameof(User))]
         public int UserId { get; set; }

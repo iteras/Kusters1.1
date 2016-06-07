@@ -139,6 +139,10 @@
     <Compile Include="Migrations\201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.Designer.cs">
       <DependentUpon>201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606071912184_playlistModelUpgraded.cs" />
+    <Compile Include="Migrations\201606071912184_playlistModelUpgraded.Designer.cs">
+      <DependentUpon>201606071912184_playlistModelUpgraded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NLogCommandInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.resx">
       <DependentUpon>201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606071912184_playlistModelUpgraded.resx">
+      <DependentUpon>201606071912184_playlistModelUpgraded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

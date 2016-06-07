@@ -1,6 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using BLL.DTO;
@@ -8,60 +13,38 @@ using BLL.Services;
 using DAL;
 using DAL.Interfaces;
 using DAL.Repositories;
+using Domain.Video;
 
-namespace Web.Controllers.api
+namespace Web.Controllers.Video.VideoControllers
 {
-    [AllowAnonymous]
-    public class VideosController : ApiController
+    public class PlaylistsController : ApiController
     {
-        private IVideoRepository _repo;
-        private VideoService _service;
+        private IPlaylistRepository _repo;
+        private PlaylistService _service;
 
         private readonly NLog.ILogger _logger;
 
 
 
-        public VideosController()
+        public PlaylistsController()
         {
-            this._repo = new VideoRepository(new DataBaseContext(_logger));
-            this._service = new VideoService();
+            this._repo = new PlaylistRepository(new DataBaseContext(_logger));
+            this._service = new PlaylistService();
         }
 
-
-        //public string Get()
-        //{
-        //    return "OK!";
-        //}
-
-        // GET: Videos
-        [ResponseType(typeof(VideoDTO))]
-        public List<VideoDTO> Get()
+        [ResponseType(typeof(PlaylistDTO))]
+        public List<PlaylistDTO> GetAllPlaylists()
         {
-            return _service.GetAllVideoDtos();
+            return _service.GetAllPlaylistDtos();
         }
-        //private DataBaseContext db = new DataBaseContext();
-
-        // GET: api/Videos/5
-        [ResponseType(typeof(VideoDTO))]
-        public IHttpActionResult GetVideoByIntId(int id)
-        {
-            var video = _service.GetVideoByIntIdDto(id);
-            if (video == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(video);
-        }
-
 
         // POST: api/Videos
-        [ResponseType(typeof(VideoDTO))]
-        public IHttpActionResult PostVideo(Domain.Video.Video video)
+        [ResponseType(typeof(PlaylistDTO))]
+        public IHttpActionResult PostVideo(Domain.Video.Playlist playlist)
         {
             if (!ModelState.IsValid)
             {
-                
+
                 return BadRequest(ModelState);
             }
             //VideoDTO videoDto = new VideoDTO()
@@ -70,36 +53,34 @@ namespace Web.Controllers.api
             //    Title = video.Title,
             //    YoutubeVideoId = video.YoutubeVideoId
             //};
-            _repo.Add(video);
+            _repo.Add(playlist);
             _repo.SaveChanges();
             return Ok();
             //May breake, "DefaultApi" replaced with "api/Videos"
             //return CreatedAtRoute("api/Videos", new { id = video.VideoId }, video); //TODO shows post result in redirected page
         }
 
-
-
-        // PUT: api/Videos/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutVideoByIntId(int id, Domain.Video.Video video)
+        public IHttpActionResult PutPlaylist(int id,Playlist playlist)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != video.VideoId)
+            if (id != playlist.PlaylistId)
             {
                 return BadRequest();
             }
-            _repo.Add(video);
+
+            _repo.Add(playlist);
+
             try
             {
                 _repo.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (_service.GetVideoByIntIdDto(id) == null)
+                if (_repo.GetById(id) == null)
                 {
                     return NotFound();
                 }
@@ -108,23 +89,24 @@ namespace Web.Controllers.api
                     throw;
                 }
             }
-            return StatusCode(HttpStatusCode.NoContent);
+
+            return Ok();
         }
 
-        // DELETE: api/Videos/5
-        [ResponseType(typeof(Domain.Video.Video))]
-        public IHttpActionResult DeleteVideo(int id)
+        // DELETE: api/Playlists/5
+        [ResponseType(typeof(Playlist))]
+        public IHttpActionResult DeletePlaylist(int id)
         {
-            Domain.Video.Video video = _repo.GetById(id);
-            if (video == null)
+            Playlist playlist = _repo.GetById(id);
+            if (playlist == null)
             {
                 return NotFound();
             }
 
-            _repo.Delete(video);
+            _repo.Delete(playlist);
             _repo.SaveChanges();
 
-            return Ok(video);
+            return Ok(playlist);
         }
 
         protected override void Dispose(bool disposing)
@@ -136,25 +118,36 @@ namespace Web.Controllers.api
             base.Dispose(disposing);
         }
 
-                
 
 
+        //// GET: api/Playlists/5
+        //[ResponseType(typeof(Playlist))]
+        //public IHttpActionResult GetPlaylist(int id)
+        //{
+        //    Playlist playlist = db.Playlists.Find(id);
+        //    if (playlist == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-        //// PUT: api/Videos/5
+        //    return Ok(playlist);
+        //}
+
+        //// PUT: api/Playlists/5
         //[ResponseType(typeof(void))]
-        //public IHttpActionResult PutVideo(int id, Video video)
+        //public IHttpActionResult PutPlaylist(int id, Playlist playlist)
         //{
         //    if (!ModelState.IsValid)
         //    {
         //        return BadRequest(ModelState);
         //    }
 
-        //    if (id != video.VideoId)
+        //    if (id != playlist.PlaylistId)
         //    {
         //        return BadRequest();
         //    }
 
-        //    db.Entry(video).State = EntityState.Modified;
+        //    db.Entry(playlist).State = EntityState.Modified;
 
         //    try
         //    {
@@ -162,7 +155,7 @@ namespace Web.Controllers.api
         //    }
         //    catch (DbUpdateConcurrencyException)
         //    {
-        //        if (!VideoExists(id))
+        //        if (!PlaylistExists(id))
         //        {
         //            return NotFound();
         //        }
@@ -175,35 +168,35 @@ namespace Web.Controllers.api
         //    return StatusCode(HttpStatusCode.NoContent);
         //}
 
-        //// POST: api/Videos
-        //[ResponseType(typeof(Video))]
-        //public IHttpActionResult PostVideo(Video video)
+        //// POST: api/Playlists
+        //[ResponseType(typeof(Playlist))]
+        //public IHttpActionResult PostPlaylist(Playlist playlist)
         //{
         //    if (!ModelState.IsValid)
         //    {
         //        return BadRequest(ModelState);
         //    }
 
-        //    db.Videos.Add(video);
+        //    db.Playlists.Add(playlist);
         //    db.SaveChanges();
 
-        //    return CreatedAtRoute("DefaultApi", new { id = video.VideoId }, video);
+        //    return CreatedAtRoute("DefaultApi", new { id = playlist.PlaylistId }, playlist);
         //}
 
-        //// DELETE: api/Videos/5
-        //[ResponseType(typeof(Video))]
-        //public IHttpActionResult DeleteVideo(int id)
+        //// DELETE: api/Playlists/5
+        //[ResponseType(typeof(Playlist))]
+        //public IHttpActionResult DeletePlaylist(int id)
         //{
-        //    Video video = db.Videos.Find(id);
-        //    if (video == null)
+        //    Playlist playlist = db.Playlists.Find(id);
+        //    if (playlist == null)
         //    {
         //        return NotFound();
         //    }
 
-        //    db.Videos.Remove(video);
+        //    db.Playlists.Remove(playlist);
         //    db.SaveChanges();
 
-        //    return Ok(video);
+        //    return Ok(playlist);
         //}
 
         //protected override void Dispose(bool disposing)
@@ -215,9 +208,9 @@ namespace Web.Controllers.api
         //    base.Dispose(disposing);
         //}
 
-        //private bool VideoExists(int id)
+        //private bool PlaylistExists(int id)
         //{
-        //    return db.Videos.Count(e => e.VideoId == id) > 0;
+        //    return db.Playlists.Count(e => e.PlaylistId == id) > 0;
         //}
     }
 }

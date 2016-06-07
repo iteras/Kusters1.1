@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BLL.DTO;
 using BLL.Factories;
 using DAL;
 using DAL.Repositories;
+using Domain.Video;
 
 namespace BLL.Services
 {
@@ -21,6 +23,23 @@ namespace BLL.Services
             this._factory = new PlaylistFactory();
         }
 
-        //public List<> //TODO listi on vaja
+
+        /*
+         * Get all playlists
+         */
+        public List<PlaylistDTO> GetAllPlaylistDtos()
+        {
+            return _repo.All.Select(x => _factory.CreateBasicPlaylistDto(x)).ToList();
+        }
+
+        /*
+         * Get all playlists for userId
+         * IS NOT PERSON, IS USER - RECOGNISED BY LOGIN INFO
+         */
+        public List<PlaylistDTO> GetAllPlaylistsForUserByUserIntId(int userIntId)
+        {
+            return _repo.All.Where(x => x.UserId == userIntId).Select(x => _factory.CreateBasicPlaylistDto(x)).ToList();
+        } 
+       
     }
 }

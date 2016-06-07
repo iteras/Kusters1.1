@@ -17,7 +17,7 @@ namespace BLL.DTO
         [MaxLength(64)]
         [MinLength(1)]
         public string PlaylistName { get; set; }
-        public List<int> VideoIds { get; set; } //just in case
+        public string YoutubeVideoId { get; set; } //just in case
 
         //public virtual List<VideoInPlaylist> VideoInPlaylists { get; set; }
     }
