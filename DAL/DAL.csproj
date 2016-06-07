@@ -100,58 +100,72 @@
     <Compile Include="Helpers\EFRepositoryFactories.cs" />
     <Compile Include="Helpers\EFRepositoryProvider.cs" />
     <Compile Include="Helpers\FormattedDbEntityValidationException.cs" />
-    <Compile Include="Interfaces\IArticleRepository.cs" />
-    <Compile Include="Interfaces\ICampaignRepository.cs" />
-    <Compile Include="Interfaces\IChatRepository.cs" />
-    <Compile Include="Interfaces\IContactRepository.cs" />
-    <Compile Include="Interfaces\IContractRepository.cs" />
-    <Compile Include="Interfaces\IDbContext.cs" />
-    <Compile Include="Interfaces\IDealRepository.cs" />
-    <Compile Include="Interfaces\IDescriptionRepository.cs" />
+    <Compile Include="Interfaces\Video\IVideoInPlaylistRepository.cs" />
+    <Compile Include="Interfaces\Video\IVideoRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IArticleRepository.cs" />
+    <Compile Include="Interfaces\Kusters\ICampaignRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IChatRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IContactRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IContractRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IDbContext.cs" />
+    <Compile Include="Interfaces\Kusters\IDealRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IDescriptionRepository.cs" />
     <Compile Include="Interfaces\IEFRepository.cs" />
     <Compile Include="Interfaces\IEFRepositoryProvider.cs" />
-    <Compile Include="Interfaces\IPersonInChatRepository.cs" />
-    <Compile Include="Interfaces\IPersonInContractRepository.cs" />
-    <Compile Include="Interfaces\IPersonInDealRepository.cs" />
-    <Compile Include="Interfaces\IPersonInPretension.cs" />
-    <Compile Include="Interfaces\IPersonRepository.cs" />
-    <Compile Include="Interfaces\IPictureRepository.cs" />
-    <Compile Include="Interfaces\IPretensionRepository.cs" />
-    <Compile Include="Interfaces\IProductRepository.cs" />
-    <Compile Include="Interfaces\IRoleRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IPersonInChatRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IPersonInContractRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IPersonInDealRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IPersonInPretension.cs" />
+    <Compile Include="Interfaces\Kusters\IPersonRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IPictureRepository.cs" />
+    <Compile Include="Interfaces\Video\IPlaylistRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IPretensionRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IProductRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IRoleRepository.cs" />
     <Compile Include="Interfaces\IUOW.cs" />
-    <Compile Include="Interfaces\IUserClaimRepository.cs" />
-    <Compile Include="Interfaces\IUserLoginRepository.cs" />
-    <Compile Include="Interfaces\IUserRepository.cs" />
-    <Compile Include="Interfaces\IUserRoleRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IUserClaimRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IUserLoginRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IUserRepository.cs" />
+    <Compile Include="Interfaces\Kusters\IUserRoleRepository.cs" />
     <Compile Include="Migrations\201605272133086_usad.cs" />
     <Compile Include="Migrations\201605272133086_usad.Designer.cs">
       <DependentUpon>201605272133086_usad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606070923293_videoAdded.cs" />
+    <Compile Include="Migrations\201606070923293_videoAdded.Designer.cs">
+      <DependentUpon>201606070923293_videoAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.cs" />
+    <Compile Include="Migrations\201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.Designer.cs">
+      <DependentUpon>201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NLogCommandInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ArticleRepository.cs" />
-    <Compile Include="Repositories\CampaignRepository.cs" />
-    <Compile Include="Repositories\ChatRepository.cs" />
-    <Compile Include="Repositories\ContactRepository.cs" />
-    <Compile Include="Repositories\ContractRepository.cs" />
-    <Compile Include="Repositories\DealRepository.cs" />
-    <Compile Include="Repositories\DescriptionRepository.cs" />
+    <Compile Include="Repositories\Kusters\ArticleRepository.cs" />
+    <Compile Include="Repositories\Kusters\CampaignRepository.cs" />
+    <Compile Include="Repositories\Kusters\ChatRepository.cs" />
+    <Compile Include="Repositories\Kusters\ContactRepository.cs" />
+    <Compile Include="Repositories\Kusters\ContractRepository.cs" />
+    <Compile Include="Repositories\Kusters\DealRepository.cs" />
+    <Compile Include="Repositories\Kusters\DescriptionRepository.cs" />
     <Compile Include="Repositories\EFRepository.cs" />
-    <Compile Include="Repositories\PersonInChatRepository.cs" />
-    <Compile Include="Repositories\PersonInContractRepository.cs" />
-    <Compile Include="Repositories\PersonInDealRepository.cs" />
-    <Compile Include="Repositories\PersonInPretensionRepository.cs" />
-    <Compile Include="Repositories\PersonRepository.cs" />
-    <Compile Include="Repositories\PictureRepository.cs" />
-    <Compile Include="Repositories\PretensionRepository.cs" />
-    <Compile Include="Repositories\ProductRepository.cs" />
-    <Compile Include="Repositories\RoleRepository.cs" />
-    <Compile Include="Repositories\UserClaimRepository.cs" />
-    <Compile Include="Repositories\UserLoginRepository.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="Repositories\UserRoleRepository.cs" />
+    <Compile Include="Repositories\Kusters\PersonInChatRepository.cs" />
+    <Compile Include="Repositories\Kusters\PersonInContractRepository.cs" />
+    <Compile Include="Repositories\Kusters\PersonInDealRepository.cs" />
+    <Compile Include="Repositories\Kusters\PersonInPretensionRepository.cs" />
+    <Compile Include="Repositories\Kusters\PersonRepository.cs" />
+    <Compile Include="Repositories\Kusters\PictureRepository.cs" />
+    <Compile Include="Repositories\Video\PlaylistRepository.cs" />
+    <Compile Include="Repositories\Kusters\PretensionRepository.cs" />
+    <Compile Include="Repositories\Kusters\ProductRepository.cs" />
+    <Compile Include="Repositories\Kusters\RoleRepository.cs" />
+    <Compile Include="Repositories\Kusters\UserClaimRepository.cs" />
+    <Compile Include="Repositories\Kusters\UserLoginRepository.cs" />
+    <Compile Include="Repositories\Kusters\UserRepository.cs" />
+    <Compile Include="Repositories\Kusters\UserRoleRepository.cs" />
+    <Compile Include="Repositories\Video\VideoInPlaylistRepository.cs" />
+    <Compile Include="Repositories\Video\VideoRepository.cs" />
     <Compile Include="UOW.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +189,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605272133086_usad.resx">
       <DependentUpon>201605272133086_usad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606070923293_videoAdded.resx">
+      <DependentUpon>201606070923293_videoAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.resx">
+      <DependentUpon>201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

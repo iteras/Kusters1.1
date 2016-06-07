@@ -12,6 +12,7 @@ using DAL.Helpers;
 using DAL.Interfaces;
 using Domain;
 using Domain.Identity;
+using Domain.Video;
 using Ninject;
 using NLog;
 using Resources;
@@ -28,8 +29,11 @@ namespace DAL
             : base("name=DataBaseConnectionStr")
         {
             _logger = logger;
+            if (_logger == null)
+            {
+                return;
+            }
             _logger.Debug("InstanceId: " + _instanceId);
-
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataBaseContext,Migrations.Configuration>());
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DataBaseContext>());
             Database.SetInitializer(new DatabaseInitializer());
@@ -77,7 +81,7 @@ namespace DAL
         public IDbSet<Article> Articles { get; set; }
         public IDbSet<MultiLangString> MultiLangStrings { get; set; }
         public IDbSet<Translation> Translations { get; set; }
-
+        public IDbSet<Video> Videos { get; set; } 
 
         // Identity tables, PK - string
         //public IDbSet<Role> Roles { get; set; }

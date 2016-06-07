@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using Domain;
 using Domain.Identity;
+using Domain.Video;
 using Microsoft.AspNet.Identity;
 
 namespace DAL
@@ -107,8 +108,19 @@ namespace DAL
             });
             context.SaveChanges();
 
+            context.Videos.Add(new Video()
+            {
+                Title = "Intz hate",
+                YoutubeVideoId = "E5ONTXHS2mM"
+            });
 
+            context.Videos.Add(new Video()
+            {
+                Title = "Impz way",
+                YoutubeVideoId = "YS-5oD2Y4Wk"
+            });
 
+            context.SaveChanges();
             context.ContactTypes.Add(new ContactType()
             {
                 ContactTypeName = new MultiLangString("Skype", "en", "Skype", "ContactType.0")

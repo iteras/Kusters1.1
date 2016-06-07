@@ -303,6 +303,7 @@ a:focus {
   padding: 0 15px;
   font-weight: 300;
   overflow: hidden;
+    z-index: 800;
 }
 .main-header .logo .logo-lg {
   display: block;
@@ -401,6 +402,9 @@ a:focus {
   .main-header .navbar-custom-menu {
     float: right;
   }
+}
+.navbar-custom {
+    position: static;
 }
 @media (max-width: 991px) {
   .navbar-collapse.pull-left {

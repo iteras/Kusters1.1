@@ -42,7 +42,11 @@
         <div class="wrapper">
 
             <header class="main-header">
-                @Html.ActionLink(@Resources.Common.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "logo" })
+                @Html.ActionLink(@Resources.Common.ApplicationName, "Index", "Home", new { area = "" }, new { })
+                @Html.ActionLink("YouTubefy", "Index", "Videos", new { area = "" }, new { @*@class = "logo"*@ })
+                
+                
+               
 
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
@@ -337,10 +341,15 @@ else
         <div class="wrapper">
 
             <header class="main-header">
-                @Html.ActionLink(@Resources.Common.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "logo" })
+
+                        @Html.ActionLink(@Resources.Common.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "logo" })
+                  
+
+                        @Html.ActionLink("YouTubefy", "Index", "Videos", new { area = "" }, new { @class = "logo" })
+
 
                 <!-- Header Navbar: style can be found in header.less -->
-                <nav class="navbar navbar-static-top" role="navigation">
+                <nav class="navbar navbar-custom navbar-static-top" role="navigation">
                     <!-- Navbar Right Menu -->
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">

@@ -77,7 +77,7 @@ namespace DAL
 
 
         public IPersonRepository Persons => GetRepo<IPersonRepository>();
-
+        public IVideoRepository Videos => GetRepo<IVideoRepository>();
         public IContactRepository Contacts => GetRepo<IContactRepository>();
         public IArticleRepository Articles => GetRepo<IArticleRepository>();
 
