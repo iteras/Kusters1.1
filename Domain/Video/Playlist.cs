@@ -13,18 +13,21 @@ namespace Domain.Video
     {
         [Key]
        public int PlaylistId { get; set; }
+
         [Required]
         [MaxLength(64)]
         [MinLength(1)]
        public string PlaylistName { get; set; }
+
+
         [MaxLength(20)]
         [MinLength(1)]
         [Required]
        public string YoutubeVideoId { get; set; }
 
-        [ForeignKey(nameof(User))]
-        public int UserId { get; set; }
-        public virtual UserInt User { get; set; }
+        [ForeignKey(nameof(UserInt))]
+        public int UserIntId { get; set; }
+        public virtual UserInt UserInt { get; set; }
 
         public virtual List<VideoInPlaylist> VideoInPlaylists { get; set; }
     }

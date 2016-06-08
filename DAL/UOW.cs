@@ -87,6 +87,11 @@ namespace DAL
         public IUserClaimIntRepository UserClaimsInt => GetRepo<IUserClaimIntRepository>();
         public IUserLoginIntRepository UserLoginsInt => GetRepo<IUserLoginIntRepository>();
 
+
+        //Videos section
+        public IPlaylistRepository Playlists => GetRepo<IPlaylistRepository>();
+        public IVideoInPlaylistRepository VideoInPlaylists => GetRepo<IVideoInPlaylistRepository>();
+
         // calling standard EF repo provider
         private IEFRepository<T> GetStandardRepo<T>() where T : class
         {

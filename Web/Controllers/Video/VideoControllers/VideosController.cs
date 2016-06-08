@@ -7,19 +7,28 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DAL;
+using DAL.Interfaces;
 using Domain.Video;
 
 namespace Web.Controllers.Video.VideoControllers
 {
-    public class VideosController : Controller
+    public class VideosController : BaseController
     {
+        private readonly IUOW _uow;
 
-        private DataBaseContext db = new DataBaseContext();
+        public VideosController(IUOW uow)
+        {
+            _uow = uow;
+        }
+
+
+
+        //private DataBaseContext db = new DataBaseContext();
 
         // GET: Videos
         public ActionResult Index()
         {
-            return View(db.Videos.ToList());
+            return View(_uow.Videos.All);
         }
 
         // GET: Videos/Details/5
@@ -29,7 +38,7 @@ namespace Web.Controllers.Video.VideoControllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Domain.Video.Video video = db.Videos.Find(id);
+            Domain.Video.Video video = _uow.Videos.GetById(id);
             if (video == null)
             {
                 return HttpNotFound();
@@ -52,8 +61,8 @@ namespace Web.Controllers.Video.VideoControllers
         {
             if (ModelState.IsValid)
             {
-                db.Videos.Add(video);
-                db.SaveChanges();
+                _uow.Videos.Add(video);
+                _uow.Videos.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -67,7 +76,7 @@ namespace Web.Controllers.Video.VideoControllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Domain.Video.Video video = db.Videos.Find(id);
+            Domain.Video.Video video = _uow.Videos.GetById(id);
             if (video == null)
             {
                 return HttpNotFound();
@@ -84,8 +93,8 @@ namespace Web.Controllers.Video.VideoControllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(video).State = EntityState.Modified;
-                db.SaveChanges();
+                _uow.Videos.Update(video);
+                _uow.Videos.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(video);
@@ -98,7 +107,7 @@ namespace Web.Controllers.Video.VideoControllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Domain.Video.Video video = db.Videos.Find(id);
+            Domain.Video.Video video = _uow.Videos.GetById(id);
             if (video == null)
             {
                 return HttpNotFound();
@@ -111,9 +120,9 @@ namespace Web.Controllers.Video.VideoControllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Domain.Video.Video video = db.Videos.Find(id);
-            db.Videos.Remove(video);
-            db.SaveChanges();
+            Domain.Video.Video video = _uow.Videos.GetById(id);
+            _uow.Videos.Delete(video);
+            _uow.Videos.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -121,7 +130,7 @@ namespace Web.Controllers.Video.VideoControllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _uow.Videos.Dispose();
             }
             base.Dispose(disposing);
         }

@@ -1,0 +1,43 @@
+﻿@model Domain.Video.Playlist
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Playlist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaylistName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaylistName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YoutubeVideoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YoutubeVideoId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PlaylistId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

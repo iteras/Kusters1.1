@@ -15,8 +15,10 @@ using DAL.Interfaces;
 using DAL.Repositories;
 using Domain.Video;
 
-namespace Web.Controllers.Video.VideoControllers
+namespace Web.Controllers.api
 {
+    [AllowAnonymous]
+    //[EnableCors(origins: "http://localhost:43467/", headers: "*", methods : "*")]
     public class PlaylistsController : ApiController
     {
         private IPlaylistRepository _repo;
@@ -47,12 +49,6 @@ namespace Web.Controllers.Video.VideoControllers
 
                 return BadRequest(ModelState);
             }
-            //VideoDTO videoDto = new VideoDTO()
-            //{
-            //    VideoId =  video.VideoId,
-            //    Title = video.Title,
-            //    YoutubeVideoId = video.YoutubeVideoId
-            //};
             _repo.Add(playlist);
             _repo.SaveChanges();
             return Ok();

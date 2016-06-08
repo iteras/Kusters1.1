@@ -12,6 +12,7 @@ using DAL.Repositories;
 namespace Web.Controllers.api
 {
     [AllowAnonymous]
+    //[EnableCors(origins: "http://localhost:43467/", headers: "*", methods : "*")]
     public class VideosController : ApiController
     {
         private IVideoRepository _repo;
@@ -34,6 +35,7 @@ namespace Web.Controllers.api
         //}
 
         // GET: Videos
+
         [ResponseType(typeof(VideoDTO))]
         public List<VideoDTO> Get()
         {

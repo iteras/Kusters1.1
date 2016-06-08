@@ -127,21 +127,13 @@
     <Compile Include="Interfaces\Kusters\IUserLoginRepository.cs" />
     <Compile Include="Interfaces\Kusters\IUserRepository.cs" />
     <Compile Include="Interfaces\Kusters\IUserRoleRepository.cs" />
-    <Compile Include="Migrations\201605272133086_usad.cs" />
-    <Compile Include="Migrations\201605272133086_usad.Designer.cs">
-      <DependentUpon>201605272133086_usad.cs</DependentUpon>
+    <Compile Include="Migrations\201606081212036_newDbMigCuzErrorOccuredWhenAddingMoreMigrations.cs" />
+    <Compile Include="Migrations\201606081212036_newDbMigCuzErrorOccuredWhenAddingMoreMigrations.Designer.cs">
+      <DependentUpon>201606081212036_newDbMigCuzErrorOccuredWhenAddingMoreMigrations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606070923293_videoAdded.cs" />
-    <Compile Include="Migrations\201606070923293_videoAdded.Designer.cs">
-      <DependentUpon>201606070923293_videoAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.cs" />
-    <Compile Include="Migrations\201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.Designer.cs">
-      <DependentUpon>201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606071912184_playlistModelUpgraded.cs" />
-    <Compile Include="Migrations\201606071912184_playlistModelUpgraded.Designer.cs">
-      <DependentUpon>201606071912184_playlistModelUpgraded.cs</DependentUpon>
+    <Compile Include="Migrations\201606081226294_fixAGAINRAAA.cs" />
+    <Compile Include="Migrations\201606081226294_fixAGAINRAAA.Designer.cs">
+      <DependentUpon>201606081226294_fixAGAINRAAA.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NLogCommandInterceptor.cs" />
@@ -191,17 +183,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605272133086_usad.resx">
-      <DependentUpon>201605272133086_usad.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606081212036_newDbMigCuzErrorOccuredWhenAddingMoreMigrations.resx">
+      <DependentUpon>201606081212036_newDbMigCuzErrorOccuredWhenAddingMoreMigrations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606070923293_videoAdded.resx">
-      <DependentUpon>201606070923293_videoAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.resx">
-      <DependentUpon>201606071339445_Added2TablesPlaylistAndVideoInPlaylistSODAMNLONGNAME.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606071912184_playlistModelUpgraded.resx">
-      <DependentUpon>201606071912184_playlistModelUpgraded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606081226294_fixAGAINRAAA.resx">
+      <DependentUpon>201606081226294_fixAGAINRAAA.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

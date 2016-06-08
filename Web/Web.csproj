@@ -93,11 +93,19 @@
       <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Http.OData, Version=5.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.3.1\lib\net45\System.Web.Http.OData.dll</HintPath>
       <Private>True</Private>
@@ -290,6 +298,7 @@
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\api\PlaylistsController.cs" />
+    <Compile Include="Controllers\Video\VideoControllers\PlaylistsController.cs" />
     <Compile Include="Controllers\Video\VideoControllers\VideosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -302,21 +311,22 @@
     <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
-    <Compile Include="Views\ViewModels\AccountBindingModels.cs" />
-    <Compile Include="Views\ViewModels\AccountViewModels.cs" />
-    <Compile Include="Views\ViewModels\ApiAccountViewModels.cs" />
+    <Compile Include="ViewModels\AccountBindingModels.cs" />
+    <Compile Include="ViewModels\AccountViewModels.cs" />
+    <Compile Include="ViewModels\ApiAccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Views\ViewModels\ContactViewModels.cs" />
-    <Compile Include="Views\ViewModels\ContractViewModels.cs" />
-    <Compile Include="Views\ViewModels\DealViewModels.cs" />
-    <Compile Include="Views\ViewModels\DescriptionViewModel.cs" />
-    <Compile Include="Views\ViewModels\HomeViewModels.cs" />
-    <Compile Include="Views\ViewModels\ManageViewModels.cs" />
-    <Compile Include="Views\ViewModels\PersonViewModels.cs" />
-    <Compile Include="Views\ViewModels\ProductViewModels.cs" />
+    <Compile Include="ViewModels\ContactViewModels.cs" />
+    <Compile Include="ViewModels\ContractViewModels.cs" />
+    <Compile Include="ViewModels\DealViewModels.cs" />
+    <Compile Include="ViewModels\DescriptionViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModels.cs" />
+    <Compile Include="ViewModels\ManageViewModels.cs" />
+    <Compile Include="ViewModels\PersonViewModels.cs" />
+    <Compile Include="ViewModels\PlaylistViewModels.cs" />
+    <Compile Include="ViewModels\ProductViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -3537,6 +3547,11 @@
     <Content Include="Views\Videos\Details.cshtml" />
     <Content Include="Views\Videos\Edit.cshtml" />
     <Content Include="Views\Videos\Index.cshtml" />
+    <Content Include="Views\Playlists\Create.cshtml" />
+    <Content Include="Views\Playlists\Delete.cshtml" />
+    <Content Include="Views\Playlists\Details.cshtml" />
+    <Content Include="Views\Playlists\Edit.cshtml" />
+    <Content Include="Views\Playlists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

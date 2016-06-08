@@ -43,6 +43,12 @@ namespace DAL.Interfaces
         IArticleRepository Articles { get; }
 
 
+        //Videos section
+        IVideoRepository Videos { get; }
+        IPlaylistRepository Playlists { get; }
+        IVideoInPlaylistRepository VideoInPlaylists { get; }
+
+
         // Identity, PK - string
         //IUserRepository Users { get; }
         //IUserRoleRepository UserRoles { get; }

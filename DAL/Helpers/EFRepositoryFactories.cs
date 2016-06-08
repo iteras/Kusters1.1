@@ -63,6 +63,8 @@ namespace DAL.Helpers
                 {typeof (IUserClaimIntRepository), dbContext => new UserClaimIntRepository(dbContext)},
                 {typeof (IUserLoginIntRepository), dbContext => new UserLoginIntRepository(dbContext)},
                 {typeof (IRoleIntRepository), dbContext => new RoleIntRepository(dbContext)},
+                {typeof (IVideoRepository), dbContext => new VideoRepository(dbContext)},
+                {typeof (IPlaylistRepository), dbContext => new PlaylistRepository(dbContext) }
             };
         }
 

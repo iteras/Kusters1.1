@@ -38,7 +38,7 @@ namespace BLL.Services
          */
         public List<PlaylistDTO> GetAllPlaylistsForUserByUserIntId(int userIntId)
         {
-            return _repo.All.Where(x => x.UserId == userIntId).Select(x => _factory.CreateBasicPlaylistDto(x)).ToList();
+            return _repo.All.Where(x => x.UserIntId == userIntId).Select(x => _factory.CreateBasicPlaylistDto(x)).ToList();
         } 
        
     }
